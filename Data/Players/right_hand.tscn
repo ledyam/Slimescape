@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca8tglorvqg7d"]
+
+[ext_resource type="Script" uid="uid://dig34es7gdj1y" path="res://right_hand.gd" id="1_x2xj7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2xj7"]
+size = Vector2(13.5, 16)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_x2xj7"]
+
+[node name="RightHand" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_x2xj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x2xj7")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(0, 5.04871e-29)
+scale = Vector2(4.75, 7.5)
+texture = SubResource("PlaceholderTexture2D_x2xj7")

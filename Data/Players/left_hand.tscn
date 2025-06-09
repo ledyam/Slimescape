@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4lgx6g773tsf"]
+
+[ext_resource type="Script" uid="uid://blue8o7ecvufu" path="res://Data/Players/left_hand.gd" id="1_u45ft"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u45ft"]
+size = Vector2(8, 8)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_u45ft"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u45ft"]
+radius = 7.07107
+
+[node name="LeftHand" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_u45ft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u45ft")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, 2.38419e-07)
+scale = Vector2(7.5, 7.5)
+texture = SubResource("PlaceholderTexture2D_u45ft")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_u45ft")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
