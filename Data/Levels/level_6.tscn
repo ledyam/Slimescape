@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bnohuxpyxephj"]
+[gd_scene load_steps=13 format=4 uid="uid://dkwtykupgul2x"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_4w7ye"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_he3aq"]
@@ -97,7 +97,7 @@ texture = ExtResource("2_he3aq")
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_45qft")
 
-[node name="generic_level" instance=ExtResource("1_4w7ye")]
+[node name="generic_level2" instance=ExtResource("1_4w7ye")]
 
 [node name="Obstacles" type="TileMapLayer" parent="Base_Tile" index="0"]
 position = Vector2(-16, 0)
