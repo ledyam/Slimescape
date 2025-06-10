@@ -7,9 +7,3 @@ var movement_left : Dictionary = {
 	_izq= "A",
 	_der = "D"
 }
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "RightHand":
-		CentralSignal.increment_level.emit()
-	pass # Replace with function body.

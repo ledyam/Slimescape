@@ -1,13 +1,12 @@
 [gd_scene load_steps=18 format=3 uid="uid://mxyf28sl8b78"]
 
-[ext_resource type="Script" uid="uid://dne5jls6bos7e" path="res://Data/Players/left_hand_normal.gd" id="1_24f0y"]
+[ext_resource type="Script" uid="uid://h35kpbfeouot" path="res://Data/Players/left_hand_normal.gd" id="1_24f0y"]
 [ext_resource type="Texture2D" uid="uid://b5y2r83c334b0" path="res://Assets/slime_blue.png" id="3_j47ua"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4b0fv"]
-size = Vector2(26, 13)
+size = Vector2(18, 11)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_35u4c"]
-radius = 14.0357
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24f0y"]
 atlas = ExtResource("3_j47ua")
@@ -147,22 +146,20 @@ _data = {
 }
 
 [node name="LeftHand" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
 collision_mask = 3
 script = ExtResource("1_24f0y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2.5)
+position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_4b0fv")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_35u4c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
-scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_syp0f")
 animation = &"jump"
 autoplay = "move_left"
@@ -174,7 +171,7 @@ libraries = {
 }
 
 [node name="coyote_timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.01
 one_shot = true
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="coyote_timer" to="." method="_on_coyote_timer_timeout"]

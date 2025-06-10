@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://buy8ec6733gq5" path="res://Assets/slime_red.png" id="3_x38xh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lc0f"]
-size = Vector2(18, 11)
+size = Vector2(27, 12.9987)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17njr"]
 atlas = ExtResource("3_x38xh")
@@ -144,16 +144,17 @@ _data = {
 }
 
 [node name="RightHand" type="CharacterBody2D"]
-scale = Vector2(1.5, 1.5)
 collision_mask = 3
 script = ExtResource("1_tk3ul")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0.500651, -6.5)
 rotation = 0.00130171
 shape = SubResource("RectangleShape2D_5lc0f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_30f41")
 animation = &"jump"
 autoplay = "move_left"
@@ -162,3 +163,9 @@ autoplay = "move_left"
 libraries = {
 &"": SubResource("AnimationLibrary_02dv2")
 }
+
+[node name="coyote_timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="coyote_timer" to="." method="_on_coyote_timer_timeout"]
