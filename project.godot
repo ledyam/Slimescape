@@ -23,8 +23,12 @@ CentralSignal="*res://Data/Signals/CentralSignal.gd"
 
 window/size/viewport_width=657
 window/size/viewport_height=384
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
 
 [file_customization]
 
