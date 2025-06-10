@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnbsqvsd45pt2"]
+
+[ext_resource type="Script" uid="uid://bd6jy17a5fgi0" path="res://UI/tecla_guia.gd" id="1_uf5hy"]
+[ext_resource type="Texture2D" uid="uid://dxcdfimoyio3j" path="res://Assets/SimpleKeys/Jumbo/Light/Single PNGs/0.png" id="2_ofmle"]
+
+[node name="TeclaGuia" type="TextureRect"]
+clip_contents = true
+anchors_preset = -1
+anchor_left = 0.00152207
+anchor_top = 0.00260417
+anchor_right = 0.0300152
+anchor_bottom = 0.0442708
+offset_right = -9.72
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.08, 1)
+texture = ExtResource("2_ofmle")
+expand_mode = 1
+script = ExtResource("1_uf5hy")
+metadata/_edit_use_anchors_ = true
