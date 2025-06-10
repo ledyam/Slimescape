@@ -1,4 +1,5 @@
 extends MainCharacter
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 
@@ -15,7 +16,14 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity.x = direction * SPEED
+		if direction < 0 : 
+			$AnimatedSprite2D.flip_h = false
+			animation_player.play("move_left")
+			velocity.x = direction * SPEED
+		else : 
+			$AnimatedSprite2D.flip_h = true
+			animation_player.play("move_left")
+			velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 

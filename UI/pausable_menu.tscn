@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgxqadk8df0em"]
+
+[ext_resource type="Texture2D" uid="uid://bqbbvbdbc45qa" path="res://Assets/GUI.png" id="1_wbn63"]
+[ext_resource type="Script" uid="uid://chtnry3edpskt" path="res://UI/pausable_menu.gd" id="1_xh5gb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbn63"]
+bg_color = Color(0.396166, 0.434446, 0.617402, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xh5gb"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.33822, 0.373521, 0.544716, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0.0901961, 0.0901961, 0.203922, 0.890196)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0.0862745, 0.0862745, 0.0862745, 0.282353)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mx2vx"]
+bg_color = Color(0.236203, 0.263739, 0.401406, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="Theme" id="Theme_n067c"]
+Button/constants/outline_size = 0
+Button/styles/hover = SubResource("StyleBoxFlat_wbn63")
+Button/styles/normal = SubResource("StyleBoxFlat_xh5gb")
+Button/styles/pressed = SubResource("StyleBoxFlat_mx2vx")
+
+[node name="PausableMenu" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_xh5gb")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_n067c")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = -74.5
+offset_right = 73.5
+offset_bottom = 74.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wbn63")
+region_rect = Rect2(2, 34, 44, 44)
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 6
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 13
+
+[node name="Button" type="Button" parent="Control/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Jugar"
+
+[node name="Button2" type="Button" parent="Control/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Opciones"
+
+[node name="Button3" type="Button" parent="Control/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Salir"
