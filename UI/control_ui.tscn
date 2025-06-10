@@ -1,9 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5gs1uviawiuc"]
+[gd_scene load_steps=10 format=3 uid="uid://c5gs1uviawiuc"]
 
 [ext_resource type="Script" uid="uid://ccgvfwayvk2jj" path="res://UI/control_ui.gd" id="1_8w784"]
 [ext_resource type="Texture2D" uid="uid://d1gxhcwesv4tb" path="res://Assets/timer.png" id="2_ds52d"]
 [ext_resource type="StyleBox" uid="uid://dfy23iirn8ues" path="res://UI/bar_fill.tres" id="3_ds52d"]
 [ext_resource type="LabelSettings" uid="uid://dxhbsy6kqrvv1" path="res://UI/labels/generic_label.tres" id="3_ry7jt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds52d"]
+bg_color = Color(0.0941176, 0.14902, 0.211765, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ry7jt"]
 bg_color = Color(0.0941176, 0.14902, 0.211765, 1)
@@ -29,7 +36,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ds52d"]
 resource_name = "timer"
-length = 2.0
+length = 4.5
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -38,10 +45,10 @@ tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.2, 1.96667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(1.03333, 1.63333, 2.23333, 2.83333, 3.53333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.5708, 6.28319, 6.28319]
+"values": [0.0, 1.5708, 3.14159, 4.71239, 6.28319]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l8jcl"]
@@ -53,6 +60,30 @@ _data = {
 [node name="ControlUI" type="CanvasLayer"]
 layer = 2
 script = ExtResource("1_8w784")
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 530.0
+offset_top = 360.0
+offset_right = 626.0
+offset_bottom = 378.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ds52d")
+
+[node name="WipsLabel" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -4.0
+offset_right = 39.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = ExtResource("3_ry7jt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 3
@@ -99,22 +130,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "/ 10"
-label_settings = ExtResource("3_ry7jt")
-
-[node name="WipsLabel" type="Label" parent="."]
-unique_name_in_owner = true
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -118.0
-offset_top = -21.0
-offset_right = -40.0
-offset_bottom = -13.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "0"
 label_settings = ExtResource("3_ry7jt")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
