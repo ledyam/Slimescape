@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_up") and can_jump():
+		$"Sound/Cartoon-jump-6462".play()
 		if !has_started:
 			has_started = true
 			started_timer()

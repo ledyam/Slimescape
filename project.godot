@@ -10,26 +10,30 @@ config_version=5
 
 [application]
 
-config/name="Curda Sync"
+config/name="SlimeScape"
+run/main_scene="uid://ciwdvtk5yn12r"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="uid://bm5hc3w1bat0o"
+config/icon="uid://3jkwml6dx63h"
 
 [autoload]
 
 ControlUi="*res://UI/control_ui.tscn"
 CentralSignal="*res://Data/Signals/CentralSignal.gd"
 PausableMenu="*res://UI/pausable_menu.tscn"
+GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
+SoundManager="*res://SoundManager.gd"
 
 [display]
 
 window/size/viewport_width=657
 window/size/viewport_height=384
+window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg")
 
 [file_customization]
 
@@ -41,7 +45,19 @@ folder_colors={
 
 [gui]
 
-theme/custom_font="uid://refuf5j5hr24"
+theme/custom_font="uid://boc8cigfbnipa"
+
+[gui_transitions]
+
+config/default/auto_start=true
+config/default/fade_layout=true
+config/default/center_pivot=true
+config/default/duration=0.5
+config/default/delay=0.5
+config/default/transition_type="QUAD"
+config/default/ease_type="IN_OUT"
+config/default/animation_enter=4
+config/default/animation_leave=4
 
 [input]
 

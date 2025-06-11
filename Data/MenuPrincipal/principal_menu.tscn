@@ -1,0 +1,301 @@
+[gd_scene load_steps=15 format=3 uid="uid://ciwdvtk5yn12r"]
+
+[ext_resource type="Script" uid="uid://bx7jp71nnnyt6" path="res://Data/MenuPrincipal/principal_menu.gd" id="1_xaq4r"]
+[ext_resource type="AudioStream" uid="uid://cq2d78bc8qsia" path="res://Assets/Sounds/principal_menu_audio.mp3" id="3_jyrhh"]
+[ext_resource type="Theme" uid="uid://c8f8cf35u5tw8" path="res://UI/custom_theme.tres" id="4_7yhsr"]
+[ext_resource type="PackedScene" uid="uid://cy4tlif73jssx" path="res://UI/buttom/button_with_sound.tscn" id="4_82crm"]
+[ext_resource type="Script" uid="uid://b15gu5hdpxfvy" path="res://addons/simple-gui-transitions/transition.gd" id="5_5v1vu"]
+[ext_resource type="VideoStream" uid="uid://cmvyeg68dgbkh" path="res://Assets/Sounds/My-Video-1.ogv" id="5_n3ypx"]
+[ext_resource type="Texture2D" uid="uid://d32egagoh85gn" path="res://Assets/icons/1bit 16px icons part-2 outlines.png" id="6_n3ypx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7yhsr"]
+font_size = 12
+
+[sub_resource type="Animation" id="Animation_5v1vu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VersionLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Screen:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sound:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7yhsr"]
+resource_name = "oclution"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 7.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VersionLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Screen:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sound:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_82crm"]
+resource_name = "oclution_2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VersionLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0999999, 2.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sound:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Screen:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n3ypx"]
+_data = {
+&"RESET": SubResource("Animation_5v1vu"),
+&"oclution": SubResource("Animation_7yhsr"),
+&"oclution_2": SubResource("Animation_82crm")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82crm"]
+atlas = ExtResource("6_n3ypx")
+region = Rect2(201, 105, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufk0p"]
+atlas = ExtResource("6_n3ypx")
+region = Rect2(440, 8, 16, 16)
+
+[node name="PrincipalMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_7yhsr")
+script = ExtResource("1_xaq4r")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("5_n3ypx")
+expand = true
+loop = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.407915
+anchor_top = 0.447917
+anchor_right = 0.584475
+anchor_bottom = 0.846354
+offset_right = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_7yhsr")
+theme_override_constants/separation = 21
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Inciar" parent="VBoxContainer" instance=ExtResource("4_82crm")]
+layout_mode = 2
+text = "Iniciar"
+
+[node name="Opciones" parent="VBoxContainer" instance=ExtResource("4_82crm")]
+layout_mode = 2
+text = "Opciones"
+
+[node name="Salir" parent="VBoxContainer" instance=ExtResource("4_82crm")]
+layout_mode = 2
+text = "Salir"
+
+[node name="VersionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = -16.0
+offset_right = 54.0
+offset_bottom = -3.0
+grow_vertical = 0
+text = "v1.0.0"
+label_settings = SubResource("LabelSettings_7yhsr")
+
+[node name="GuiTransition" type="Node" parent="."]
+script = ExtResource("5_5v1vu")
+fade_layout = 1
+animation_enter = 4
+animation_leave = 4
+duration = 2.0
+delay = 1.0
+layout = NodePath("../VBoxContainer")
+group = NodePath("../VBoxContainer")
+metadata/_custom_type_script = "uid://b15gu5hdpxfvy"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_n3ypx")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jyrhh")
+autoplay = true
+mix_target = 2
+
+[node name="Sound" type="Button" parent="."]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 353.0
+offset_right = 647.0
+offset_bottom = 375.0
+size_flags_horizontal = 3
+icon = SubResource("AtlasTexture_82crm")
+icon_alignment = 1
+
+[node name="Screen" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 625.0
+offset_top = 8.0
+offset_right = 649.0
+offset_bottom = 32.0
+size_flags_horizontal = 3
+icon = SubResource("AtlasTexture_ufk0p")
+icon_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Inciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Sound" to="." method="_on_sound_pressed"]
+[connection signal="pressed" from="Screen" to="." method="_on_screen_pressed"]

@@ -20,10 +20,12 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("W") and can_jump():
+		
+		$"Sound/Cartoon-jump-6462".play()
 		if !has_started:
 			has_started = true
 			started_timer()
-		
+			
 		
 		velocity.y = JUMP_VELOCITY
 		is_jumping = true
@@ -51,16 +53,17 @@ func _physics_process(delta: float) -> void:
 
 func can_jump():
 	if is_on_floor() and !is_jumping  : return true
-	elif !coyote_timer.is_stopped() : return  true 
+	elif !is_jumping and !coyote_timer.is_stopped() : return  true 
 	 
 	
 	
 
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
+	
+func _on_area_2d_body_entered(body):
 	if body.name == "RightHand":
 		CentralSignal.increment_level.emit()
 		CentralSignal.pause_movement.emit()
-	
-		get_tree().change_scene_to_file("res://UI/transition_level.tscn")
-	pass # Replace with function body.
+		call_deferred("_change_scene")
+
+func _change_scene():
+	get_tree().change_scene_to_file("res://UI/transition_level.tscn")

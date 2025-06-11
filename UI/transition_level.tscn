@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs5mljvno7rel"]
+[gd_scene load_steps=7 format=3 uid="uid://bs5mljvno7rel"]
 
 [ext_resource type="Script" uid="uid://dkpy3uah5e6uq" path="res://transition_level.gd" id="1_2m7fr"]
 [ext_resource type="LabelSettings" uid="uid://d03v1nq705cef" path="res://UI/labels/transtition_level_label.tres" id="2_wp8pr"]
+[ext_resource type="AudioStream" uid="uid://drsmjkbjev5ur" path="res://Assets/Sounds/clock-tick-tik-tak-76043.mp3" id="3_wp8pr"]
 
 [sub_resource type="Animation" id="Animation_boejx"]
 resource_name = "increment_level"
@@ -71,3 +72,8 @@ text = "10"
 label_settings = ExtResource("2_wp8pr")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sound" type="Node" parent="."]
+
+[node name="Clock-tick-tik-tak-76043" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("3_wp8pr")
