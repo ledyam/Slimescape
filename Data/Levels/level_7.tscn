@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=12 format=4 uid="uid://b4rfn6cufdjnq"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_ki83a"]
@@ -91,6 +92,8 @@ sources/0 = SubResource("TileSetAtlasSource_i4t3m")
 texture = ExtResource("2_i4t3m")
 6:6/0 = 0
 7:6/0 = 0
+
+
 7:7/0 = 0
 8:7/0 = 0
 9:7/0 = 0
@@ -98,6 +101,7 @@ texture = ExtResource("2_i4t3m")
 11:7/0 = 0
 12:7/0 = 0
 12:6/0 = 0
+
 11:6/0 = 0
 10:6/0 = 0
 9:6/0 = 0

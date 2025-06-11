@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="1_xrjha"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lhd0x"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xrjha"]
 texture = ExtResource("1_xrjha")
 2:2/0 = 0
 1:5/0 = 0
@@ -20,9 +20,9 @@ texture = ExtResource("1_xrjha")
 10:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_iq2b3"]
-sources/0 = SubResource("TileSetAtlasSource_lhd0x")
+sources/0 = SubResource("TileSetAtlasSource_xrjha")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ayg0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lhd0x"]
 texture = ExtResource("1_xrjha")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -106,7 +106,7 @@ texture = ExtResource("1_xrjha")
 
 [sub_resource type="TileSet" id="TileSet_w1tct"]
 physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_3ayg0")
+sources/0 = SubResource("TileSetAtlasSource_lhd0x")
 
 [node name="generic_level" type="Node2D"]
 
