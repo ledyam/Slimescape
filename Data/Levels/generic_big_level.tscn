@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://b6oro5h82ugce"]
+
+[gd_scene load_steps=6 format=4 uid="uid://ckv3y1opbn15w"]
+
 
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="1_lldc6"]
 
