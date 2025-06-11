@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://ube04gcf40ei"]
+
+[ext_resource type="Script" uid="uid://2vuyk7rehnw8" path="res://Data/Objects/saw.gd" id="1_h37fp"]
+[ext_resource type="Texture2D" uid="uid://c67yrpmaxqs02" path="res://Assets/Suriken.png" id="2_v1j56"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3tbc"]
+atlas = ExtResource("2_v1j56")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xigvb"]
+atlas = ExtResource("2_v1j56")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eydpg"]
+atlas = ExtResource("2_v1j56")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5h2hw"]
+atlas = ExtResource("2_v1j56")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hquat"]
+atlas = ExtResource("2_v1j56")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3ijb"]
+atlas = ExtResource("2_v1j56")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pnls"]
+atlas = ExtResource("2_v1j56")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2th4i"]
+atlas = ExtResource("2_v1j56")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5duyx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3tbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xigvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eydpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5h2hw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hquat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3ijb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pnls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2th4i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
+
+[node name="Saw" type="Node2D"]
+script = ExtResource("1_h37fp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-21, -25)
+sprite_frames = SubResource("SpriteFrames_5duyx")
+frame_progress = 0.512794
