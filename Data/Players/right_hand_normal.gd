@@ -55,5 +55,5 @@ func _physics_process(delta: float) -> void:
 
 func can_jump():
 	if is_on_floor() and !is_jumping  : return true
-	elif !coyote_timer.is_stopped() : return  true
+	elif !is_jumping and !coyote_timer.is_stopped() : return  true
 	

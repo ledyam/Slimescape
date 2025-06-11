@@ -93,6 +93,7 @@ _data = {
 
 [node name="ControlUI" type="CanvasLayer"]
 layer = 2
+visible = false
 script = ExtResource("1_8w784")
 
 [node name="TransitionRect" type="ColorRect" parent="."]
@@ -185,6 +186,7 @@ text = "/ 10"
 label_settings = ExtResource("3_ry7jt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UIContainer"]
+visible = false
 
 [node name="ProgressBar" type="ProgressBar" parent="UIContainer/CanvasLayer"]
 unique_name_in_owner = true

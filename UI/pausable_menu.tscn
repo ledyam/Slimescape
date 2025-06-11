@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgxqadk8df0em"]
+[gd_scene load_steps=5 format=3 uid="uid://dgxqadk8df0em"]
 
 [ext_resource type="Texture2D" uid="uid://bqbbvbdbc45qa" path="res://Assets/GUI.png" id="1_wbn63"]
 [ext_resource type="Script" uid="uid://chtnry3edpskt" path="res://UI/pausable_menu.gd" id="1_xh5gb"]
 [ext_resource type="Theme" uid="uid://c8f8cf35u5tw8" path="res://UI/custom_theme.tres" id="2_mx2vx"]
+[ext_resource type="PackedScene" uid="uid://cy4tlif73jssx" path="res://UI/buttom/button_with_sound.tscn" id="4_n067c"]
 
 [node name="PausableMenu" type="CanvasLayer"]
 process_mode = 3
-visible = false
+layer = 4
 script = ExtResource("1_xh5gb")
 
 [node name="Control" type="Control" parent="."]
@@ -55,14 +56,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 13
 
-[node name="Button" type="Button" parent="Control/NinePatchRect/VBoxContainer"]
+[node name="ButtonWithSound" parent="Control/NinePatchRect/VBoxContainer" instance=ExtResource("4_n067c")]
 layout_mode = 2
-text = "Jugar"
+text = "Continuar"
 
-[node name="Button2" type="Button" parent="Control/NinePatchRect/VBoxContainer"]
+[node name="ButtonWithSound2" parent="Control/NinePatchRect/VBoxContainer" instance=ExtResource("4_n067c")]
 layout_mode = 2
 text = "Opciones"
 
-[node name="Button3" type="Button" parent="Control/NinePatchRect/VBoxContainer"]
+[node name="ButtonWithSound3" parent="Control/NinePatchRect/VBoxContainer" instance=ExtResource("4_n067c")]
 layout_mode = 2
 text = "Salir"
