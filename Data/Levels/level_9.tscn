@@ -159,7 +159,7 @@ sources/0 = SubResource("TileSetAtlasSource_eu0jc")
 
 [sub_resource type="TileSet" id="TileSet_o53y8"]
 
-[node name="generic_level3" instance=ExtResource("1_o53y8")]
+[node name="generic_level" instance=ExtResource("1_o53y8")]
 
 [node name="door" type="TileMapLayer" parent="Base_Tile" index="0"]
 tile_map_data = PackedByteArray("AAAFAAkAAQAJAAAAAAAEAAkAAQAJAAAAAAADAAkAAQAJAAAAAAAiAAkAAQAJAAAAAAAjAAkAAQAJAAAAAAA=")
@@ -175,6 +175,9 @@ tile_set = SubResource("TileSet_r30a5")
 
 [node name="switch" type="TileMapLayer" parent="Base_Tile" index="3"]
 tile_set = SubResource("TileSet_o53y8")
+
+[node name="Spikes" parent="Base_Tile" index="4"]
+tile_map_data = PackedByteArray("AAANAAUAAAABAA4AAAAOAAUAAAACAA4AAAAPAAUAAAADAA4AAAABABMAAAABAA4AAAACABMAAAACAA4AAAAmABMAAAABAA4AAAAnABMAAAACAA4AAAA=")
 
 [node name="LeftHand" parent="." index="2" instance=ExtResource("5_ekgag")]
 position = Vector2(290, 155)
