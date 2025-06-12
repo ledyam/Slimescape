@@ -28,7 +28,7 @@ var secondary_bar_shader_material: ShaderMaterial = null
 const SHAKE_DISTANCE: float = 3.0
 const SHAKE_DURATION: float = 0.10
 const SHAKE_REPEATS: int = 6
-
+var NODOS_NO : Array = ["res://Data/MenuPrincipal/principal_menu.tscn","res://UI/transition_level.tscn"]
 var original_ui_position: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
@@ -62,7 +62,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") and can_reset and not is_resetting:
-		if get_tree().current_scene.scene_file_path != "res://UI/transition_level.tscn":
+		if get_tree().current_scene.scene_file_path not in NODOS_NO:
 			reset_level()
 
 func _process(delta: float) -> void:

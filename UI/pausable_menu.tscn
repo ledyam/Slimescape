@@ -57,7 +57,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 13
 
-[node name="ButtonWithSound" parent="Control/NinePatchRect/VBoxContainer" instance=ExtResource("4_n067c")]
+[node name="Continuar" parent="Control/NinePatchRect/VBoxContainer" instance=ExtResource("4_n067c")]
 layout_mode = 2
 text = "Continuar"
 
@@ -65,6 +65,9 @@ text = "Continuar"
 layout_mode = 2
 text = "Opciones"
 
-[node name="ButtonWithSound3" parent="Control/NinePatchRect/VBoxContainer" instance=ExtResource("4_n067c")]
+[node name="Salir" parent="Control/NinePatchRect/VBoxContainer" instance=ExtResource("4_n067c")]
 layout_mode = 2
 text = "Salir"
+
+[connection signal="pressed" from="Control/NinePatchRect/VBoxContainer/Continuar" to="." method="_on_button_continuar"]
+[connection signal="pressed" from="Control/NinePatchRect/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
