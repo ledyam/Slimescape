@@ -155,7 +155,6 @@ tile_map_data = PackedByteArray("AAAaAAMAAAAGAAYAAAAaAAQAAAAGAAcAAAAbAAMAAAAHAAY
 tile_set = SubResource("TileSet_nts85")
 
 [node name="LeftHand" parent="." index="2" instance=ExtResource("3_lu46t")]
-z_index = 0
 position = Vector2(205, 132)
 collision_mask = 3
 
