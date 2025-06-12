@@ -60,8 +60,8 @@ func _physics_process(delta: float) -> void:
 func can_jump():
 	if is_jumping and double_jump  : 
 		double_jump = false 
-		return true
 		$DoubleJumpTimer.stop()
+		return true
 	if is_on_floor() and !is_jumping  : return true
 	elif !is_jumping and !coyote_timer.is_stopped() : return  true
 	
