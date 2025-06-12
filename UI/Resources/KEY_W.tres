@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://ce117eid4wbkp"]
+
+[ext_resource type="Texture2D" uid="uid://b8v6vwdl5vhr5" path="res://Assets/SimpleKeys/Jumbo/Light/Spritesheets/W.png" id="1_edi2m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2htt"]
+atlas = ExtResource("1_edi2m")
+region = Rect2(0, 0, 19, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_127mp"]
+atlas = ExtResource("1_edi2m")
+region = Rect2(19, 0, 19, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce84k"]
+atlas = ExtResource("1_edi2m")
+region = Rect2(38, 0, 19, 21)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2htt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_127mp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce84k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

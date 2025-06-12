@@ -28,14 +28,19 @@ func _on_iniciar_pressed() -> void:
 func _on_sound_pressed() -> void:
 	if$AudioStreamPlayer.playing:
 		$AudioStreamPlayer.stream_paused = true
+		%Sound.icon = load("res://Assets/icons/Lucid V1.2/PNG/Flat/16/Speaker-Crossed.png")
 	else:
 		$AudioStreamPlayer.stream_paused = false 
+		%Sound.icon = load("res://Assets/icons/Lucid V1.2/PNG/Flat/16/Speaker-1.png")
 	pass # Replace with function body.
 
 
 func _on_screen_pressed() -> void:
 	if get_window().mode == Window.MODE_FULLSCREEN:
+		%Screen.icon = load("res://Assets/icons/Lucid V1.2/PNG/Flat/16/Cursor-3.png")
 		get_window().mode = Window.MODE_MAXIMIZED
 	else : 
+		%Screen.icon = load("res://Assets/icons/Lucid V1.2/PNG/Flat/16/Cursor-7.png")
+
 		get_window().mode = Window.MODE_FULLSCREEN
 	pass # Replace with function body.

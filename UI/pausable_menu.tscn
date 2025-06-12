@@ -8,6 +8,7 @@
 [node name="PausableMenu" type="CanvasLayer"]
 process_mode = 3
 layer = 4
+visible = false
 script = ExtResource("1_xh5gb")
 
 [node name="Control" type="Control" parent="."]

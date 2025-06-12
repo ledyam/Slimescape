@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ciwdvtk5yn12r"]
+[gd_scene load_steps=28 format=3 uid="uid://ciwdvtk5yn12r"]
 
 [ext_resource type="Script" uid="uid://bx7jp71nnnyt6" path="res://Data/MenuPrincipal/principal_menu.gd" id="1_xaq4r"]
 [ext_resource type="AudioStream" uid="uid://cq2d78bc8qsia" path="res://Assets/Sounds/principal_menu_audio.mp3" id="3_jyrhh"]
@@ -6,7 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://cy4tlif73jssx" path="res://UI/buttom/button_with_sound.tscn" id="4_82crm"]
 [ext_resource type="Script" uid="uid://b15gu5hdpxfvy" path="res://addons/simple-gui-transitions/transition.gd" id="5_5v1vu"]
 [ext_resource type="VideoStream" uid="uid://cmvyeg68dgbkh" path="res://Assets/Sounds/My-Video-1.ogv" id="5_n3ypx"]
-[ext_resource type="Texture2D" uid="uid://d32egagoh85gn" path="res://Assets/icons/1bit 16px icons part-2 outlines.png" id="6_n3ypx"]
+[ext_resource type="Texture2D" uid="uid://b4fe4cmythg37" path="res://Assets/icons/Lucid V1.2/PNG/Flat/16/Speaker-0.png" id="7_vvsx8"]
+[ext_resource type="Texture2D" uid="uid://bqbbvbdbc45qa" path="res://Assets/GUI.png" id="8_ufk0p"]
+[ext_resource type="Texture2D" uid="uid://dyf5vhc5de5mq" path="res://Assets/icons/Lucid V1.2/PNG/Flat/16/Cursor-3.png" id="8_vvsx8"]
+[ext_resource type="Texture2D" uid="uid://bhgh2otjegapn" path="res://Assets/icons/App_Icons/Small (24x24) PNG/Discord.png" id="9_fbmrv"]
+[ext_resource type="Texture2D" uid="uid://b5v0k6fcml0k8" path="res://Assets/icons/App_Icons/Small (24x24) PNG/Telegram.png" id="10_fbmrv"]
+[ext_resource type="Texture2D" uid="uid://cueqgc005jlj7" path="res://Assets/icons/App_Icons/Small (24x24) PNG/PayPal.png" id="11_vvsx8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7yhsr"]
 font_size = 12
@@ -40,22 +45,10 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Screen:modulate")
+tracks/2/path = NodePath("Sound:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sound:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -92,22 +85,10 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Screen:modulate")
+tracks/2/path = NodePath("Sound:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 5.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sound:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0, 5.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -153,18 +134,6 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Screen:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.93333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n3ypx"]
 _data = {
@@ -173,13 +142,46 @@ _data = {
 &"oclution_2": SubResource("Animation_82crm")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_82crm"]
-atlas = ExtResource("6_n3ypx")
-region = Rect2(201, 105, 14, 14)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbmrv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 3
+border_color = Color(0.8, 0.8, 0.8, 0)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ufk0p"]
-atlas = ExtResource("6_n3ypx")
-region = Rect2(440, 8, 16, 16)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvsx8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4ewf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b53i8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 3
+border_width_right = 3
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nshq3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1j08h"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x012q"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufk0p"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_181kp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_181kp"]
+Button/colors/icon_hover_color = Color(1, 1, 0.921569, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_x012q")
+Button/styles/normal = SubResource("StyleBoxFlat_ufk0p")
+Button/styles/pressed = SubResource("StyleBoxFlat_181kp")
 
 [node name="PrincipalMenu" type="Control"]
 layout_mode = 3
@@ -188,7 +190,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_7yhsr")
 script = ExtResource("1_xaq4r")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
@@ -275,25 +276,90 @@ autoplay = true
 mix_target = 2
 
 [node name="Sound" type="Button" parent="."]
-layout_mode = 0
-offset_left = 625.0
-offset_top = 353.0
-offset_right = 647.0
-offset_bottom = 375.0
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.008
+offset_left = 11.0
+offset_top = 9.0
+offset_right = 35.0
+offset_bottom = 29.928
 size_flags_horizontal = 3
-icon = SubResource("AtlasTexture_82crm")
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_fbmrv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vvsx8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s4ewf")
+icon = ExtResource("7_vvsx8")
 icon_alignment = 1
 
 [node name="Screen" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 625.0
-offset_top = 8.0
-offset_right = 649.0
-offset_bottom = 32.0
-size_flags_horizontal = 3
-icon = SubResource("AtlasTexture_ufk0p")
-icon_alignment = 1
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_top = 14.0
+offset_right = -16.0
+offset_bottom = 28.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_b53i8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nshq3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1j08h")
+icon = ExtResource("8_vvsx8")
+
+[node name="Panel" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -113.0
+offset_top = -43.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("8_ufk0p")
+region_rect = Rect2(2, 34, 38, 44)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_bottom = 7
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = -11.5
+offset_right = 53.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_181kp")
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="Discord" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+icon = ExtResource("9_fbmrv")
+
+[node name="Telegram" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+icon = ExtResource("10_fbmrv")
+
+[node name="Paypal" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+icon = ExtResource("11_vvsx8")
 
 [connection signal="pressed" from="VBoxContainer/Inciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

@@ -1,11 +1,11 @@
-[gd_scene load_steps=48 format=4 uid="uid://bt2hs12qcu304"]
+[gd_scene load_steps=44 format=4 uid="uid://bt2hs12qcu304"]
 
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="1_bxb41"]
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_n1kc8"]
 [ext_resource type="Script" uid="uid://u14tdhtpcpv8" path="res://Data/Levels/level_1.gd" id="2_127mp"]
 [ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Players/left_hand.tscn" id="2_o0kuf"]
 [ext_resource type="PackedScene" uid="uid://d1j0t35v5q0mr" path="res://Data/Players/right_hand.tscn" id="3_n1kc8"]
-[ext_resource type="Texture2D" uid="uid://b8v6vwdl5vhr5" path="res://Assets/SimpleKeys/Jumbo/Light/Spritesheets/W.png" id="5_wt3go"]
+[ext_resource type="SpriteFrames" uid="uid://ce117eid4wbkp" path="res://UI/Resources/KEY_W.tres" id="4_ce84k"]
 [ext_resource type="Texture2D" uid="uid://bk41ppm2fbxos" path="res://Assets/SimpleKeys/Jumbo/Light/Spritesheets/A.png" id="6_6wd42"]
 [ext_resource type="Texture2D" uid="uid://b06231mtesp11" path="res://Assets/SimpleKeys/Jumbo/Light/Spritesheets/D.png" id="7_2pc45"]
 [ext_resource type="Texture2D" uid="uid://d1j2jumffobiq" path="res://Assets/SimpleKeys/Jumbo/Light/Spritesheets/ARROWLEFT.png" id="9_ce84k"]
@@ -147,35 +147,6 @@ texture = ExtResource("1_bxb41")
 
 [sub_resource type="TileSet" id="TileSet_6wd42"]
 sources/0 = SubResource("TileSetAtlasSource_wt3go")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x2htt"]
-atlas = ExtResource("5_wt3go")
-region = Rect2(0, 0, 19, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_127mp"]
-atlas = ExtResource("5_wt3go")
-region = Rect2(19, 0, 19, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ce84k"]
-atlas = ExtResource("5_wt3go")
-region = Rect2(38, 0, 19, 21)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_kghxt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x2htt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_127mp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ce84k")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wobub"]
 atlas = ExtResource("6_6wd42")
@@ -552,7 +523,7 @@ offset_bottom = 385.0
 
 [node name="W" type="AnimatedSprite2D" parent="Control" index="0"]
 position = Vector2(88, 46)
-sprite_frames = SubResource("SpriteFrames_kghxt")
+sprite_frames = ExtResource("4_ce84k")
 
 [node name="A" type="AnimatedSprite2D" parent="Control" index="1"]
 position = Vector2(63, 70)
