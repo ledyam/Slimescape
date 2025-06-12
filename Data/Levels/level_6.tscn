@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=17 format=4 uid="uid://cwi25mym2fbxr"]
+=======
+[gd_scene load_steps=14 format=4 uid="uid://cs6fjvpnk60jh"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_4w7ye"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_he3aq"]
@@ -138,25 +142,6 @@ texture = ExtResource("2_he3aq")
 [sub_resource type="TileSet" id="TileSet_jq456"]
 sources/0 = SubResource("TileSetAtlasSource_y34pq")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45qft"]
-texture = ExtResource("2_he3aq")
-1:14/0 = 0
-1:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.5288, 8, -2.06838, 8, 8, -8, 8)
-2:14/0 = 0
-2:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.5288, 8, -2.06838, 8, 8, -8, 8)
-3:14/0 = 0
-3:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.5288, 8, -2.06838, 8, 8, -8, 8)
-4:14/0 = 0
-4:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.5288, 8, -2.06838, 8, 8, -8, 8)
-5:14/0 = 0
-5:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.5288, 8, -2.06838, 8, 8, -8, 8)
-6:14/0 = 0
-6:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSet" id="TileSet_ja2or"]
-physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_45qft")
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jq456"]
 texture = ExtResource("4_ja2or")
 0:0/size_in_atlas = Vector2i(2, 2)
@@ -189,7 +174,7 @@ physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_jq456")
 sources/1 = SubResource("TileSetAtlasSource_6gkl0")
 
-[node name="generic_level2" instance=ExtResource("1_4w7ye")]
+[node name="generic_level" instance=ExtResource("1_4w7ye")]
 
 [node name="Obstacles" type="TileMapLayer" parent="Base_Tile" index="0"]
 position = Vector2(-16, 0)
@@ -208,16 +193,33 @@ is_push = true
 tile_map_data = PackedByteArray("AAAVAAgAAAAEAAwAAAAWAAgAAAAFAAwAAAAXAAgAAAAGAAwAAAAOAAgAAAAEAAwAAAAPAAgAAAAFAAwAAAAQAAgAAAAGAAwAAAAmAAQAAAANAA4AAFAmAAMAAAAMAA4AAFAmAAIAAAALAA4AAFAmAAEAAAAKAA4AAFAbAAsAAAAGAAYAAAAcAAsAAAAGAAYAAAAeAAoAAAAGAAYAAAAeAA4AAAAHAAYAAAAfAA4AAAAIAAYAAAAgAA4AAAAJAAYAAAAIAAkAAAAHAAYAAAAJAAkAAAAIAAYAAAAKAAkAAAAJAAYAAAAKAAsAAAAHAAYAAAALAAsAAAAIAAYAAAAMAAsAAAAJAAYAAAAKAAwAAAAHAAYAAAALAAwAAAAIAAYAAAAMAAwAAAAJAAYAAAABAAQAAAAKAAcAAAACAAQAAAALAAcAAAADAAQAAAAMAAcAAAAIAAIAAAAKAAcAAAAJAAIAAAALAAcAAAAKAAIAAAAMAAcAAAAgAAEAAAAIAAcAAAAhAAEAAAAJAAcAAAAiAAEAAAAIAAcAAAAjAAEAAAAJAAcAAAAUAAIAAAAIAAcAAAAVAAIAAAAJAAcAAAAPAAIAAAAIAAcAAAAQAAIAAAAJAAcAAAA=")
 tile_set = SubResource("TileSet_jq456")
 
+<<<<<<< Updated upstream
 [node name="Spikes" type="TileMapLayer" parent="Base_Tile" index="2"]
 tile_map_data = PackedByteArray("AAAdABIAAAADAA4AAAAeABIAAAAEAA4AAAAfABIAAAAFAA4AAAAKAA4AAAADAA4AAFAKAA8AAAAEAA4AAFAKABAAAAAFAA4AAFAHAAsAAAABAA4AAFAHAAwAAAACAA4AAFAHAA0AAAADAA4AAFA=")
 tile_set = SubResource("TileSet_ja2or")
 
 [node name="Spikes_B" type="TileMapLayer" parent="Base_Tile" index="3"]
 tile_map_data = PackedByteArray("AAAPAAYAAQAAAAAAAAAQAAYAAQAAAAAAAAARAAYAAQAAAAAAAAASAAYAAQAAAAAAAAATAAYAAQAAAAAAAAAUAAYAAQAAAAAAAAAVAAYAAQAAAAAAAAAWAAYAAQAAAAAAAAA=")
+=======
+[node name="Spikes_B" type="TileMapLayer" parent="Base_Tile" index="2"]
+tile_map_data = PackedByteArray("AAAQAAYAAAAAAAAAAAASAAYAAAAAAAAAAAAUAAYAAAAAAAAAAAA=")
+>>>>>>> Stashed changes
 tile_set = SubResource("TileSet_6gkl0")
 
+[node name="Spikes" parent="Base_Tile" index="3"]
+tile_map_data = PackedByteArray("AAALAA4AAAAEAA4AAFALAA8AAAAFAA4AAFALABAAAAAGAA4AAFAIAAsAAAAEAA4AAFAIAAwAAAAFAA4AAFAIAA0AAAAGAA4AAFAeABIAAAAEAA4AAAAfABIAAAAFAA4AAAAgABIAAAAGAA4AAAA=")
+
 [node name="LeftHand" parent="." index="2" instance=ExtResource("4_45qft")]
-position = Vector2(99, 322)
+position = Vector2(161.862, 216.863)
 
 [node name="RightHand" parent="." index="3" instance=ExtResource("5_ja2or")]
 position = Vector2(448, 326)
+
+[node name="ColorRect" parent="Shaders" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
