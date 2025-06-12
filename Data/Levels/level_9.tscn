@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://b6uviwyijli1v"]
+[gd_scene load_steps=17 format=4 uid="uid://b6uviwyijli1v"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_o53y8"]
 [ext_resource type="Texture2D" uid="uid://t6nrhxecii02" path="res://Assets/Spear.png" id="2_ex7vk"]
@@ -178,7 +178,28 @@ sources/0 = SubResource("TileSetAtlasSource_pliyn")
 
 [sub_resource type="TileSet" id="TileSet_o53y8"]
 
-[node name="generic_level" instance=ExtResource("1_o53y8")]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iq2b3"]
+texture = ExtResource("2_pliyn")
+6:14/0 = 0
+6:14/0/custom_data_0 = true
+5:14/0 = 0
+5:14/0/custom_data_0 = true
+4:14/0 = 0
+4:14/0/custom_data_0 = true
+3:14/0 = 0
+3:14/0/custom_data_0 = true
+2:14/0 = 0
+2:14/0/custom_data_0 = true
+1:14/0 = 0
+1:14/0/custom_data_0 = true
+
+[sub_resource type="TileSet" id="TileSet_3ayg0"]
+physics_layer_0/collision_layer = 2
+custom_data_layer_0/name = "es_pincho"
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_iq2b3")
+
+[node name="generic_level3" instance=ExtResource("1_o53y8")]
 
 [node name="door" type="TileMapLayer" parent="Base_Tile" index="0"]
 tile_map_data = PackedByteArray("AAAFAAkAAQAJAAAAAAAEAAkAAQAJAAAAAAADAAkAAQAJAAAAAAAiAAkAAQAJAAAAAAAjAAkAAQAJAAAAAAA=")
@@ -199,8 +220,14 @@ tile_set = SubResource("TileSet_t1bbx")
 [node name="switch" type="TileMapLayer" parent="Base_Tile" index="4"]
 tile_set = SubResource("TileSet_o53y8")
 
+[node name="Spikes" type="TileMapLayer" parent="Base_Tile" index="5" groups=["tilemap"]]
+position = Vector2(-16, 0)
+tile_set = SubResource("TileSet_3ayg0")
+
 [node name="LeftHand" parent="." index="2" instance=ExtResource("5_ekgag")]
+z_index = 1
 position = Vector2(290, 155)
+collision_mask = 7
 
 [node name="RightHand" parent="." index="3" instance=ExtResource("6_ex7vk")]
 position = Vector2(366, 159)
