@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxtnu1x87qpvp"]
+[gd_scene load_steps=11 format=3 uid="uid://w3gaj2dokwg2"]
 
 [ext_resource type="Script" uid="uid://dwrmr6kl6gelh" path="res://Data/Objects/open_door_large.gd" id="1_xcc0q"]
 [ext_resource type="Texture2D" uid="uid://cvihr5xqw3hp" path="res://Assets/lanza larga.png" id="2_xcc0q"]
@@ -28,9 +28,6 @@ animations = [{
 "name": &"Open Large",
 "speed": 5.0
 }]
-
-[sub_resource type="Animation" id="Animation_wnrd1"]
-length = 0.001
 
 [sub_resource type="Animation" id="Animation_xcc0q"]
 length = 0.4
@@ -82,6 +79,9 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 90)]
 }
+
+[sub_resource type="Animation" id="Animation_wnrd1"]
+length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xb5dt"]
 _data = {

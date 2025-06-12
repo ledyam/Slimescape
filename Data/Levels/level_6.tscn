@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=4 uid="uid://bs8d5h58dffkn"]
+[gd_scene load_steps=17 format=4 uid="uid://bs8d5h58dffkn"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_4w7ye"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_he3aq"]
+[ext_resource type="Script" uid="uid://c17flehupcchg" path="res://Data/Levels/level_6.gd" id="2_y34pq"]
 [ext_resource type="Texture2D" uid="uid://b04lmfi8fxd7k" path="res://Assets/Jumper.png" id="3_45qft"]
 [ext_resource type="PackedScene" uid="uid://daa1ed5vh7khg" path="res://Data/Objects/jumper.tscn" id="3_jgpfo"]
 [ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Players/left_hand.tscn" id="4_45qft"]
@@ -159,7 +160,12 @@ texture = ExtResource("5_jgpfo")
 [sub_resource type="TileSet" id="TileSet_6gkl0"]
 sources/1 = SubResource("TileSetAtlasSource_jq456")
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jgpfo"]
+a = Vector2(-69.1707, -0.993797)
+b = Vector2(66.8293, 1.0062)
+
 [node name="generic_level" instance=ExtResource("1_4w7ye")]
+script = ExtResource("2_y34pq")
 
 [node name="Obstacles" type="TileMapLayer" parent="Base_Tile" index="0"]
 position = Vector2(-16, 0)
@@ -195,3 +201,11 @@ collision_mask = 3
 
 [node name="RightHand" parent="." index="3" instance=ExtResource("5_ja2or")]
 position = Vector2(448, 337)
+
+[node name="Area2D" type="Area2D" parent="." index="5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(323, 95)
+shape = SubResource("SegmentShape2D_jgpfo")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -158,7 +158,7 @@ position = Vector2(616, 101)
 
 [node name="LeftHand" parent="." index="4" instance=ExtResource("4_oyyxi")]
 z_index = 1
-position = Vector2(37, 326)
+position = Vector2(37, 332)
 
 [node name="DoubleJumpBuff" parent="." index="6" instance=ExtResource("6_rwcsa")]
 position = Vector2(620, 324)
