@@ -18,11 +18,26 @@ func _on_salir_pressed() -> void:
 
 func _on_iniciar_pressed() -> void:
 	$GuiTransition._hide()
+	$VideoStreamPlayer.stream = load("res://Assets/Sounds/Init Game.ogv")
+	$VideoStreamPlayer.play()
+	$VideoStreamPlayer.loop = false
+	$VideoStreamPlayer.finished
 	animation_player.play("oclution_2")
 	await animation_player.animation_finished
+	
 	ControlUi.show()
 	ControlUi.canvas_layer.show()
 	get_tree().change_scene_to_file("res://Data/Levels/level_1.tscn")
+
+
+
+
+
+
+
+
+
+
 
 
 func _on_sound_pressed() -> void:

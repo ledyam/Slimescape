@@ -15,13 +15,17 @@ run/main_scene="uid://ciwdvtk5yn12r"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://3jkwml6dx63h"
 
+[audio]
+
+buses/default_bus_layout="res://UI/Resources/Sound Bus/default_bus_layout.tres"
+
 [autoload]
 
 ControlUi="*res://UI/control_ui.tscn"
-CentralSignal="*res://Data/Signals/CentralSignal.gd"
+CentralSignal="*res://Autoloads/CentralSignal.gd"
 PausableMenu="*res://UI/pausable_menu.tscn"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
-SoundManager="*res://SoundManager.gd"
+SoundManager="*res://Autoloads/SoundManager.gd"
 
 [display]
 

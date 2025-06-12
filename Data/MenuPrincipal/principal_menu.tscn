@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bx7jp71nnnyt6" path="res://Data/MenuPrincipal/principal_menu.gd" id="1_xaq4r"]
 [ext_resource type="AudioStream" uid="uid://cq2d78bc8qsia" path="res://Assets/Sounds/principal_menu_audio.mp3" id="3_jyrhh"]
-[ext_resource type="Theme" uid="uid://c8f8cf35u5tw8" path="res://UI/custom_theme.tres" id="4_7yhsr"]
+[ext_resource type="Theme" uid="uid://c8f8cf35u5tw8" path="res://UI/Themes/custom_theme.tres" id="4_7yhsr"]
 [ext_resource type="PackedScene" uid="uid://cy4tlif73jssx" path="res://UI/buttom/button_with_sound.tscn" id="4_82crm"]
 [ext_resource type="Script" uid="uid://b15gu5hdpxfvy" path="res://addons/simple-gui-transitions/transition.gd" id="5_5v1vu"]
 [ext_resource type="VideoStream" uid="uid://cmvyeg68dgbkh" path="res://Assets/Sounds/My-Video-1.ogv" id="5_n3ypx"]
@@ -97,7 +97,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_82crm"]
 resource_name = "oclution_2"
-length = 3.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -105,7 +105,7 @@ tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.96667),
+"times": PackedFloat32Array(0, 5.93333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -117,7 +117,7 @@ tracks/1/path = NodePath("VersionLabel:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0999999, 2.93333),
+"times": PackedFloat32Array(0.0999999, 5.86667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -129,7 +129,7 @@ tracks/2/path = NodePath("Sound:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.93333),
+"times": PackedFloat32Array(0, 5.86667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -259,7 +259,7 @@ script = ExtResource("5_5v1vu")
 fade_layout = 1
 animation_enter = 4
 animation_leave = 4
-duration = 2.0
+duration = 1.0
 delay = 1.0
 layout = NodePath("../VBoxContainer")
 group = NodePath("../VBoxContainer")
