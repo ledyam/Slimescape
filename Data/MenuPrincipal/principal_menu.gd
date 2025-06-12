@@ -21,7 +21,6 @@ func _on_iniciar_pressed() -> void:
 	$VideoStreamPlayer.stream = load("res://Assets/Sounds/Init Game.ogv")
 	$VideoStreamPlayer.play()
 	$VideoStreamPlayer.loop = false
-	$VideoStreamPlayer.finished
 	animation_player.play("oclution_2")
 	await animation_player.animation_finished
 	
