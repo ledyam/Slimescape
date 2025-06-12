@@ -1,13 +1,10 @@
-[gd_scene load_steps=16 format=4 uid="uid://1cidu43x3nt3"]
+[gd_scene load_steps=10 format=4 uid="uid://b4rfn6cufdjnq"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_ki83a"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_i4t3m"]
 [ext_resource type="PackedScene" uid="uid://ube04gcf40ei" path="res://Data/Objects/saw.tscn" id="3_oyyxi"]
 [ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Players/left_hand.tscn" id="4_oyyxi"]
 [ext_resource type="PackedScene" uid="uid://d1j0t35v5q0mr" path="res://Data/Players/right_hand.tscn" id="5_rwcsa"]
-[ext_resource type="PackedScene" uid="uid://c5yir4b2bqqlc" path="res://Data/Buff/double_jump_buff.tscn" id="6_rwcsa"]
-[ext_resource type="PackedScene" uid="uid://dldrmpe7xgvu1" path="res://UI/KEYS/key_guia.tscn" id="7_qf4jo"]
-[ext_resource type="SpriteFrames" uid="uid://ce117eid4wbkp" path="res://UI/Resources/KEY_W.tres" id="8_tpdq7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4t3m"]
 texture = ExtResource("2_i4t3m")
@@ -128,28 +125,6 @@ texture = ExtResource("2_i4t3m")
 [sub_resource type="TileSet" id="TileSet_ejm7k"]
 sources/0 = SubResource("TileSetAtlasSource_i04ou")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejm7k"]
-texture = ExtResource("2_i4t3m")
-1:14/0 = 0
-1:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.70866, 8, -2.06838, 8, 8, -8, 8)
-2:14/0 = 0
-2:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.70866, 8, -2.06838, 8, 8, -8, 8)
-3:14/0 = 0
-3:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.70866, 8, -2.06838, 8, 8, -8, 8)
-4:14/0 = 0
-4:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.70866, 8, -2.06838, 8, 8, -8, 8)
-5:14/0 = 0
-5:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.70866, 8, -2.06838, 8, 8, -8, 8)
-6:14/0 = 0
-6:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.70866, 8, -2.06838, 8, 8, -8, 8)
-
-[sub_resource type="TileSet" id="TileSet_oyyxi"]
-physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_ejm7k")
-
-[sub_resource type="LabelSettings" id="LabelSettings_c5l7h"]
-font_size = 20
-
 [node name="generic_level" instance=ExtResource("1_ki83a")]
 
 [node name="Obstacles" type="TileMapLayer" parent="Base_Tile" index="0"]
@@ -160,17 +135,18 @@ tile_set = SubResource("TileSet_i04ou")
 tile_map_data = PackedByteArray("AAATAAoAAAAKAAMAAAATAAsAAAAKAAQAAAAUAAoAAAALAAMAAAAUAAsAAAALAAQAAAAVAAoAAAAMAAMAAAAVAAsAAAAMAAQAAAAVAAwAAAAMAAUAAAAUAAwAAAALAAUAAAATAAwAAAALAAUAAAASAAsAAAAMAAMAAAASAAwAAAAMAAQAAAAkAAIAAAAKAAEAAAAkAAMAAAAKAAIAAAAlAAIAAAALAAEAAAAlAAMAAAALAAIAAAAlABIAAAAMAAEAAAAlABMAAAAMAAIAAAAlABQAAAAMAAMAAAAmABIAAAANAAEAAAAmABMAAAANAAIAAAAmABQAAAANAAMAAAAAAAEAAAAMAAEAAAAAAAIAAAAMAAIAAAAAAAMAAAAMAAMAAAABAAEAAAANAAEAAAABAAIAAAANAAIAAAABAAMAAAANAAMAAAANAA8AAAAIAAUAAAANABAAAAAIAAYAAAANABEAAAAIAAcAAAAOAA8AAAAJAAUAAAAOABAAAAAJAAYAAAAOABEAAAAJAAcAAAAJAAoAAAAIAAUAAAAJAAsAAAAIAAYAAAAJAAwAAAAIAAcAAAAKAAoAAAAJAAUAAAAKAAsAAAAJAAYAAAAKAAwAAAAJAAcAAAAPAAQAAAAGAAYAAAAQAAQAAAAHAAYAAAALAAMAAAAGAAYAAAAMAAMAAAAHAAYAAAAJAAMAAAAGAAYAAAAKAAMAAAAHAAYAAAAVAAIAAAAGAAYAAAAWAAIAAAAHAAYAAAAWAAMAAAAGAAYAAAAXAAMAAAAHAAYAAAAWAAQAAAAGAAYAAAAXAAQAAAAHAAYAAAAcAAoAAAAGAAYAAAAdAAoAAAAHAAYAAAAeAAoAAAAGAAYAAAAfAAoAAAAHAAYAAAAeAAsAAAAGAAYAAAAfAAsAAAAHAAYAAAAgAAsAAAAGAAYAAAAhAAsAAAAHAAYAAAAiAAwAAAAGAAYAAAAjAAwAAAAGAAYAAAAkAAwAAAAHAAYAAAAjAAsAAAAGAAYAAAAkAAsAAAAHAAYAAAAjAAoAAAAGAAYAAAAkAAoAAAAHAAYAAAAEABAAAAAGAAYAAAAFABAAAAAHAAYAAAAEABEAAAAGAAYAAAAFABEAAAAHAAYAAAAEABQAAAAGAAYAAAAFABQAAAAHAAYAAAABABAAAAAKAAEAAAABABEAAAAKAAIAAAACABAAAAALAAEAAAACABEAAAALAAIAAAARAAkAAAAMAAEAAAARAAoAAAAMAAIAAAASAAkAAAANAAEAAAASAAoAAAANAAIAAAATAAkAAAAIAAcAAAAUAAkAAAAIAAcAAAAVAAkAAAAJAAcAAAAhAAIAAAAIAAcAAAAiAAIAAAAJAAcAAAAhAAMAAAAIAAcAAAAiAAMAAAAJAAcAAAAhAAQAAAAIAAcAAAAiAAQAAAAJAAcAAAAhAAUAAAAIAAcAAAAiAAUAAAAJAAcAAAAjAAUAAAAIAAcAAAAkAAUAAAAJAAcAAAAmAAIAAAAMAAUAAAAmAAMAAAAMAAUAAAAmAAQAAAAMAAUAAAAmAAUAAAAMAAUAAAABAAkAAAAMAAUAAAACAAkAAAAMAAUAAAACAAoAAAAMAAUAAAADAAoAAAAMAAUAAAADAAsAAAAMAAUAAAAEAAsAAAAMAAUAAAAFAAsAAAAMAAUAAAAFAAwAAAAMAAUAAAASABQAAAAMAAUAAAASABMAAAAMAAUAAAATABMAAAAMAAUAAAAAAA8AAAAKAAcAAAABAA8AAAALAAcAAAACAA8AAAAMAAcAAAA=")
 tile_set = SubResource("TileSet_ejm7k")
 
-[node name="Spikes" type="TileMapLayer" parent="Base_Tile" index="2"]
-tile_map_data = PackedByteArray("AAANAAQAAAABAA4AAAAOAAQAAAACAA4AAAADAAQAAAABAA4AAAAEAAQAAAACAA4AAAAUAAEAAAADAA4AAFAUAAIAAAAEAA4AAFAUAAMAAAADAA4AAFAUAAQAAAAEAA4AAFAfABAAAAADAA4AAGAfAA8AAAAEAA4AAGAfABIAAAADAA4AAGAfABEAAAAEAA4AAGAIABIAAAABAA4AAAAJABIAAAACAA4AAAA=")
-tile_set = SubResource("TileSet_oyyxi")
+[node name="Saw" parent="Base_Tile" index="2" instance=ExtResource("3_oyyxi")]
+position = Vector2(325, 227)
 
-[node name="Saw" parent="Base_Tile" index="3" instance=ExtResource("3_oyyxi")]
-position = Vector2(330, 201)
-move_distance = Vector2(-130, 0)
+[node name="Saw2" parent="Base_Tile" index="3" instance=ExtResource("3_oyyxi")]
+position = Vector2(267, 230)
 
-[node name="Saw2" parent="Base_Tile" index="4" instance=ExtResource("3_oyyxi")]
-position = Vector2(369, 201)
-move_distance = Vector2(130, 0)
+[node name="AnimatedSprite2D" parent="Base_Tile/Saw2" index="0"]
+position = Vector2(-24, -28)
+flip_v = true
+
+[node name="Spikes" parent="Base_Tile" index="4"]
+tile_map_data = PackedByteArray("AAAJABIAAAAEAA4AAAAKABIAAAAEAA4AAAA=")
 
 [node name="RightHand" parent="." index="2" instance=ExtResource("5_rwcsa")]
 position = Vector2(616, 101)
@@ -178,27 +154,4 @@ position = Vector2(616, 101)
 [node name="LeftHand" parent="." index="3" instance=ExtResource("4_oyyxi")]
 position = Vector2(37, 326)
 
-[node name="ColorRect" parent="Shaders" index="0"]
-offset_left = 16.0
-offset_right = 673.0
-
-[node name="DoubleJumpBuff" parent="." index="5" instance=ExtResource("6_rwcsa")]
-position = Vector2(616, 324)
-
-[node name="KeyGuia" parent="." index="6" instance=ExtResource("7_qf4jo")]
-position = Vector2(538, 324)
-sprite_frames = ExtResource("8_tpdq7")
-
-[node name="KeyGuia2" parent="." index="7" instance=ExtResource("7_qf4jo")]
-position = Vector2(578, 324)
-sprite_frames = ExtResource("8_tpdq7")
-
-[node name="Label" type="Label" parent="." index="8"]
-offset_left = 539.0
-offset_top = 314.0
-offset_right = 579.0
-offset_bottom = 334.0
-text = "+"
-label_settings = SubResource("LabelSettings_c5l7h")
-horizontal_alignment = 1
-vertical_alignment = 1
+[editable path="Base_Tile/Saw2"]
