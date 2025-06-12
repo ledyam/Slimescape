@@ -53,6 +53,9 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+	tile_collision()
+	
+	
 
 func can_jump():
 	if is_jumping and double_jump  : 

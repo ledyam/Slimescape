@@ -503,7 +503,7 @@ _data = {
 &"default": SubResource("Animation_127mp")
 }
 
-[node name="generic_level" instance=ExtResource("1_n1kc8")]
+[node name="generic_level2" instance=ExtResource("1_n1kc8")]
 script = ExtResource("2_127mp")
 
 [node name="Tiles" type="TileMapLayer" parent="Base_Tile" index="0"]
@@ -556,7 +556,9 @@ libraries = {
 }
 
 [node name="LeftHand" parent="." index="4" instance=ExtResource("2_o0kuf")]
+z_index = 0
 position = Vector2(84.5537, 105.934)
+collision_mask = 3
 
 [node name="RightHand" parent="." index="5" instance=ExtResource("3_n1kc8")]
 position = Vector2(580.421, 105.934)
