@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://u2mfjofv7h26"]
+[gd_scene load_steps=13 format=4 uid="uid://dxej2c6bl8tj1"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_e28n3"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_0vfbo"]
 [ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Players/left_hand.tscn" id="4_4sina"]
 [ext_resource type="PackedScene" uid="uid://d1j0t35v5q0mr" path="res://Data/Players/right_hand.tscn" id="5_u5phs"]
-[ext_resource type="PackedScene" uid="uid://ci082gwy7mxum" path="res://Data/Objects/arrow_door.tscn" id="6_u5phs"]
+[ext_resource type="PackedScene" path="res://Data/Objects/arrow_door.tscn" id="6_u5phs"]
 [ext_resource type="PackedScene" uid="uid://cswe1hwl6j37f" path="res://Data/Objects/skull_switch.tscn" id="7_wyjt1"]
 [ext_resource type="PackedScene" uid="uid://w3gaj2dokwg2" path="res://Data/Objects/open_door_large.tscn" id="7_xllas"]
 [ext_resource type="Texture2D" uid="uid://dn4m20bv65upl" path="res://Assets/icons/skull_01b.png" id="8_fwrns"]
@@ -93,6 +93,9 @@ tile_set = SubResource("TileSet_4sina")
 [node name="Decoration" type="TileMapLayer" parent="Base_Tile" index="1"]
 
 [node name="switch" type="TileMapLayer" parent="Base_Tile" index="2"]
+
+[node name="Spikes" parent="Base_Tile" index="3"]
+tile_map_data = PackedByteArray("AAAGABMAAAABAA4AAAAHABMAAAACAA4AAAANAAwAAAADAA4AAGANAAsAAAAEAA4AAGANAAoAAAAFAA4AAGANAAkAAAAGAA4AAGANABAAAAADAA4AAGANAA8AAAAEAA4AAGANAA4AAAAFAA4AAGANAA0AAAAGAA4AAGANABQAAAADAA4AAGANABMAAAAEAA4AAGANABIAAAAFAA4AAGANABEAAAAGAA4AAGAVAAsAAAACAA4AAFAVAAwAAAADAA4AAFAVAA0AAAAEAA4AAFAVAA4AAAACAA4AAFAVAA8AAAADAA4AAFAeABIAAAACAA4AAFAeABMAAAADAA4AAFAeABQAAAAEAA4AAFAeAAoAAAACAA4AAAAfAAoAAAADAA4AAAAgAAoAAAAEAA4AAAAbAAoAAAACAA4AAAAcAAoAAAADAA4AAAAdAAoAAAAEAA4AAAAaAAoAAAAFAA4AAAA=")
 
 [node name="LeftHand" parent="." index="2" instance=ExtResource("4_4sina")]
 position = Vector2(46, 329)
