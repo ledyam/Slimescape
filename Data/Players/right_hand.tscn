@@ -159,7 +159,7 @@ shape = SubResource("RectangleShape2D_5lc0f")
 position = Vector2(0, -12)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_30f41")
-animation = &"jump"
+animation = &"move_left"
 autoplay = "move_left"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

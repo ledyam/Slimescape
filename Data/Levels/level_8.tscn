@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cggornq0mlgur"]
+[gd_scene load_steps=12 format=4 uid="uid://ur4hn3kpg4ti"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_gij72"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_jv0a5"]
@@ -159,19 +159,19 @@ tile_map_data = PackedByteArray("AAAbAAsAAAACAA4AAAAcAAsAAAACAA4AAAAiAAsAAAACAA4
 tile_set = SubResource("TileSet_313am")
 
 [node name="Saw" parent="Base_Tile" index="3" instance=ExtResource("5_hurye")]
-position = Vector2(121, 292)
+position = Vector2(121, 267)
 
 [node name="Saw2" parent="Base_Tile" index="4" instance=ExtResource("5_hurye")]
-position = Vector2(135, 200)
+position = Vector2(135, 175)
 
 [node name="Saw3" parent="Base_Tile" index="5" instance=ExtResource("5_hurye")]
-position = Vector2(105, 136)
+position = Vector2(105, 111)
 
 [node name="Saw4" parent="Base_Tile" index="6" instance=ExtResource("5_hurye")]
-position = Vector2(392, 63)
+position = Vector2(392, 38)
 
 [node name="Saw5" parent="Base_Tile" index="7" instance=ExtResource("5_hurye")]
-position = Vector2(473, 129)
+position = Vector2(473, 104)
 
 [node name="LeftHand" parent="." index="2" instance=ExtResource("2_lx3rv")]
 z_index = 0
