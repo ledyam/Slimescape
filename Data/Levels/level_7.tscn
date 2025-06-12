@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://b4rfn6cufdjnq"]
+[gd_scene load_steps=14 format=4 uid="uid://1cidu43x3nt3"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_ki83a"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_i4t3m"]
@@ -131,7 +131,7 @@ sources/0 = SubResource("TileSetAtlasSource_i4t3m")
 [sub_resource type="LabelSettings" id="LabelSettings_c5l7h"]
 font_size = 20
 
-[node name="generic_level2" instance=ExtResource("1_ki83a")]
+[node name="generic_level3" instance=ExtResource("1_ki83a")]
 
 [node name="Decoration" type="TileMapLayer" parent="." index="1"]
 position = Vector2(16, 0)

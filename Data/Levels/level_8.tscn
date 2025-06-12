@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cggornq0mlgur"]
+[gd_scene load_steps=10 format=4 uid="uid://2fpugi1titng"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_gij72"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_jv0a5"]
@@ -126,7 +126,7 @@ texture = ExtResource("2_jv0a5")
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_hurye")
 
-[node name="generic_level" instance=ExtResource("1_gij72")]
+[node name="generic_level3" instance=ExtResource("1_gij72")]
 
 [node name="Spikes" parent="Base_Tile" index="0"]
 tile_map_data = PackedByteArray("AAAnAA8AAAAEAA4AADAmAA8AAAAEAA4AADAlAA8AAAAEAA4AADAkAA8AAAAEAA4AADAjAA8AAAAEAA4AADAiAA8AAAAEAA4AADAbAAsAAAABAA4AAAAcAAsAAAACAA4AAAAiAAsAAAACAA4AAAAjAAsAAAADAA4AAAA=")
