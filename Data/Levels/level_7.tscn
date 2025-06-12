@@ -1,7 +1,4 @@
-
 [gd_scene load_steps=16 format=4 uid="uid://1cidu43x3nt3"]
-
-
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_ki83a"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_i4t3m"]
@@ -181,7 +178,6 @@ position = Vector2(616, 101)
 [node name="LeftHand" parent="." index="3" instance=ExtResource("4_oyyxi")]
 position = Vector2(37, 326)
 
-
 [node name="ColorRect" parent="Shaders" index="0"]
 offset_left = 16.0
 offset_right = 673.0
@@ -206,4 +202,3 @@ text = "+"
 label_settings = SubResource("LabelSettings_c5l7h")
 horizontal_alignment = 1
 vertical_alignment = 1
-

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://c23n2lc118mxj"]
 
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="1_xrjha"]
-[ext_resource type="Shader" uid="uid://ddnw6o7enpbi6" path="res://Data/Levels/generic_level.gdshader" id="2_lhd0x"]
+[ext_resource type="Shader" uid="uid://ddnw6o7enpbi6" path="res://UI/Shaders/generic_level.gdshader" id="2_lhd0x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xrjha"]
 texture = ExtResource("1_xrjha")
