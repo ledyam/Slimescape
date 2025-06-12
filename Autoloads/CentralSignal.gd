@@ -9,3 +9,7 @@ signal active_jumper
 
 
 signal double_jump
+
+
+
+signal open_door(color : int )

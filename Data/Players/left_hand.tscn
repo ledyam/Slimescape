@@ -148,12 +148,11 @@ _data = {
 }
 
 [node name="LeftHand" type="CharacterBody2D"]
-z_index = 1
 collision_mask = 7
 script = ExtResource("1_24f0y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -2.5)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_4py3v")
 debug_color = Color(0.622742, 0.0655712, 0.117887, 0.42)
 
@@ -168,7 +167,7 @@ shape = SubResource("CircleShape2D_35u4c")
 position = Vector2(0, -7)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_syp0f")
-animation = &"jump"
+animation = &"move_left"
 autoplay = "move_left"
 flip_h = true
 

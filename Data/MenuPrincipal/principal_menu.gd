@@ -3,6 +3,7 @@ extends Control
 
 
 func _ready() -> void:
+	PausableMenu.process_mode =Node.PROCESS_MODE_DISABLED
 	ControlUi.hide()
 	ControlUi.canvas_layer.hide()
 	$AudioStreamPlayer.stream.loop = true
@@ -26,17 +27,8 @@ func _on_iniciar_pressed() -> void:
 	
 	ControlUi.show()
 	ControlUi.canvas_layer.show()
+	PausableMenu.process_mode =Node.PROCESS_MODE_ALWAYS
 	get_tree().change_scene_to_file("res://Data/Levels/level_1.tscn")
-
-
-
-
-
-
-
-
-
-
 
 
 func _on_sound_pressed() -> void:
@@ -58,3 +50,11 @@ func _on_screen_pressed() -> void:
 
 		get_window().mode = Window.MODE_FULLSCREEN
 	pass # Replace with function body.
+
+
+func _on_discord_pressed() -> void:
+	OS.shell_open("https://discord.com/channels/1335690370436169728/1335690370498957479")
+
+
+func _on_telegram_pressed() -> void:
+	OS.shell_open("https://web.telegram.org/a/#-1002377548371_1")

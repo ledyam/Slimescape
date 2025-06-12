@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://bxtnu1x87qpvp"]
+
+[ext_resource type="Script" uid="uid://dwrmr6kl6gelh" path="res://Data/Objects/open_door_large.gd" id="1_xcc0q"]
+[ext_resource type="Texture2D" uid="uid://cvihr5xqw3hp" path="res://Assets/lanza larga.png" id="2_xcc0q"]
+[ext_resource type="Texture2D" uid="uid://hldlryo6ruik" path="res://Assets/icons/skull_01a.png" id="3_wnrd1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xb5dt"]
+size = Vector2(20, 61.6883)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rm2c"]
+atlas = ExtResource("2_xcc0q")
+region = Rect2(0, 0, 32, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2k32"]
+atlas = ExtResource("2_xcc0q")
+region = Rect2(32, 0, 32, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b8shq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rm2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2k32")
+}],
+"loop": true,
+"name": &"Open Large",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_wnrd1"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_xcc0q"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Open Large"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:shape:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.20009),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(20, 61.6883), Vector2(20, 5.51948)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.197204),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 90)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xb5dt"]
+_data = {
+&"Open Large": SubResource("Animation_xcc0q"),
+&"RESET": SubResource("Animation_wnrd1")
+}
+
+[node name="OpenDoorLarge" type="StaticBody2D"]
+script = ExtResource("1_xcc0q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 3.08)
+shape = SubResource("RectangleShape2D_xb5dt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b8shq")
+animation = &"Open Large"
+
+[node name="DoorTexture" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.32549)
+position = Vector2(0, 6)
+scale = Vector2(1.25, 1.145)
+texture = ExtResource("3_wnrd1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xb5dt")
+}

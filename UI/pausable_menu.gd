@@ -9,3 +9,14 @@ func _input(event: InputEvent) -> void:
 		else : 
 			get_tree().paused = true
 			self.show()
+
+
+func _on_button_continuar() -> void:
+	get_tree().paused = true
+	self.hide()
+
+
+
+
+func _on_salir_pressed() -> void:
+	get_tree().quit()

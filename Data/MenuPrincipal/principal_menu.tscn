@@ -365,3 +365,5 @@ icon = ExtResource("11_vvsx8")
 [connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="Sound" to="." method="_on_sound_pressed"]
 [connection signal="pressed" from="Screen" to="." method="_on_screen_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Discord" to="." method="_on_discord_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Telegram" to="." method="_on_telegram_pressed"]
