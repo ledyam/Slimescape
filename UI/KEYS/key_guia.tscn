@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dldrmpe7xgvu1"]
+
+[ext_resource type="Script" uid="uid://bim17n3uhi7do" path="res://UI/KEYS/key_guia.gd" id="1_r8kva"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4oxdk"]
+
+[node name="KeyGuia" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_4oxdk")
+script = ExtResource("1_r8kva")

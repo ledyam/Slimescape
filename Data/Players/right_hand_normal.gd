@@ -3,6 +3,10 @@ extends MainCharacter
 @onready var coyote_timer: Timer = $coyote_timer
 
 
+func on_double_jump():
+	super.on_double_jump()
+	$DoubleJumpTimer.start()
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -54,6 +58,15 @@ func _physics_process(delta: float) -> void:
 
 
 func can_jump():
+	if is_jumping and double_jump  : 
+		double_jump = false 
+		return true
+		$DoubleJumpTimer.stop()
 	if is_on_floor() and !is_jumping  : return true
 	elif !is_jumping and !coyote_timer.is_stopped() : return  true
 	
+
+
+func _on_double_jump_timer_timeout() -> void:
+	double_jump = false 
+	pass # Replace with function body.

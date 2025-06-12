@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=16 format=4 uid="uid://cs6fjvpnk60jh"]
+
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_4w7ye"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_he3aq"]
@@ -6,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Players/left_hand.tscn" id="4_45qft"]
 [ext_resource type="Texture2D" uid="uid://dajxqnr1padyc" path="res://Assets/Spike_B.png" id="4_ja2or"]
 [ext_resource type="PackedScene" uid="uid://d1j0t35v5q0mr" path="res://Data/Players/right_hand.tscn" id="5_ja2or"]
+[ext_resource type="Texture2D" uid="uid://dp22y2gcfr2ug" path="res://Assets/spikes.png" id="5_jgpfo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ja2or"]
 texture = ExtResource("2_he3aq")
@@ -180,8 +183,21 @@ texture = ExtResource("4_ja2or")
 0:0/animation_frame_9/duration = 3.0
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6gkl0"]
+texture = ExtResource("5_jgpfo")
+0:0/animation_speed = 4.0
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.2159, 8, -5.2159, 8, 8, -8, 8)
+
 [sub_resource type="TileSet" id="TileSet_6gkl0"]
+physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_jq456")
+sources/1 = SubResource("TileSetAtlasSource_6gkl0")
 
 [node name="generic_level2" instance=ExtResource("1_4w7ye")]
 
@@ -199,7 +215,7 @@ tile_map_data = PackedByteArray("AAAdABIAAAADAA4AAAAeABIAAAAEAA4AAAAfABIAAAAFAA4
 tile_set = SubResource("TileSet_ja2or")
 
 [node name="Spikes_B" type="TileMapLayer" parent="Base_Tile" index="3"]
-tile_map_data = PackedByteArray("AAAQAAYAAAAAAAAAAAASAAYAAAAAAAAAAAAUAAYAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAPAAYAAQAAAAAAAAAQAAYAAQAAAAAAAAARAAYAAQAAAAAAAAASAAYAAQAAAAAAAAATAAYAAQAAAAAAAAAUAAYAAQAAAAAAAAAVAAYAAQAAAAAAAAAWAAYAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_6gkl0")
 
 [node name="LeftHand" parent="." index="2" instance=ExtResource("4_45qft")]

@@ -1,10 +1,14 @@
-[gd_scene load_steps=12 format=4 uid="uid://c4sagsww5vycj"]
+[gd_scene load_steps=16 format=4 uid="uid://bro41cypdb7k6"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_e28n3"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_0vfbo"]
 [ext_resource type="Texture2D" uid="uid://t6nrhxecii02" path="res://Assets/Spear.png" id="2_2s176"]
 [ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Players/left_hand.tscn" id="4_4sina"]
 [ext_resource type="PackedScene" uid="uid://d1j0t35v5q0mr" path="res://Data/Players/right_hand.tscn" id="5_u5phs"]
+[ext_resource type="PackedScene" uid="uid://cswe1hwl6j37f" path="res://Data/Objects/skull_switch.tscn" id="6_u5phs"]
+[ext_resource type="Texture2D" uid="uid://hldlryo6ruik" path="res://Assets/icons/skull_01a.png" id="7_lt2y5"]
+[ext_resource type="Texture2D" uid="uid://dn4m20bv65upl" path="res://Assets/icons/skull_01b.png" id="8_wyjt1"]
+[ext_resource type="PackedScene" uid="uid://c5yir4b2bqqlc" path="res://Data/Buff/double_jump_buff.tscn" id="9_fwrns"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4sina"]
 texture = ExtResource("2_2s176")
@@ -137,3 +141,14 @@ position = Vector2(46, 329)
 
 [node name="RightHand" parent="." index="3" instance=ExtResource("5_u5phs")]
 position = Vector2(625, 333)
+
+[node name="SkullSwitch" parent="." index="5" instance=ExtResource("6_u5phs")]
+position = Vector2(169, 326)
+texture = ExtResource("7_lt2y5")
+
+[node name="SkullSwitch2" parent="." index="6" instance=ExtResource("6_u5phs")]
+position = Vector2(509.273, 325.364)
+texture = ExtResource("8_wyjt1")
+
+[node name="DoubleJumpBuff" parent="." index="7" instance=ExtResource("9_fwrns")]
+position = Vector2(200.541, 328.085)

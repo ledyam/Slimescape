@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://b4rcdcwwsxw5x"]
+[gd_scene load_steps=12 format=4 uid="uid://tpldkm7sjcm7"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_gij72"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_jv0a5"]
@@ -160,24 +160,24 @@ tile_map_data = PackedByteArray("AAAbAAsAAAACAA4AAAAcAAsAAAACAA4AAAAiAAsAAAACAA4
 tile_set = SubResource("TileSet_313am")
 
 [node name="Saw" parent="Base_Tile" index="3" instance=ExtResource("5_hurye")]
-position = Vector2(121, 292)
-record = Vector2(20, 0)
+position = Vector2(105, 273)
+move_distance = Vector2(150, 0)
 
 [node name="Saw2" parent="Base_Tile" index="4" instance=ExtResource("5_hurye")]
-position = Vector2(135, 200)
-record = Vector2(20, 0)
+position = Vector2(137, 175)
+move_distance = Vector2(120, 0)
 
 [node name="Saw3" parent="Base_Tile" index="5" instance=ExtResource("5_hurye")]
-position = Vector2(105, 136)
-record = Vector2(20, 0)
+position = Vector2(105, 111)
+move_distance = Vector2(180, 0)
 
 [node name="Saw4" parent="Base_Tile" index="6" instance=ExtResource("5_hurye")]
-position = Vector2(392, 63)
-record = Vector2(0, 20)
+position = Vector2(394, 32)
+move_distance = Vector2(0, 85)
 
 [node name="Saw5" parent="Base_Tile" index="7" instance=ExtResource("5_hurye")]
-position = Vector2(473, 129)
-record = Vector2(0, -20)
+position = Vector2(483, 111)
+move_distance = Vector2(0, -85)
 
 [node name="LeftHand" parent="." index="2" instance=ExtResource("2_lx3rv")]
 position = Vector2(31, 322)

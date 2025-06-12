@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cswe1hwl6j37f"]
+
+[ext_resource type="Script" uid="uid://d33g4ia0a8ghb" path="res://Data/Objects/skull_switch.gd" id="2_w0ujk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w0ujk"]
+
+[node name="SkullSwitch" type="Sprite2D"]
+script = ExtResource("2_w0ujk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_w0ujk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

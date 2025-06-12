@@ -2,6 +2,9 @@ extends MainCharacter
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var coyote_timer: Timer = $coyote_timer
 
+func on_double_jump():
+	super.on_double_jump()
+	$DoubleJumpTimer.start()
 
 func _physics_process(delta: float) -> void:
 	
@@ -52,6 +55,12 @@ func _physics_process(delta: float) -> void:
 	
 
 func can_jump():
+	if is_jumping and double_jump  : 
+		double_jump = false 
+		$DoubleJumpTimer.stop()
+		return true
+		
+		
 	if is_on_floor() and !is_jumping  : return true
 	elif !is_jumping and !coyote_timer.is_stopped() : return  true 
 	 
@@ -67,3 +76,8 @@ func _on_area_2d_body_entered(body):
 
 func _change_scene():
 	get_tree().change_scene_to_file("res://UI/transition_level.tscn")
+
+
+func _on_double_jump_timer_timeout() -> void:
+	double_jump = false 
+	pass # Replace with function body.

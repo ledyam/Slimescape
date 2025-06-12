@@ -146,7 +146,8 @@ _data = {
 }
 
 [node name="RightHand" type="CharacterBody2D"]
-collision_mask = 3
+z_index = 1
+collision_mask = 7
 script = ExtResource("1_tk3ul")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -177,4 +178,9 @@ stream = ExtResource("3_17njr")
 volume_db = -20.0
 playback_type = 1
 
+[node name="DoubleJumpTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="timeout" from="coyote_timer" to="." method="_on_coyote_timer_timeout"]
+[connection signal="timeout" from="DoubleJumpTimer" to="." method="_on_double_jump_timer_timeout"]

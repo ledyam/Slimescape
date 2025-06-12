@@ -42,7 +42,7 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
 [resource]
-Button/constants/outline_size = 0
+Button/constants/outline_size = 4
 Button/font_sizes/font_size = 25
 Button/fonts/font = ExtResource("1_5nqvi")
 Button/styles/hover = SubResource("StyleBoxFlat_wbn63")
