@@ -13,7 +13,7 @@ var double_jump : bool = false
 func started_timer():
 	CentralSignal.play_movement.emit()
 
-<<<<<<< Updated upstream
+
 
 func _ready() -> void:
 	CentralSignal.double_jump.connect(on_double_jump)
@@ -22,7 +22,7 @@ func _ready() -> void:
 func on_double_jump():
 	double_jump = true
 	pass
-=======
+
 func tile_collision():
 	var tilemap : TileMapLayer = get_tree().get_first_node_in_group("tilemap")
 	if tilemap:
@@ -33,4 +33,3 @@ func tile_collision():
 
 		if tile_data and tile_data.get_custom_data("es_pincho"):
 			ControlUi.reset_level()
->>>>>>> Stashed changes

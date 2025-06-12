@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ccgvfwayvk2jj" path="res://UI/control_ui.gd" id="1_8w784"]
 [ext_resource type="Texture2D" uid="uid://d1gxhcwesv4tb" path="res://Assets/timer.png" id="2_ds52d"]
 [ext_resource type="LabelSettings" uid="uid://dxhbsy6kqrvv1" path="res://UI/labels/generic_label.tres" id="3_ry7jt"]
-[ext_resource type="Shader" path="res://UI/control_ui.gdshader" id="4_lwrcn"]
+[ext_resource type="Shader" uid="uid://bdy1f55ti0ugq" path="res://UI/Shaders/control_ui.gdshader" id="4_lwrcn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds52d"]
 bg_color = Color(0.0941176, 0.14902, 0.211765, 1)
