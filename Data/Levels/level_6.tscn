@@ -1,8 +1,6 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=17 format=4 uid="uid://cwi25mym2fbxr"]
-=======
+
 [gd_scene load_steps=14 format=4 uid="uid://cs6fjvpnk60jh"]
->>>>>>> Stashed changes
+
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_4w7ye"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_he3aq"]
