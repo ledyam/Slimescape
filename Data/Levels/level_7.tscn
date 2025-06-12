@@ -135,7 +135,7 @@ tile_map_data = PackedByteArray("AAATAAoAAAAKAAMAAAATAAsAAAAKAAQAAAAUAAoAAAALAAM
 tile_set = SubResource("TileSet_ejm7k")
 
 [node name="Spikes" parent="Base_Tile" index="2"]
-tile_map_data = PackedByteArray("AAAJABIAAAAEAA4AAAAKABIAAAAEAA4AAAA=")
+tile_map_data = PackedByteArray("AAAJABIAAAAEAA4AAAAKABIAAAAEAA4AAAAEAAQAAAABAA4AAAAFAAQAAAACAA4AAAAOAAQAAAABAA4AAAAPAAQAAAACAA4AAAAVAAEAAAADAA4AAFAVAAIAAAAEAA4AAFAVAAMAAAAFAA4AAFAVAAQAAAAGAA4AAFA=")
 
 [node name="RightHand" parent="." index="2" instance=ExtResource("5_rwcsa")]
 position = Vector2(616, 101)

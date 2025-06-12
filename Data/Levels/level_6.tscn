@@ -165,7 +165,7 @@ texture = ExtResource("4_ja2or")
 [sub_resource type="TileSet" id="TileSet_6gkl0"]
 sources/0 = SubResource("TileSetAtlasSource_jq456")
 
-[node name="generic_level4" instance=ExtResource("1_4w7ye")]
+[node name="generic_level" instance=ExtResource("1_4w7ye")]
 
 [node name="Obstacles" type="TileMapLayer" parent="Base_Tile" index="0"]
 position = Vector2(-16, 0)
@@ -179,6 +179,9 @@ tile_set = SubResource("TileSet_jq456")
 [node name="Spikes_B" type="TileMapLayer" parent="Base_Tile" index="2"]
 tile_map_data = PackedByteArray("AAAQAAYAAAAAAAAAAAASAAYAAAAAAAAAAAAUAAYAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_6gkl0")
+
+[node name="Spikes" parent="Base_Tile" index="3"]
+tile_map_data = PackedByteArray("AAAeABIAAAAEAA4AAAAfABIAAAAFAA4AAAAgABIAAAAGAA4AAAALAA4AAAAEAA4AAFALAA8AAAAFAA4AAFALABAAAAAGAA4AAFAIAAsAAAAEAA4AAFAIAAwAAAAFAA4AAFAIAA0AAAAGAA4AAFA=")
 
 [node name="LeftHand" parent="." index="2" instance=ExtResource("4_45qft")]
 z_index = 0
