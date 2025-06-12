@@ -102,7 +102,7 @@ texture = ExtResource("2_b8rlu")
 [sub_resource type="TileSet" id="TileSet_b8rlu"]
 sources/0 = SubResource("TileSetAtlasSource_yt6oe")
 
-[node name="generic_level3" instance=ExtResource("1_yt6oe")]
+[node name="generic_level6" instance=ExtResource("1_yt6oe")]
 
 [node name="Obstacles" type="TileMapLayer" parent="Base_Tile" index="0"]
 position = Vector2(-16, 0)

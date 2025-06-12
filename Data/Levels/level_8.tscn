@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://ur4hn3kpg4ti"]
+[gd_scene load_steps=12 format=4 uid="uid://cggornq0mlgur"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_gij72"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_jv0a5"]

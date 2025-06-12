@@ -159,7 +159,7 @@ sources/0 = SubResource("TileSetAtlasSource_eu0jc")
 
 [sub_resource type="TileSet" id="TileSet_o53y8"]
 
-[node name="generic_level" instance=ExtResource("1_o53y8")]
+[node name="generic_level3" instance=ExtResource("1_o53y8")]
 
 [node name="door" type="TileMapLayer" parent="Base_Tile" index="0"]
 tile_map_data = PackedByteArray("AAAFAAkAAQAJAAAAAAAEAAkAAQAJAAAAAAADAAkAAQAJAAAAAAAiAAkAAQAJAAAAAAAjAAkAAQAJAAAAAAA=")
