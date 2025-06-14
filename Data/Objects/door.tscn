@@ -153,9 +153,8 @@ _data = {
 &"defalut": SubResource("Animation_6rm2c")
 }
 
-[node name="Arrow_Door" type="StaticBody2D"]
+[node name="Door" type="StaticBody2D"]
 script = ExtResource("1_xdrpm")
-color = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.8147e-06)
@@ -167,9 +166,10 @@ sprite_frames = SubResource("SpriteFrames_gr5xq")
 animation = &"defalut"
 
 [node name="DoorTexture" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.32549)
-position = Vector2(0, 6)
-scale = Vector2(1.25, 1.145)
+modulate = Color(1, 1, 1, 0.796078)
+z_index = 1
+position = Vector2(1, 7.42)
+scale = Vector2(1.375, 1.3225)
 texture = ExtResource("2_2xrrq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
