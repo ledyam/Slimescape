@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=4 uid="uid://c23n2lc118mxj"]
 
-[ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="1_xrjha"]
+[ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Tiles/Dungeon Tile Set.png" id="1_xrjha"]
 [ext_resource type="Shader" uid="uid://ddnw6o7enpbi6" path="res://UI/Shaders/generic_level.gdshader" id="2_lhd0x"]
-[ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Players/left_hand.tscn" id="3_3ayg0"]
-[ext_resource type="PackedScene" uid="uid://d1j0t35v5q0mr" path="res://Data/Players/right_hand.tscn" id="4_w1tct"]
+[ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Characters/Players/left_hand.tscn" id="3_3ayg0"]
+[ext_resource type="PackedScene" uid="uid://d1j0t35v5q0mr" path="res://Data/Characters/Players/right_hand.tscn" id="4_w1tct"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xrjha"]
 texture = ExtResource("1_xrjha")
@@ -163,8 +163,12 @@ tile_set = SubResource("TileSet_3ayg0")
 [node name="ColorRect" type="ColorRect" parent="Shaders"]
 material = SubResource("ShaderMaterial_iq2b3")
 offset_right = 657.0
-offset_bottom = 339.0
+offset_bottom = 352.0
 
 [node name="LeftHand" parent="." instance=ExtResource("3_3ayg0")]
 
 [node name="RightHand" parent="." instance=ExtResource("4_w1tct")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(330, 193)
+zoom = Vector2(0.97, 0.93)

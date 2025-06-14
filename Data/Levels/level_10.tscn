@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://u2mfjofv7h26"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_e28n3"]
-[ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_0vfbo"]
+[ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Tiles/Dungeon Tile Set.png" id="2_0vfbo"]
 [ext_resource type="PackedScene" uid="uid://cfifsncne7dsj" path="res://Data/Objects/door.tscn" id="7_lt2y5"]
 [ext_resource type="PackedScene" uid="uid://cswe1hwl6j37f" path="res://Data/Objects/skull_switch.tscn" id="7_wyjt1"]
 [ext_resource type="PackedScene" uid="uid://w3gaj2dokwg2" path="res://Data/Objects/large_door.tscn" id="7_xllas"]

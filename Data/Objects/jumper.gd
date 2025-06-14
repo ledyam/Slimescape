@@ -3,8 +3,10 @@ extends Node2D
 @export var is_active : bool 
 @export var is_push : bool 
 var is_player_in : bool = false
-# Called when the node enters the scene tree for the first time.
 var player_reference : CharacterBody2D
+
+
+
 func _ready() -> void:
 	CentralSignal.active_jumper.connect(on_active_jumper)
 	if !is_push:

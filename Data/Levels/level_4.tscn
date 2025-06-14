@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://8af6t3at1mme"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_yt6oe"]
-[ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_b8rlu"]
+[ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Tiles/Dungeon Tile Set.png" id="2_b8rlu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eakor"]
 texture = ExtResource("2_b8rlu")

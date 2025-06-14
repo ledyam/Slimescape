@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://mxyf28sl8b78"]
 
-[ext_resource type="Script" uid="uid://dne5jls6bos7e" path="res://Data/Players/left_hand_normal.gd" id="1_24f0y"]
+[ext_resource type="Script" uid="uid://dne5jls6bos7e" path="res://Data/Characters/Players/left_hand_normal.gd" id="1_24f0y"]
 [ext_resource type="Texture2D" uid="uid://b5y2r83c334b0" path="res://Assets/slime_blue.png" id="3_j47ua"]
 [ext_resource type="AudioStream" uid="uid://wfdg11x7ur7v" path="res://Assets/Sounds/cartoon-jump-6462.mp3" id="3_syp0f"]
 
