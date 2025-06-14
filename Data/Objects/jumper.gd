@@ -24,8 +24,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func on_active_jumper():
 	if is_push and is_active:
 		$AnimationPlayer.play("push")
-		if is_player_in:
-			player_reference.velocity.y += -500
+		
+		
+		
+func push_player():
+	if is_player_in:
+		player_reference.velocity.y += -500
 	
 
 

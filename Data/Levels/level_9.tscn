@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_o53y8"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_pliyn"]
-[ext_resource type="PackedScene" uid="uid://ci082gwy7mxum" path="res://Data/Objects/arrow_door.tscn" id="3_t1bbx"]
+[ext_resource type="PackedScene" uid="uid://cfifsncne7dsj" path="res://Data/Objects/arrow_door.tscn" id="3_t1bbx"]
 [ext_resource type="Texture2D" uid="uid://hldlryo6ruik" path="res://Assets/icons/skull_01a.png" id="4_ekgag"]
 [ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Players/left_hand.tscn" id="5_ekgag"]
 [ext_resource type="Texture2D" uid="uid://dn4m20bv65upl" path="res://Assets/icons/skull_01b.png" id="5_ex7vk"]

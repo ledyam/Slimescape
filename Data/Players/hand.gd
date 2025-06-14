@@ -32,4 +32,5 @@ func tile_collision():
 		var tile_data: TileData = tilemap.get_cell_tile_data( tile_coords)  # <-- Aquí agregamos el layer 0
 
 		if tile_data and tile_data.get_custom_data("es_pincho"):
+		
 			ControlUi.reset_level()

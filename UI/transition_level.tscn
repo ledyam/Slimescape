@@ -16,6 +16,7 @@ _data = {
 bg_color = Color(0, 0, 0, 1)
 
 [node name="TransitionLevel" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

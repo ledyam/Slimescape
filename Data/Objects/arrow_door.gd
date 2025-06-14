@@ -11,9 +11,6 @@ func _ready() -> void:
 
 
 func on_open_door(signal_color : int ):
-	
 	if signal_color == color:
 		$AnimationPlayer.play("Open")
-		await $AnimationPlayer.animation_finished
-		$AnimationPlayer.play("finish")
 		$DoorTexture.texture = null

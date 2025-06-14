@@ -31,17 +31,17 @@ region = Rect2(24, 0, 24, 16)
 atlas = ExtResource("1_1rx6c")
 region = Rect2(48, 0, 24, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qbduj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_die2t"]
 atlas = ExtResource("1_1rx6c")
-region = Rect2(0, 0, 24, 16)
+region = Rect2(48, 0, 24, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d5e2q"]
 atlas = ExtResource("1_1rx6c")
 region = Rect2(24, 0, 24, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_die2t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbduj"]
 atlas = ExtResource("1_1rx6c")
-region = Rect2(48, 0, 24, 16)
+region = Rect2(0, 0, 24, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yucst"]
 atlas = ExtResource("1_1rx6c")
@@ -102,13 +102,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qbduj")
+"texture": SubResource("AtlasTexture_die2t")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d5e2q")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_die2t")
+"texture": SubResource("AtlasTexture_qbduj")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yucst")
@@ -127,7 +127,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"push",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -272,7 +272,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_i201n"]
-length = 0.8
+length = 0.533333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -280,7 +280,7 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
@@ -304,10 +304,10 @@ tracks/2/path = NodePath("CollisionShape2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.102426, 0.201225, 0.300932, 0.605489, 0.700663),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.333333, 0.520362),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-10, 0), Vector2(-10, 1), Vector2(-10, 2), Vector2(-10, -6), Vector2(-10, -5), Vector2(-10, -3)]
+"values": [Vector2(-10, 0), Vector2(-10, 1), Vector2(-10, -1), Vector2(-10, -6), Vector2(-10, -5), Vector2(-10, -3)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -316,10 +316,24 @@ tracks/3/path = NodePath("Area2D/CollisionShape2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.203945, 0.303651, 0.700663),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.166373, 0.266667, 0.469095, 0.520362),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-6, -3), Vector2(-6, 0), Vector2(-6, -8), Vector2(-7, -6)]
+"values": [Vector2(-6, 0), Vector2(-6, 0), Vector2(-6, -8), Vector2(-7, -6), Vector2(-6, -6), Vector2(-6, -5)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"push_player"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_d5e2q"]
@@ -393,8 +407,7 @@ script = ExtResource("1_qbduj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rlq3o")
-animation = &"fetch"
-frame = 5
+animation = &"push"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-12, 2)
