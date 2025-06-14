@@ -1,10 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://1cidu43x3nt3"]
+[gd_scene load_steps=12 format=4 uid="uid://1cidu43x3nt3"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_ki83a"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_i4t3m"]
 [ext_resource type="PackedScene" uid="uid://ube04gcf40ei" path="res://Data/Objects/saw.tscn" id="3_oyyxi"]
-[ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Players/left_hand.tscn" id="4_oyyxi"]
-[ext_resource type="PackedScene" uid="uid://d1j0t35v5q0mr" path="res://Data/Players/right_hand.tscn" id="5_rwcsa"]
 [ext_resource type="PackedScene" uid="uid://c5yir4b2bqqlc" path="res://Data/Buff/double_jump_buff.tscn" id="6_rwcsa"]
 [ext_resource type="PackedScene" uid="uid://dldrmpe7xgvu1" path="res://UI/KEYS/key_guia.tscn" id="7_qf4jo"]
 [ext_resource type="SpriteFrames" uid="uid://ce117eid4wbkp" path="res://UI/Resources/KEY_W.tres" id="8_tpdq7"]
@@ -153,27 +151,20 @@ move_distance = Vector2(-100, 0)
 [node name="Spikes" parent="Base_Tile" index="1"]
 tile_map_data = PackedByteArray("AAAJABIAAAAEAA4AAAAKABIAAAAEAA4AAAAOAAQAAAAFAA4AAAAPAAQAAAAGAA4AAAAEAAQAAAAFAA4AAAAFAAQAAAAGAA4AAAAVAAEAAAABAA4AAFAVAAIAAAACAA4AAFAVAAMAAAADAA4AAFAVAAQAAAAEAA4AAFA=")
 
-[node name="RightHand" parent="." index="3" instance=ExtResource("5_rwcsa")]
-position = Vector2(616, 101)
-
-[node name="LeftHand" parent="." index="4" instance=ExtResource("4_oyyxi")]
-z_index = 1
-position = Vector2(37, 332)
-
-[node name="DoubleJumpBuff" parent="." index="6" instance=ExtResource("6_rwcsa")]
+[node name="DoubleJumpBuff" parent="." index="4" instance=ExtResource("6_rwcsa")]
 position = Vector2(620, 324)
 
-[node name="KeyGuia" parent="." index="7" instance=ExtResource("7_qf4jo")]
+[node name="KeyGuia" parent="." index="5" instance=ExtResource("7_qf4jo")]
 position = Vector2(582, 321)
 scale = Vector2(0.934211, 0.773811)
 sprite_frames = ExtResource("8_tpdq7")
 
-[node name="KeyGuia2" parent="." index="8" instance=ExtResource("7_qf4jo")]
+[node name="KeyGuia2" parent="." index="6" instance=ExtResource("7_qf4jo")]
 position = Vector2(544, 321)
 scale = Vector2(0.934211, 0.773811)
 sprite_frames = ExtResource("8_tpdq7")
 
-[node name="Label" type="Label" parent="." index="9"]
+[node name="Label" type="Label" parent="." index="7"]
 offset_left = 560.0
 offset_top = 311.0
 offset_right = 568.0
@@ -182,3 +173,9 @@ text = "+"
 label_settings = SubResource("LabelSettings_c5l7h")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LeftHand" parent="." index="8"]
+position = Vector2(32, 331)
+
+[node name="RightHand" parent="." index="9"]
+position = Vector2(620, 104)

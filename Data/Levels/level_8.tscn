@@ -1,9 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://2fpugi1titng"]
+[gd_scene load_steps=8 format=4 uid="uid://2fpugi1titng"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_gij72"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_jv0a5"]
-[ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Players/left_hand.tscn" id="2_lx3rv"]
-[ext_resource type="PackedScene" uid="uid://d1j0t35v5q0mr" path="res://Data/Players/right_hand.tscn" id="3_jv0a5"]
 [ext_resource type="PackedScene" uid="uid://ube04gcf40ei" path="res://Data/Objects/saw.tscn" id="5_hurye"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_313am"]
@@ -163,9 +161,8 @@ move_distance = Vector2(0, 80)
 position = Vector2(480, 111)
 move_distance = Vector2(0, -80)
 
-[node name="LeftHand" parent="." index="5" instance=ExtResource("2_lx3rv")]
-position = Vector2(31, 322)
-collision_mask = 3
+[node name="LeftHand" parent="." index="5"]
+position = Vector2(30, 333)
 
-[node name="RightHand" parent="." index="6" instance=ExtResource("3_jv0a5")]
-position = Vector2(620, 328)
+[node name="RightHand" parent="." index="6"]
+position = Vector2(629, 336)

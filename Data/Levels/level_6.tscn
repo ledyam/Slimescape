@@ -1,12 +1,10 @@
-[gd_scene load_steps=16 format=4 uid="uid://bs8d5h58dffkn"]
+[gd_scene load_steps=14 format=4 uid="uid://bs8d5h58dffkn"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_4w7ye"]
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_he3aq"]
 [ext_resource type="Script" uid="uid://c17flehupcchg" path="res://Data/Levels/level_6.gd" id="2_y34pq"]
 [ext_resource type="Texture2D" uid="uid://b04lmfi8fxd7k" path="res://Assets/Jumper.png" id="3_45qft"]
 [ext_resource type="PackedScene" uid="uid://daa1ed5vh7khg" path="res://Data/Objects/jumper.tscn" id="3_jgpfo"]
-[ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Players/left_hand.tscn" id="4_45qft"]
-[ext_resource type="PackedScene" uid="uid://d1j0t35v5q0mr" path="res://Data/Players/right_hand.tscn" id="5_ja2or"]
 [ext_resource type="Texture2D" uid="uid://dp22y2gcfr2ug" path="res://Assets/spikes.png" id="5_jgpfo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ja2or"]
@@ -187,16 +185,15 @@ is_push = true
 tile_map_data = PackedByteArray("AAAVAAgAAAAEAAwAAAAWAAgAAAAFAAwAAAAXAAgAAAAGAAwAAAAOAAgAAAAEAAwAAAAPAAgAAAAFAAwAAAAQAAgAAAAGAAwAAAAmAAQAAAANAA4AAFAmAAMAAAAMAA4AAFAmAAIAAAALAA4AAFAmAAEAAAAKAA4AAFAbAAsAAAAGAAYAAAAcAAsAAAAGAAYAAAAeAAoAAAAGAAYAAAAeAA4AAAAHAAYAAAAfAA4AAAAIAAYAAAAgAA4AAAAJAAYAAAAIAAkAAAAHAAYAAAAJAAkAAAAIAAYAAAAKAAkAAAAJAAYAAAAKAAsAAAAHAAYAAAALAAsAAAAIAAYAAAAMAAsAAAAJAAYAAAAKAAwAAAAHAAYAAAALAAwAAAAIAAYAAAAMAAwAAAAJAAYAAAABAAQAAAAKAAcAAAACAAQAAAALAAcAAAADAAQAAAAMAAcAAAAIAAIAAAAKAAcAAAAJAAIAAAALAAcAAAAKAAIAAAAMAAcAAAAgAAEAAAAIAAcAAAAhAAEAAAAJAAcAAAAiAAEAAAAIAAcAAAAjAAEAAAAJAAcAAAAUAAIAAAAIAAcAAAAVAAIAAAAJAAcAAAAPAAIAAAAIAAcAAAAQAAIAAAAJAAcAAAA=")
 tile_set = SubResource("TileSet_jq456")
 
-[node name="Spikes_B" type="TileMapLayer" parent="Base_Tile" index="2" groups=["tilemap"]]
+[node name="Spikes" parent="Base_Tile" index="2"]
+tile_map_data = PackedByteArray("AAAeABIAAAAEAA4AAAAfABIAAAAFAA4AAAAgABIAAAAGAA4AAAALAA4AAAAEAA4AAFAIAAsAAAAEAA4AAFAIAAwAAAAFAA4AAFAIAA0AAAAGAA4AAFALAA8AAAAFAA4AAFALABAAAAAGAA4AAFA=")
+
+[node name="Spikes_B" type="TileMapLayer" parent="Base_Tile" index="3" groups=["tilemap"]]
 tile_map_data = PackedByteArray("AAAWAAYAAQAAAAAAAAAVAAYAAQAAAAAAAAAUAAYAAQAAAAAAAAATAAYAAQAAAAAAAAASAAYAAQAAAAAAAAARAAYAAQAAAAAAAAAQAAYAAQAAAAAAAAAPAAYAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_6gkl0")
 
-[node name="Spikes" parent="Base_Tile" index="3"]
-tile_map_data = PackedByteArray("AAAeABIAAAAEAA4AAAAfABIAAAAFAA4AAAAgABIAAAAGAA4AAAALAA4AAAAEAA4AAFALAA8AAAAFAA4AAFALABAAAAAGAA4AAFAIAAsAAAAEAA4AAFAIAAwAAAAFAA4AAFAIAA0AAAAGAA4AAFA=")
+[node name="LeftHand" parent="." index="3"]
+position = Vector2(93.445, 331.528)
 
-[node name="LeftHand" parent="." index="2" instance=ExtResource("4_45qft")]
-position = Vector2(96, 332)
-collision_mask = 3
-
-[node name="RightHand" parent="." index="3" instance=ExtResource("5_ja2or")]
-position = Vector2(448, 337)
+[node name="RightHand" parent="." index="4"]
+position = Vector2(452, 338)
