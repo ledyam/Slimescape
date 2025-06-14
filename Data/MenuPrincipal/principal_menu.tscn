@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ciwdvtk5yn12r"]
+[gd_scene load_steps=29 format=3 uid="uid://ciwdvtk5yn12r"]
 
 [ext_resource type="Script" uid="uid://bx7jp71nnnyt6" path="res://Data/MenuPrincipal/principal_menu.gd" id="1_xaq4r"]
 [ext_resource type="AudioStream" uid="uid://cq2d78bc8qsia" path="res://Assets/Sounds/principal_menu_audio.mp3" id="3_jyrhh"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bhgh2otjegapn" path="res://Assets/icons/App_Icons/Small (24x24) PNG/Discord.png" id="9_fbmrv"]
 [ext_resource type="Texture2D" uid="uid://b5v0k6fcml0k8" path="res://Assets/icons/App_Icons/Small (24x24) PNG/Telegram.png" id="10_fbmrv"]
 [ext_resource type="Texture2D" uid="uid://cueqgc005jlj7" path="res://Assets/icons/App_Icons/Small (24x24) PNG/PayPal.png" id="11_vvsx8"]
+[ext_resource type="Texture2D" uid="uid://bj6xoufjgw8jl" path="res://Assets/Logos/Game Logo 1.0.png" id="13_s4ewf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7yhsr"]
 font_size = 12
@@ -213,8 +214,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="MainLogo" type="TextureRect" parent="."]
+modulate = Color(0.537255, 0.741176, 0.984314, 1)
+self_modulate = Color(0.635294, 0.811765, 1, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -227.0
+offset_top = -22.0
+offset_right = 231.0
+offset_bottom = 194.0
+grow_horizontal = 2
+texture = ExtResource("13_s4ewf")
+expand_mode = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.407915

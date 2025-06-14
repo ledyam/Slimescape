@@ -62,4 +62,4 @@ tile_set = SubResource("TileSet_mru4c")
 position = Vector2(193, 139)
 
 [node name="RightHand" parent="." index="4"]
-position = Vector2(469, 144)
+position = Vector2(463, 144)

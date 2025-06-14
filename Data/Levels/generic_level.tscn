@@ -170,5 +170,5 @@ offset_bottom = 352.0
 [node name="RightHand" parent="." instance=ExtResource("4_w1tct")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(330, 193)
-zoom = Vector2(0.97, 0.93)
+position = Vector2(327, 192)
+zoom = Vector2(0.98, 0.94)

@@ -35,7 +35,7 @@ func _ready() -> void:
 	CentralSignal.increment_level.connect(on_increment_level)
 	CentralSignal.play_movement.connect(on_play_movement)
 	CentralSignal.pause_movement.connect(on_pause_movement)
-	$AnimationPlayer.play("timer")
+	$AnimationPlayer.play("default")
 	
 	# --- NUEVO: Obtener los ShaderMaterial de los ProgressBars ---
 	if main_time_bar:
