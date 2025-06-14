@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cfifsncne7dsj"]
 
 [ext_resource type="Texture2D" uid="uid://t6nrhxecii02" path="res://Assets/Spear.png" id="1_e1p3f"]
-[ext_resource type="Script" uid="uid://dn6kxc1pmvav4" path="res://Data/Objects/arrow_door.gd" id="1_xdrpm"]
+[ext_resource type="Script" uid="uid://dn6kxc1pmvav4" path="res://Data/Objects/door.gd" id="1_xdrpm"]
 [ext_resource type="Texture2D" uid="uid://hldlryo6ruik" path="res://Assets/icons/skull_01a.png" id="2_2xrrq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1p3f"]
@@ -37,7 +37,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_xdrpm")
 }],
 "loop": false,
-"name": &"defalut",
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -107,7 +107,7 @@ tracks/2/keys = {
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_6rm2c"]
+[sub_resource type="Animation" id="Animation_5x0v3"]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -131,26 +131,14 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["defalut"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": ["default"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gr5xq"]
 _data = {
 &"Open": SubResource("Animation_xdrpm"),
 &"RESET": SubResource("Animation_dilkk"),
-&"defalut": SubResource("Animation_6rm2c")
+&"default": SubResource("Animation_5x0v3")
 }
 
 [node name="Door" type="StaticBody2D"]
@@ -163,7 +151,7 @@ shape = SubResource("RectangleShape2D_e1p3f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gr5xq")
-animation = &"defalut"
+animation = &"Open"
 
 [node name="DoorTexture" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.796078)

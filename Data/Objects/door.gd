@@ -5,7 +5,7 @@ class_name Door
 
 func _ready() -> void:
 	$DoorTexture.texture = texture
-	$AnimationPlayer.play('defalut')
+	$AnimationPlayer.play('default')
 
 
 func open_door():
