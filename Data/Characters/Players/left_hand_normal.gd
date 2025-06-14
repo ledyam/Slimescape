@@ -78,7 +78,7 @@ func _on_area_2d_body_entered(body):
 		call_deferred("_change_scene")
 
 func _change_scene():
-	get_tree().change_scene_to_file("res://UI/transition_level.tscn")
+	get_tree().change_scene_to_file("res://UI/Level Transition/transition_level.tscn")
 
 
 func _on_double_jump_timer_timeout() -> void:

@@ -13,7 +13,7 @@ config_version=5
 config/name="SlimeScape"
 run/main_scene="uid://ciwdvtk5yn12r"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="uid://3jkwml6dx63h"
+config/icon="uid://dao5qffpvd14u"
 
 [audio]
 
@@ -29,8 +29,8 @@ SoundManager="*res://Autoloads/SoundManager.gd"
 
 [display]
 
-window/size/viewport_width=657
-window/size/viewport_height=384
+window/size/viewport_width=640
+window/size/viewport_height=360
 window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
@@ -43,6 +43,7 @@ enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/simple-g
 
 folder_colors={
 "res://Assets/": "red",
+"res://Autoloads/": "orange",
 "res://Data/": "purple",
 "res://UI/": "green"
 }

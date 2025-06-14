@@ -1,10 +1,8 @@
-[gd_scene load_steps=44 format=4 uid="uid://bt2hs12qcu304"]
+[gd_scene load_steps=42 format=4 uid="uid://bt2hs12qcu304"]
 
-[ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="1_bxb41"]
+[ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Tiles/Dungeon Tile Set.png" id="1_bxb41"]
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_n1kc8"]
 [ext_resource type="Script" uid="uid://u14tdhtpcpv8" path="res://Data/Levels/level_1.gd" id="2_127mp"]
-[ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Players/left_hand.tscn" id="2_o0kuf"]
-[ext_resource type="PackedScene" uid="uid://d1j0t35v5q0mr" path="res://Data/Players/right_hand.tscn" id="3_n1kc8"]
 [ext_resource type="SpriteFrames" uid="uid://ce117eid4wbkp" path="res://UI/Resources/KEY_W.tres" id="4_ce84k"]
 [ext_resource type="Texture2D" uid="uid://bk41ppm2fbxos" path="res://Assets/SimpleKeys/Jumbo/Light/Spritesheets/A.png" id="6_6wd42"]
 [ext_resource type="Texture2D" uid="uid://b06231mtesp11" path="res://Assets/SimpleKeys/Jumbo/Light/Spritesheets/D.png" id="7_2pc45"]
@@ -555,9 +553,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_gyv1f")
 }
 
-[node name="LeftHand" parent="." index="4" instance=ExtResource("2_o0kuf")]
-position = Vector2(84.5537, 105.934)
-collision_mask = 3
+[node name="LeftHand" parent="." index="5"]
+position = Vector2(87, 110)
 
-[node name="RightHand" parent="." index="5" instance=ExtResource("3_n1kc8")]
-position = Vector2(580.421, 105.934)
+[node name="RightHand" parent="." index="6"]
+position = Vector2(584, 115)

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bx7jp71nnnyt6" path="res://Data/MenuPrincipal/principal_menu.gd" id="1_xaq4r"]
 [ext_resource type="AudioStream" uid="uid://cq2d78bc8qsia" path="res://Assets/Sounds/principal_menu_audio.mp3" id="3_jyrhh"]
 [ext_resource type="Theme" uid="uid://c8f8cf35u5tw8" path="res://UI/Themes/custom_theme.tres" id="4_7yhsr"]
-[ext_resource type="PackedScene" uid="uid://cy4tlif73jssx" path="res://UI/buttom/button_with_sound.tscn" id="4_82crm"]
+[ext_resource type="PackedScene" uid="uid://cy4tlif73jssx" path="res://UI/buttons/button_with_sound.tscn" id="4_82crm"]
 [ext_resource type="Script" uid="uid://b15gu5hdpxfvy" path="res://addons/simple-gui-transitions/transition.gd" id="5_5v1vu"]
 [ext_resource type="VideoStream" uid="uid://cmvyeg68dgbkh" path="res://Assets/Sounds/My-Video-1.ogv" id="5_n3ypx"]
 [ext_resource type="Texture2D" uid="uid://b4fe4cmythg37" path="res://Assets/icons/Lucid V1.2/PNG/Flat/16/Speaker-0.png" id="7_vvsx8"]

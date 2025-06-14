@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://u2mfjofv7h26"]
+[gd_scene load_steps=11 format=4 uid="uid://u2mfjofv7h26"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_e28n3"]
-[ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_0vfbo"]
-[ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Players/left_hand.tscn" id="4_4sina"]
-[ext_resource type="PackedScene" uid="uid://d1j0t35v5q0mr" path="res://Data/Players/right_hand.tscn" id="5_u5phs"]
-[ext_resource type="PackedScene" uid="uid://ci082gwy7mxum" path="res://Data/Objects/arrow_door.tscn" id="6_u5phs"]
+[ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Tiles/Dungeon Tile Set.png" id="2_0vfbo"]
+[ext_resource type="PackedScene" uid="uid://cfifsncne7dsj" path="res://Data/Objects/door.tscn" id="7_lt2y5"]
 [ext_resource type="PackedScene" uid="uid://cswe1hwl6j37f" path="res://Data/Objects/skull_switch.tscn" id="7_wyjt1"]
-[ext_resource type="PackedScene" uid="uid://w3gaj2dokwg2" path="res://Data/Objects/open_door_large.tscn" id="7_xllas"]
+[ext_resource type="PackedScene" uid="uid://w3gaj2dokwg2" path="res://Data/Objects/large_door.tscn" id="7_xllas"]
 [ext_resource type="Texture2D" uid="uid://dn4m20bv65upl" path="res://Assets/icons/skull_01b.png" id="8_fwrns"]
 [ext_resource type="PackedScene" uid="uid://c5yir4b2bqqlc" path="res://Data/Buff/double_jump_buff.tscn" id="9_fwrns"]
 [ext_resource type="Texture2D" uid="uid://hldlryo6ruik" path="res://Assets/icons/skull_01a.png" id="9_xllas"]
@@ -97,39 +95,38 @@ tile_set = SubResource("TileSet_4sina")
 [node name="Spikes" parent="Base_Tile" index="3"]
 tile_map_data = PackedByteArray("AAAGABMAAAABAA4AAAAHABMAAAACAA4AAAANAAwAAAADAA4AAGANAAsAAAAEAA4AAGANAAoAAAAFAA4AAGANAAkAAAAGAA4AAGANABAAAAADAA4AAGANAA8AAAAEAA4AAGANAA4AAAAFAA4AAGANAA0AAAAGAA4AAGANABQAAAADAA4AAGANABMAAAAEAA4AAGANABIAAAAFAA4AAGANABEAAAAGAA4AAGAVAAsAAAACAA4AAFAVAAwAAAADAA4AAFAVAA0AAAAEAA4AAFAVAA4AAAACAA4AAFAVAA8AAAADAA4AAFAeABIAAAACAA4AAFAeABMAAAADAA4AAFAeABQAAAAEAA4AAFAeAAoAAAACAA4AAAAfAAoAAAADAA4AAAAgAAoAAAAEAA4AAAAbAAoAAAACAA4AAAAcAAoAAAADAA4AAAAdAAoAAAAEAA4AAAAaAAoAAAAFAA4AAAA=")
 
-[node name="LeftHand" parent="." index="2" instance=ExtResource("4_4sina")]
-position = Vector2(46, 329)
-collision_mask = 3
-
-[node name="RightHand" parent="." index="3" instance=ExtResource("5_u5phs")]
-position = Vector2(625, 333)
-
-[node name="Shaders" parent="." index="4"]
+[node name="Shaders" parent="." index="2"]
 visible = false
 
 [node name="ColorRect" parent="Shaders" index="0"]
 scale = Vector2(1.04596, 1)
 
-[node name="Interact" type="Node" parent="." index="5"]
+[node name="Interact" type="Node" parent="." index="3"]
 
-[node name="Arrow_Door" parent="Interact" index="0" instance=ExtResource("6_u5phs")]
-position = Vector2(319, 299)
-scale = Vector2(1, 1.2)
+[node name="SkullSwitch" parent="Interact" index="0" instance=ExtResource("7_wyjt1")]
+position = Vector2(38, 66)
+texture = ExtResource("8_fwrns")
+door = NodePath("../DoorRed")
+
+[node name="SkullSwitch2" parent="Interact" index="1" instance=ExtResource("7_wyjt1")]
+position = Vector2(376, 238)
+texture = ExtResource("9_xllas")
+door = NodePath("../DoorBlue")
+
+[node name="DoubleJumpBuff" parent="Interact" index="2" instance=ExtResource("9_fwrns")]
+position = Vector2(207, 321)
+
+[node name="DoorBlue" parent="Interact" index="3" instance=ExtResource("7_lt2y5")]
+position = Vector2(319, 305)
 texture = ExtResource("9_xllas")
 
-[node name="OpenDoorLarge" parent="Interact" index="1" instance=ExtResource("7_xllas")]
-position = Vector2(431, 58)
+[node name="DoorRed" parent="Interact" index="4" instance=ExtResource("7_xllas")]
+position = Vector2(435, 66)
 rotation = 1.57079
 texture = ExtResource("8_fwrns")
 
-[node name="SkullSwitch" parent="Interact" index="2" instance=ExtResource("7_wyjt1")]
-position = Vector2(38, 66)
-texture = ExtResource("8_fwrns")
+[node name="LeftHand" parent="." index="4"]
+position = Vector2(47.3223, 329.612)
 
-[node name="SkullSwitch2" parent="Interact" index="3" instance=ExtResource("7_wyjt1")]
-position = Vector2(376, 238)
-texture = ExtResource("9_xllas")
-color = 1
-
-[node name="DoubleJumpBuff" parent="Interact" index="4" instance=ExtResource("9_fwrns")]
-position = Vector2(198.953, 320.932)
+[node name="RightHand" parent="." index="5"]
+position = Vector2(615, 335)

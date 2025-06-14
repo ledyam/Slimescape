@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://8af6t3at1mme"]
+[gd_scene load_steps=7 format=4 uid="uid://8af6t3at1mme"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_yt6oe"]
-[ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Dungeon Tile Set.png" id="2_b8rlu"]
-[ext_resource type="PackedScene" uid="uid://mxyf28sl8b78" path="res://Data/Players/left_hand.tscn" id="3_eakor"]
-[ext_resource type="PackedScene" uid="uid://d1j0t35v5q0mr" path="res://Data/Players/right_hand.tscn" id="4_204gw"]
+[ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Tiles/Dungeon Tile Set.png" id="2_b8rlu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eakor"]
 texture = ExtResource("2_b8rlu")
@@ -117,9 +115,8 @@ tile_set = SubResource("TileSet_b8rlu")
 [node name="Spikes" parent="Base_Tile" index="2"]
 tile_map_data = PackedByteArray("AAAGAAsAAAADAA4AAAAHAAsAAAAEAA4AAAAIAAsAAAAFAA4AAAAJAAsAAAACAA4AAAABAAMAAAACAA4AAFABAAIAAAACAA4AAFANAAsAAAADAA4AAAAOAAsAAAAEAA4AAAAPAAsAAAAFAA4AAAAQAAsAAAAGAA4AAAAYAAsAAAADAA4AAAAZAAsAAAAEAA4AAAAaAAsAAAAFAA4AAAA=")
 
-[node name="LeftHand" parent="." index="2" instance=ExtResource("3_eakor")]
-position = Vector2(274, 333)
-collision_mask = 3
+[node name="LeftHand" parent="." index="3"]
+position = Vector2(275, 331)
 
-[node name="RightHand" parent="." index="3" instance=ExtResource("4_204gw")]
-position = Vector2(383, 338)
+[node name="RightHand" parent="." index="4"]
+position = Vector2(389, 336)

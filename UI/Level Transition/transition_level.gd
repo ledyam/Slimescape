@@ -62,4 +62,5 @@ func transition_to_next_level():
 	await exit_tween.finished
 	
 	# Cargar escena del siguiente nivel
-	get_tree().change_scene_to_file("res://Data/Levels/level_%d.tscn" % (ControlUi.current_level + 1))
+	get_tree().change_scene_to_file("res://Data/Levels/test_level.tscn")
+	#get_tree().change_scene_to_file("res://Data/Levels/level_%d.tscn" % (ControlUi.current_level + 1))
