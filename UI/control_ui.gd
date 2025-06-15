@@ -31,6 +31,9 @@ const SHAKE_REPEATS: int = 6
 var NODOS_NO : Array = ["res://Data/MenuPrincipal/principal_menu.tscn","res://UI/transition_level.tscn"]
 var original_ui_position: Vector2 = Vector2.ZERO
 
+
+
+
 func _ready() -> void:
 	CentralSignal.increment_level.connect(on_increment_level)
 	CentralSignal.play_movement.connect(on_play_movement)
