@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpq0jjkqx38eo"]
+
+[ext_resource type="Script" uid="uid://dx85212bxya46" path="res://Data/Characters/Players/hand.gd" id="1_hnbiw"]
+[ext_resource type="AudioStream" uid="uid://wfdg11x7ur7v" path="res://Assets/Sounds/cartoon-jump-6462.mp3" id="3_yc2cu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krfdj"]
+size = Vector2(25, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7syc"]
+radius = 13.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jwq60"]
+animations = []
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_35u4c"]
+
+[node name="HandMain" type="CharacterBody2D"]
+script = ExtResource("1_hnbiw")
+metadata/_custom_type_script = "uid://dx85212bxya46"
+
+[node name="BodyCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_krfdj")
+debug_color = Color(0.622742, 0.0655712, 0.117887, 0.42)
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionHitBox" type="CollisionShape2D" parent="HitBox"]
+z_index = -1
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_c7syc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_jwq60")
+animation = &"move_left"
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_35u4c")
+}
+
+[node name="Sound" type="Node" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("3_yc2cu")
+volume_db = -20.0
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="CoyoteTimer" type="Timer" parent="Timers"]
+wait_time = 0.2
+one_shot = true
+
+[node name="DoubleJumpTimer" type="Timer" parent="Timers"]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_area_2d_body_entered"]
