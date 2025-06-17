@@ -3,47 +3,57 @@
 [ext_resource type="FontFile" uid="uid://boc8cigfbnipa" path="res://Assets/Fonts/VT323/VT323-Regular.ttf" id="1_5nqvi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbn63"]
-bg_color = Color(0.371364, 0.497433, 0.57717, 1)
+bg_color = Color(0.0526982, 0.409094, 0.544667, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 2
-border_width_bottom = 3
-border_color = Color(0.153943, 0.223062, 0.232278, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-expand_margin_bottom = 2.0
+border_width_bottom = 4
+border_color = Color(0, 0.156863, 0.239216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xh5gb"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.27451, 0.380392, 0.447059, 1)
+bg_color = Color(0.0266783, 0.292482, 0.395876, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 2
 border_width_bottom = 3
-border_color = Color(0.121697, 0.181718, 0.189217, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-expand_margin_bottom = 2.0
+border_color = Color(3.73013e-07, 0.157944, 0.239213, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
 shadow_color = Color(0.0862745, 0.0862745, 0.0862745, 0.282353)
 shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mx2vx"]
-bg_color = Color(0.221964, 0.313445, 0.370953, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+bg_color = Color(0.0129361, 0.199139, 0.27333, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [resource]
 Button/constants/outline_size = 4
-Button/font_sizes/font_size = 25
+Button/font_sizes/font_size = 16
 Button/fonts/font = ExtResource("1_5nqvi")
 Button/styles/hover = SubResource("StyleBoxFlat_wbn63")
 Button/styles/normal = SubResource("StyleBoxFlat_xh5gb")

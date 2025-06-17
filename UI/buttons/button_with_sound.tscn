@@ -11,9 +11,11 @@ script = ExtResource("1_k272o")
 
 [node name="Pressed" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_xyp2q")
+bus = &"UI"
 
 [node name="Hover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_0c1ig")
+bus = &"UI"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

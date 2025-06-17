@@ -78,5 +78,5 @@ vertical_alignment = 1
 
 [node name="Sound" type="Node" parent="."]
 
-[node name="Clock-tick-tik-tak-76043" type="AudioStreamPlayer" parent="Sound"]
+[node name="Tik-Tak" type="AudioStreamPlayer" parent="Sound"]
 stream = ExtResource("3_wp8pr")

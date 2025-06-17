@@ -2,16 +2,12 @@ extends Control
 
 @onready var current_level_label: Label = %CurrentLevel
 
-# Configuración de animación
 const MOVE_DISTANCE: float = 50.0
 const ANIM_DURATION: float = 0.75
 
 func _ready() -> void:
-	ControlUi.canvas_layer.hide()
-	ControlUi.hide()
-	current_level_label.text = str(ControlUi.current_level)
-	$"Sound/Clock-tick-tik-tak-76043".play()
-	# Animación de transición
+	current_level_label.text = str(LevelManager.current_level_index)
+	$"Sound/Tik-Tak".play()
 	animate_level_change()
 
 func animate_level_change():
@@ -27,7 +23,7 @@ func animate_level_change():
 	await tween.finished
 	
 	# 2. Cambiar texto y resetear propiedades
-	current_level_label.text = str(ControlUi.current_level + 1)
+	current_level_label.text = str(LevelManager.current_level_index + 1)
 	current_level_label.position.y -= MOVE_DISTANCE
 	
 	# 3. Animación de entrada (nuevo número aparece desde arriba)
@@ -51,16 +47,10 @@ func animate_level_change():
 	transition_to_next_level()
 
 func transition_to_next_level():
-	# Preparar siguiente nivel
-	CentralSignal.pause_movement.emit()
-	ControlUi.restart_timer()
-	ControlUi.show()
-	ControlUi.canvas_layer.show()
+	
 	# Fade out suave antes de cargar
 	var exit_tween = create_tween()
 	exit_tween.tween_property(self, "modulate:a", 0, 0.3)
 	await exit_tween.finished
-	
 	# Cargar escena del siguiente nivel
-	get_tree().change_scene_to_file("res://Data/Levels/test_level.tscn")
-	#get_tree().change_scene_to_file("res://Data/Levels/level_%d.tscn" % (ControlUi.current_level + 1))
+	LevelManager.go_to_next_level()

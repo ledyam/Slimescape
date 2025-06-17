@@ -1,16 +1,16 @@
 extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var gui_transition: Node = $CanvasLayer/GuiTransition
+
 
 
 func _ready() -> void:
+	MusicManager.play_music("res://Assets/Sounds/principal_menu_audio.mp3")
 	PausableMenu.process_mode =Node.PROCESS_MODE_DISABLED
-	ControlUi.hide()
-	ControlUi.canvas_layer.hide()
-	$AudioStreamPlayer.stream.loop = true
-	$VideoStreamPlayer.play()
 	animation_player.play("oclution")
+	$VideoStreamPlayer.play()
 	await animation_player.animation_finished
-	$GuiTransition._show()
+	gui_transition._show()
 
 
 func _on_salir_pressed() -> void:
@@ -18,12 +18,11 @@ func _on_salir_pressed() -> void:
 
 
 func _on_iniciar_pressed() -> void:
-	$GuiTransition._hide()
+	gui_transition._hide()
 	$VideoStreamPlayer.stream = load("res://Assets/Sounds/Init Game.ogv")
 	$VideoStreamPlayer.play()
-	$VideoStreamPlayer.loop = false
 	animation_player.play("oclution_2")
-	await animation_player.animation_finished
+
 	
 	ControlUi.show()
 	ControlUi.canvas_layer.show()
@@ -32,11 +31,11 @@ func _on_iniciar_pressed() -> void:
 
 
 func _on_sound_pressed() -> void:
-	if$AudioStreamPlayer.playing:
-		$AudioStreamPlayer.stream_paused = true
+	if !MusicManager.is_paused():
+		MusicManager.set_paused(true)
 		%Sound.icon = load("res://Assets/icons/Lucid V1.2/PNG/Flat/16/Speaker-Crossed.png")
 	else:
-		$AudioStreamPlayer.stream_paused = false 
+		MusicManager.set_paused(false)
 		%Sound.icon = load("res://Assets/icons/Lucid V1.2/PNG/Flat/16/Speaker-1.png")
 	pass # Replace with function body.
 
@@ -58,3 +57,9 @@ func _on_discord_pressed() -> void:
 
 func _on_telegram_pressed() -> void:
 	OS.shell_open("https://web.telegram.org/a/#-1002377548371_1")
+
+
+func _on_opciones_pressed() -> void:
+	$CanvasLayer/VBoxContainer.hide()
+	GuiTransitions.show("MenuOptions")
+	pass # Replace with function body.

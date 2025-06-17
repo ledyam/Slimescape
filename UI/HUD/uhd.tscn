@@ -1,0 +1,243 @@
+[gd_scene load_steps=16 format=3 uid="uid://c5gs1uviawiuc"]
+
+[ext_resource type="Script" uid="uid://ccgvfwayvk2jj" path="res://UI/HUD/uhd.gd" id="1_od8do"]
+[ext_resource type="Texture2D" uid="uid://dpb6udqspfcqo" path="res://Assets/timer-sheet.png" id="2_thus8"]
+[ext_resource type="LabelSettings" uid="uid://dxhbsy6kqrvv1" path="res://UI/Resources/labels/generic_label.tres" id="3_7g137"]
+[ext_resource type="PackedScene" uid="uid://dhehq44lrf35w" path="res://UI/Timers/timer_bar.tscn" id="3_fl0mb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds52d"]
+bg_color = Color(0.0941176, 0.14902, 0.211765, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ry7jt"]
+bg_color = Color(0.0941176, 0.14902, 0.211765, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="Animation" id="Animation_ds52d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_naqsb"]
+length = 6.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.2, 0.433333, 0.6, 0.833333, 2.5, 2.76667, 3.03333, 3.30645, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 4, 4, 2, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AnimatedSprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.22, 1.8, 2.5, 4.1, 5.06667, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.5708, 3.14159, 3.14159, 4.71239, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l8jcl"]
+_data = {
+&"RESET": SubResource("Animation_ds52d"),
+&"default": SubResource("Animation_naqsb")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwrcn"]
+atlas = ExtResource("2_thus8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8jcl"]
+atlas = ExtResource("2_thus8")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h70h6"]
+atlas = ExtResource("2_thus8")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q26xt"]
+atlas = ExtResource("2_thus8")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alq8y"]
+atlas = ExtResource("2_thus8")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6hsj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwrcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8jcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h70h6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q26xt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alq8y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="HUD" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_od8do")
+
+[node name="TransitionRect" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 0)
+
+[node name="HUDContanier" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AttemptPanel" type="Panel" parent="HUDContanier"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -109.0
+offset_top = -25.0
+offset_right = -18.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ds52d")
+
+[node name="AttemptLabel" type="Label" parent="HUDContanier/AttemptPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.5
+offset_top = -7.5
+offset_right = 39.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = ExtResource("3_7g137")
+
+[node name="LevelPanel" type="Panel" parent="HUDContanier"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -24.0
+offset_right = 131.0
+offset_bottom = -8.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ry7jt")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUDContanier/LevelPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -4.0
+offset_right = 17.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CurrentLevelLabel" type="Label" parent="HUDContanier/LevelPanel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("3_7g137")
+
+[node name="LevelMaxLabel2" type="Label" parent="HUDContanier/LevelPanel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "/ 10"
+label_settings = ExtResource("3_7g137")
+
+[node name="TimerBar" parent="HUDContanier" instance=ExtResource("3_fl0mb")]
+layout_mode = 1
+offset_left = 3.0
+offset_top = -11.0
+offset_right = 146.0
+offset_bottom = 2.0
+rotation = 3.14159
+
+[node name="TimerBar2" parent="HUDContanier" instance=ExtResource("3_fl0mb")]
+layout_mode = 1
+offset_left = 4.0
+offset_top = -24.0
+offset_right = 147.0
+offset_bottom = -11.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../HUDContanier")
+libraries = {
+&"": SubResource("AnimationLibrary_l8jcl")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(323, 342)
+scale = Vector2(1.375, 1.375)
+sprite_frames = SubResource("SpriteFrames_f6hsj")

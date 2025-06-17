@@ -60,14 +60,8 @@ func _physics_process(delta: float) -> void:
 		if !has_started:
 			has_started = true
 			started_timer()
-		if direction < 0 : 
-			$AnimatedSprite2D.flip_h = false
-			animation_player.play("move")
-			velocity.x = direction * SPEED
-		else : 
-			$AnimatedSprite2D.flip_h = true
-			animation_player.play("move")
-			velocity.x = direction * SPEED
+			
+		move(direction)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
@@ -75,8 +69,16 @@ func _physics_process(delta: float) -> void:
 	
 	tile_collision()
 	
+	
+func move(direction) -> void : 
+	
+	$AnimatedSprite2D.flip_h = direction > 0
+	animation_player.play("move")
+	velocity.x = direction * SPEED
+	
 func started_timer():
-	CentralSignal.play_movement.emit()
+	if !LevelTimeManager.is_running:
+		CentralSignal.player_is_movement.emit()
 
 
 func on_double_jump():
@@ -96,7 +98,6 @@ func tile_collision():
 			if tile_data and tile_data.get_custom_data("es_pincho"):
 				ControlUi.reset_level()
 
-
 func can_jump():
 	if is_jumping and double_jump  : 
 		double_jump = false 
@@ -104,18 +105,22 @@ func can_jump():
 		return true
 	if is_on_floor() and !is_jumping  : return true
 	elif !is_jumping and !coyote_timer.is_stopped() : return  true 
-	 
+ 
 func _change_scene():
-	get_tree().change_scene_to_file("res://UI/Level Transition/transition_level.tscn")
+	LevelManager._get_to_transition()
 
 func _on_double_jump_timer_timeout() -> void:
 	double_jump = false 
 	pass # Replace with function body.
-	
 
 func _on_area_2d_body_entered(body):
 	if body is MainCharacter:
 		if !body.ID == ID: 
-			CentralSignal.increment_level.emit()
-			CentralSignal.pause_movement.emit()
 			call_deferred("_change_scene")
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		GameSession.add_attempt()
+		LevelManager.restart_level()
+		LevelTimeManager.reset_level_timer()

@@ -11,13 +11,13 @@ const BUS = {
 	MUSIC = "Music",
 	SFX = "SFX",
 }
-const INIT_VALUE : float = 0.6
+const INIT_VALUE : float = 0.0
 func _ready():
 	# Verifica si todos los buses requeridos existen
-	for name in BUS.values():
-		if not bus_exists(name):
-			push_warning("Audio bus '%s' no existe." % name)
-		else : set_volume(name,INIT_VALUE)
+	for bus_name in BUS.values():
+		if not bus_exists(bus_name):
+			push_warning("Audio bus '%s' no existe." % bus_name)
+		else : set_volume(bus_name,INIT_VALUE)
 			
 
 # Verifica si existe un bus por nombre
@@ -54,8 +54,8 @@ func is_bus_muted(bus_name: String) -> bool:
 func mute_all_buses(except_buses: Array = []) -> void:
 	var count = AudioServer.get_bus_count()
 	for i in range(count):
-		var name = AudioServer.get_bus_name(i)
-		if name in except_buses:
+		var bus_name = AudioServer.get_bus_name(i)
+		if bus_name in except_buses:
 			continue
 		AudioServer.set_bus_mute(i, true)
 

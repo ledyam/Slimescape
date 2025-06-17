@@ -1,0 +1,170 @@
+{
+	"categories": [
+		{
+			"uuid": "41293889-59ae-45f9-ae74-f527052e6c7b",
+			"title": "Level Design",
+			"color": "0034ff"
+		},
+		{
+			"uuid": "baedbdb9-0422-4c09-84dd-c8412048ef83",
+			"title": "Critic Bug",
+			"color": "f00e0e"
+		},
+		{
+			"uuid": "367564b0-a948-4936-855b-f728cc0af020",
+			"title": "New System",
+			"color": "00f40a"
+		},
+		{
+			"uuid": "0d798815-cfe7-4149-911d-18bb7f780c54",
+			"title": "UI / UX",
+			"color": "dd7920"
+		},
+		{
+			"uuid": "29ded3cc-03fc-4a15-99b0-237945abe81e",
+			"title": "Assets",
+			"color": "d3d025"
+		},
+		{
+			"uuid": "5c99c26d-d3b6-4829-a613-6fd8eba9744b",
+			"title": "Script Refactor",
+			"color": "bd152d"
+		},
+		{
+			"uuid": "f5cd2f9e-ab32-4c92-b38b-3483c7319234",
+			"title": "Script Update",
+			"color": "dd005d"
+		},
+		{
+			"uuid": "29551367-9d36-4ab9-aa60-45a91d1a59e5",
+			"title": "Upgrade System",
+			"color": "b118c9"
+		},
+		{
+			"uuid": "f53d4e03-333d-4315-95e2-5b949b453d19",
+			"title": "Refactor ",
+			"color": "f62525"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "45481342-77d6-48eb-a861-ed2e06347ea4",
+			"title": "BackLog",
+			"tasks": []
+		},
+		{
+			"uuid": "c549a139-abfe-42bd-8fb9-ff1fe6121303",
+			"title": "To-Do",
+			"tasks": [
+				"2c9d6822-5096-4a08-be0f-1a3129eef680",
+				"7936ad99-da15-42c9-ac98-83889d2d05b9"
+			]
+		},
+		{
+			"uuid": "810e7fab-7cc4-45eb-8664-fc3d79b05959",
+			"title": "In Progress",
+			"tasks": [
+				"af732b72-eb0d-4c41-ac66-ae2cd83f3b16"
+			]
+		},
+		{
+			"uuid": "a285691b-a931-48cc-b549-e185f7f5f4f7",
+			"title": "Testing",
+			"tasks": []
+		},
+		{
+			"uuid": "246e8c62-985f-4892-ae01-f70dd1abef21",
+			"title": "Done",
+			"tasks": [
+				"2e793f46-eafb-4483-939f-52e6b858e1fd",
+				"3710f087-5bf3-4c77-ad69-c331a8a9daba",
+				"0342f943-e056-4290-b23e-96bd352a7399"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "58ef546a-371d-44e3-8225-a20924e9c67c",
+			"title": "New task",
+			"description": "",
+			"category": "41293889-59ae-45f9-ae74-f527052e6c7b",
+			"steps": []
+		},
+		{
+			"uuid": "af732b72-eb0d-4c41-ac66-ae2cd83f3b16",
+			"title": "Corregir HUD",
+			"description": "",
+			"category": "0d798815-cfe7-4149-911d-18bb7f780c54",
+			"steps": [
+				{
+					"details": "Crear Animación de Reinicio de nivel -> Manual y Por Tiempo",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "0342f943-e056-4290-b23e-96bd352a7399",
+			"title": "Revisar Script de Transition Level ",
+			"description": "",
+			"category": "5c99c26d-d3b6-4829-a613-6fd8eba9744b",
+			"steps": [
+				{
+					"details": "Refactorización General",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "7936ad99-da15-42c9-ac98-83889d2d05b9",
+			"title": "Revisar Player ",
+			"description": "",
+			"category": "f5cd2f9e-ab32-4c92-b38b-3483c7319234",
+			"steps": []
+		},
+		{
+			"uuid": "2c9d6822-5096-4a08-be0f-1a3129eef680",
+			"title": "Revisar Niveles Hechos",
+			"description": "",
+			"category": "41293889-59ae-45f9-ae74-f527052e6c7b",
+			"steps": [
+				{
+					"details": "Arreglar afectación en niveles por cambios mayores de código",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "2e793f46-eafb-4483-939f-52e6b858e1fd",
+			"title": "Sistema de Menú de Opciones Básico",
+			"description": "",
+			"category": "367564b0-a948-4936-855b-f728cc0af020",
+			"steps": []
+		},
+		{
+			"uuid": "3710f087-5bf3-4c77-ad69-c331a8a9daba",
+			"title": "Corregir Inicio doble del Tiempo por Personajes",
+			"description": "",
+			"category": "baedbdb9-0422-4c09-84dd-c8412048ef83",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"45481342-77d6-48eb-a861-ed2e06347ea4"
+			],
+			[
+				"c549a139-abfe-42bd-8fb9-ff1fe6121303"
+			],
+			[
+				"810e7fab-7cc4-45eb-8664-fc3d79b05959"
+			],
+			[
+				"a285691b-a931-48cc-b549-e185f7f5f4f7"
+			],
+			[
+				"246e8c62-985f-4892-ae01-f70dd1abef21"
+			]
+		]
+	}
+}
