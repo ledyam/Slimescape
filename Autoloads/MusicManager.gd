@@ -1,19 +1,19 @@
 extends Node
-class_name MusicManager
+class_name MusicManagerClass
 
 ## Volumen por defecto de la música (en dB)
 const DEFAULT_VOLUME: float = -10.0
-
+var AUDIO_BUS : String = "Music"
 @onready var audio_player: AudioStreamPlayer = AudioStreamPlayer.new()
 var current_music_path: String = ""
+
 
 func _ready() -> void:
 	# Configuración inicial del reproductor
 	add_child(audio_player)
-	audio_player.bus = "Music"
+	audio_player.bus = AUDIO_BUS
 	audio_player.volume_db = DEFAULT_VOLUME
 	audio_player.process_mode = Node.PROCESS_MODE_ALWAYS  # Funciona incluso en pausa
-
 ## Reproduce una música en loop
 func play_music(music_path: String, fade_duration: float = 0.0) -> void:
 	if current_music_path == music_path and audio_player.playing:
@@ -67,3 +67,7 @@ func set_volume(db: float) -> void:
 ## Pausa/reanuda la música
 func set_paused(paused: bool) -> void:
 	audio_player.stream_paused = paused
+
+
+func is_paused() -> bool : 
+	return audio_player.stream_paused
