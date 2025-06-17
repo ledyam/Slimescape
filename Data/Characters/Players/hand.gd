@@ -2,6 +2,14 @@ extends CharacterBody2D
 
 class_name MainCharacter
 
+@export_enum("RED", "BLUE") var ID : int 
+
+@export var input_map : Dictionary = {
+	JUMP = "W",
+	LEFT = "A",
+	RIGHT = "D"
+}
+
 const SPEED = 140.0
 const JUMP_VELOCITY = -350.0
 var leaved_floor : bool = false 
@@ -9,10 +17,14 @@ var is_jumping : bool = false
 var has_started : bool = false  
 var double_jump : bool = false 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var coyote_timer: Timer = $coyote_timer
+@onready var coyote_timer: Timer = $Timers/CoyoteTimer
 
 
 func _ready() -> void:
+	if ID == 0 : 
+		$AnimatedSprite2D.sprite_frames = load("res://Data/Resources/Character/AnimatedSprites/red_slime.tres")
+	else :
+		$AnimatedSprite2D.sprite_frames = load("res://Data/Resources/Character/AnimatedSprites/blue_slime.tres")
 	CentralSignal.double_jump.connect(on_double_jump)
 	
 func _physics_process(delta: float) -> void:
@@ -31,9 +43,8 @@ func _physics_process(delta: float) -> void:
 		
 
 	# Handle jump.
-	if Input.is_action_just_pressed("W") and can_jump():
-		
-		$"Sound/Cartoon-jump-6462".play()
+	if Input.is_action_just_pressed(input_map.JUMP) and can_jump():
+		$"Sound/Jump".play()
 		if !has_started:
 			has_started = true
 			started_timer()
@@ -44,18 +55,18 @@ func _physics_process(delta: float) -> void:
 		coyote_timer.stop()
 
 
-	var direction := Input.get_axis("A", "D")
+	var direction := Input.get_axis(input_map.LEFT, input_map.RIGHT)
 	if direction:
 		if !has_started:
 			has_started = true
 			started_timer()
 		if direction < 0 : 
 			$AnimatedSprite2D.flip_h = false
-			animation_player.play("move_left")
+			animation_player.play("move")
 			velocity.x = direction * SPEED
 		else : 
 			$AnimatedSprite2D.flip_h = true
-			animation_player.play("move_left")
+			animation_player.play("move")
 			velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -104,6 +115,7 @@ func _on_double_jump_timer_timeout() -> void:
 
 func _on_area_2d_body_entered(body):
 	if body is MainCharacter:
-		CentralSignal.increment_level.emit()
-		CentralSignal.pause_movement.emit()
-		call_deferred("_change_scene")
+		if !body.ID == ID: 
+			CentralSignal.increment_level.emit()
+			CentralSignal.pause_movement.emit()
+			call_deferred("_change_scene")
