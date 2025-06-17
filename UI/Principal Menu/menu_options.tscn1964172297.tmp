@@ -1,0 +1,140 @@
+[gd_scene load_steps=6 format=3 uid="uid://duqr2sbbuoytj"]
+
+[ext_resource type="Script" uid="uid://bbyix4jc5wrsc" path="res://UI/Principal Menu/menu_options.gd" id="1_vrvnh"]
+[ext_resource type="Texture2D" uid="uid://bqbbvbdbc45qa" path="res://Assets/GUI.png" id="1_worg6"]
+[ext_resource type="Script" uid="uid://b15gu5hdpxfvy" path="res://addons/simple-gui-transitions/transition.gd" id="4_jdue7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y815"]
+atlas = ExtResource("1_worg6")
+region = Rect2(2, 34, 44, 44)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vrvnh"]
+font_size = 30
+
+[node name="MenuOptions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrvnh")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -55.0
+offset_right = 185.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_1y815")
+patch_margin_left = 8
+patch_margin_top = 7
+patch_margin_right = 8
+patch_margin_bottom = 7
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="OptionsSectionLabel" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 46.0
+grow_horizontal = 2
+text = "Opciones"
+label_settings = SubResource("LabelSettings_vrvnh")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
+layout_mode = 2
+offset_left = 30.0
+offset_top = 46.0
+offset_right = 340.0
+offset_bottom = 170.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MusicContainer" type="HBoxContainer" parent="NinePatchRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="MusicLabel" type="Label" parent="NinePatchRect/ScrollContainer/VBoxContainer/MusicContainer"]
+layout_mode = 2
+text = "Música : "
+
+[node name="MusicSlider" type="HSlider" parent="NinePatchRect/ScrollContainer/VBoxContainer/MusicContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -80.0
+max_value = 0.6
+value = 0.6
+
+[node name="SoundContainer" type="HBoxContainer" parent="NinePatchRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="SFXdLabel" type="Label" parent="NinePatchRect/ScrollContainer/VBoxContainer/SoundContainer"]
+layout_mode = 2
+text = "Sonido :"
+
+[node name="SFXHSlider" type="HSlider" parent="NinePatchRect/ScrollContainer/VBoxContainer/SoundContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -80.0
+max_value = 0.6
+value = 0.6
+
+[node name="ScreenContainer" type="HBoxContainer" parent="NinePatchRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="ScreenLabel" type="Label" parent="NinePatchRect/ScrollContainer/VBoxContainer/ScreenContainer"]
+layout_mode = 2
+text = "Modo de Pantalla :"
+
+[node name="ScreenModeButton" type="MenuBar" parent="NinePatchRect/ScrollContainer/VBoxContainer/ScreenContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 14
+
+[node name="ScreenMenuSelecction" type="PopupMenu" parent="NinePatchRect/ScrollContainer/VBoxContainer/ScreenContainer/ScreenModeButton"]
+title = "Selecciona una Resolución"
+item_count = 3
+item_0/text = "FULLSCREEN"
+item_0/id = 0
+item_1/text = "WINDOWED"
+item_1/id = 1
+item_2/text = "MAXIMIZED"
+item_2/id = 2
+
+[node name="GuiTransition" type="Node" parent="."]
+script = ExtResource("4_jdue7")
+animation_enter = 1
+animation_leave = 1
+transition_type = "LINEAR"
+ease_type = "IN_OUT"
+layout = NodePath("..")
+metadata/_custom_type_script = "uid://b15gu5hdpxfvy"
+
+[connection signal="value_changed" from="NinePatchRect/ScrollContainer/VBoxContainer/MusicContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="NinePatchRect/ScrollContainer/VBoxContainer/SoundContainer/SFXHSlider" to="." method="_on_sound_h_slider_value_changed"]
