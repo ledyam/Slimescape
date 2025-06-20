@@ -27,7 +27,7 @@ func _on_iniciar_pressed() -> void:
 	ControlUi.show()
 	ControlUi.canvas_layer.show()
 	PausableMenu.process_mode =Node.PROCESS_MODE_ALWAYS
-	get_tree().change_scene_to_file("res://Data/Levels/level_1.tscn")
+	get_tree().change_scene_to_file("res://Data/Levels/level_tutorial.tscn")
 
 
 func _on_sound_pressed() -> void:

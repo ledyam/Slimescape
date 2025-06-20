@@ -80,3 +80,4 @@ vertical_alignment = 1
 
 [node name="Tik-Tak" type="AudioStreamPlayer" parent="Sound"]
 stream = ExtResource("3_wp8pr")
+bus = &"UI"

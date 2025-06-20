@@ -34,15 +34,14 @@ func _physics_process(delta: float) -> void:
 		is_jumping = false 
 		leaved_floor = false 
 		
-		
 	if not is_on_floor():
 		if not leaved_floor and coyote_timer.is_stopped(): 
 			leaved_floor = true
 			coyote_timer.start()
+			
 		velocity += get_gravity() * delta
 		
 
-	# Handle jump.
 	if Input.is_action_just_pressed(input_map.JUMP) and can_jump():
 		$"Sound/Jump".play()
 		if !has_started:
@@ -68,8 +67,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	tile_collision()
-	
-	
 func move(direction) -> void : 
 	
 	$AnimatedSprite2D.flip_h = direction > 0

@@ -47,7 +47,6 @@ func animate_level_change():
 	transition_to_next_level()
 
 func transition_to_next_level():
-	
 	# Fade out suave antes de cargar
 	var exit_tween = create_tween()
 	exit_tween.tween_property(self, "modulate:a", 0, 0.3)
