@@ -6,18 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://dhehq44lrf35w" path="res://UI/Timers/timer_bar.tscn" id="3_fl0mb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds52d"]
-bg_color = Color(0.0941176, 0.14902, 0.211765, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+bg_color = Color(0.0941176, 0.0784314, 0.145098, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ry7jt"]
-bg_color = Color(0.0941176, 0.14902, 0.211765, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+bg_color = Color(0.0941176, 0.0784314, 0.145098, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="Animation" id="Animation_ds52d"]
 length = 0.001
@@ -34,9 +34,9 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_naqsb"]
+[sub_resource type="Animation" id="Animation_fl0mb"]
 length = 6.0
-loop_mode = 2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -44,10 +44,10 @@ tracks/0/path = NodePath("../AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 0.2, 0.433333, 0.6, 0.833333, 2.5, 2.76667, 3.03333, 3.30645, 3.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 1, 1.5, 2.86667, 3.53333, 4.16667, 4.73333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 4, 4, 2, 1, 0]
+"values": [0, 1, 2, 3, 4, 4, 2, 1, 0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -68,63 +68,64 @@ tracks/2/path = NodePath("../AnimatedSprite2D:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.22, 1.8, 2.5, 4.1, 5.06667, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.64333, 2.15333, 2.63333, 5.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.5708, 3.14159, 3.14159, 4.71239, 6.28319]
+"values": [0.0, 0.0, 1.5708, 3.14159, 3.14159]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l8jcl"]
 _data = {
 &"RESET": SubResource("Animation_ds52d"),
-&"default": SubResource("Animation_naqsb")
+&"default": SubResource("Animation_fl0mb")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lwrcn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlx8j"]
 atlas = ExtResource("2_thus8")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l8jcl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vox2"]
 atlas = ExtResource("2_thus8")
-region = Rect2(0, 16, 16, 16)
+region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h70h6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nvod"]
 atlas = ExtResource("2_thus8")
-region = Rect2(0, 32, 16, 16)
+region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q26xt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nph4"]
 atlas = ExtResource("2_thus8")
-region = Rect2(0, 48, 16, 16)
+region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_alq8y"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwe7k"]
 atlas = ExtResource("2_thus8")
-region = Rect2(0, 64, 16, 16)
+region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f6hsj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lwrcn")
+"texture": SubResource("AtlasTexture_rlx8j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l8jcl")
+"texture": SubResource("AtlasTexture_3vox2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h70h6")
+"texture": SubResource("AtlasTexture_8nvod")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q26xt")
+"texture": SubResource("AtlasTexture_6nph4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_alq8y")
+"texture": SubResource("AtlasTexture_jwe7k")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [node name="HUD" type="CanvasLayer"]
 layer = 2
+visible = false
 script = ExtResource("1_od8do")
 
 [node name="TransitionRect" type="ColorRect" parent="."]
@@ -218,9 +219,9 @@ label_settings = ExtResource("3_7g137")
 
 [node name="TimerBar" parent="HUDContanier" instance=ExtResource("3_fl0mb")]
 layout_mode = 1
-offset_left = 3.0
+offset_left = 4.0
 offset_top = -11.0
-offset_right = 146.0
+offset_right = 147.0
 offset_bottom = 2.0
 rotation = 3.14159
 
@@ -239,5 +240,5 @@ libraries = {
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(323, 342)
-scale = Vector2(1.375, 1.375)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_f6hsj")

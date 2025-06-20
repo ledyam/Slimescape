@@ -6,6 +6,7 @@ const MOVE_DISTANCE: float = 50.0
 const ANIM_DURATION: float = 0.75
 
 func _ready() -> void:
+	HUD.hide()
 	current_level_label.text = str(LevelManager.current_level_index)
 	$"Sound/Tik-Tak".play()
 	animate_level_change()
