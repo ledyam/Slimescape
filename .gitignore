@@ -2,7 +2,7 @@
 .godot/
 /android/
 
-.godot/
-/Test
+/Test/
 
 .addons/kanban_tasks
+.kanban
