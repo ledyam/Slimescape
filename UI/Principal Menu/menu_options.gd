@@ -41,3 +41,8 @@ func _on_sound_h_slider_value_changed(value: float) -> void:
 func _on_music_slider_value_changed(value: float) -> void:
 	if AudioManager.bus_exists("Music"):
 		AudioManager.set_volume("Music",value)
+
+
+func _on_return_menu_pressed() -> void:
+	GuiTransitions.hide(self.name)
+	pass # Replace with function body.

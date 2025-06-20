@@ -58,6 +58,5 @@ func _on_telegram_pressed() -> void:
 
 
 func _on_opciones_pressed() -> void:
-	$CanvasLayer/VBoxContainer.hide()
 	GuiTransitions.show("MenuOptions")
 	pass # Replace with function body.

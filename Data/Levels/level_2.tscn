@@ -81,6 +81,8 @@ tile_set = SubResource("TileSet_dkpxw")
 
 [node name="LeftHand" parent="." index="4"]
 position = Vector2(32.7212, 34.3559)
+ID = 1
 
 [node name="RightHand" parent="." index="5"]
 position = Vector2(612.662, 38.0814)
+ID = 0

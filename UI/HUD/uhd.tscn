@@ -125,7 +125,6 @@ animations = [{
 
 [node name="HUD" type="CanvasLayer"]
 layer = 2
-visible = false
 script = ExtResource("1_od8do")
 
 [node name="TransitionRect" type="ColorRect" parent="."]
@@ -143,22 +142,26 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="AttemptPanel" type="Panel" parent="HUDContanier"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HUDContanier"]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -109.0
-offset_top = -25.0
-offset_right = -18.0
-offset_bottom = -6.0
-grow_horizontal = 0
+offset_left = -255.0
+offset_top = -24.0
+offset_right = 257.0
+offset_bottom = -12.0
+grow_horizontal = 2
 grow_vertical = 0
+
+[node name="AttemptPanel" type="Panel" parent="HUDContanier/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ds52d")
 
-[node name="AttemptLabel" type="Label" parent="HUDContanier/AttemptPanel"]
+[node name="AttemptLabel" type="Label" parent="HUDContanier/HBoxContainer/AttemptPanel"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -166,28 +169,41 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -38.5
-offset_top = -7.5
-offset_right = 39.5
-offset_bottom = 9.5
+offset_left = -39.0
+offset_top = -8.5
+offset_right = 39.0
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "0"
 label_settings = ExtResource("3_7g137")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LevelPanel" type="Panel" parent="HUDContanier"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 40.0
-offset_top = -24.0
-offset_right = 131.0
-offset_bottom = -8.0
-grow_vertical = 0
+[node name="HBoxContainer" type="HBoxContainer" parent="HUDContanier/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_constants/separation = -1
+alignment = 1
+
+[node name="TimerBar" parent="HUDContanier/HBoxContainer/HBoxContainer" instance=ExtResource("3_fl0mb")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ProgressBar" parent="HUDContanier/HBoxContainer/HBoxContainer/TimerBar" index="0"]
+fill_mode = 1
+
+[node name="TimerBar2" parent="HUDContanier/HBoxContainer/HBoxContainer" instance=ExtResource("3_fl0mb")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelPanel" type="Panel" parent="HUDContanier/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ry7jt")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUDContanier/LevelPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HUDContanier/HBoxContainer/LevelPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -201,7 +217,7 @@ offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CurrentLevelLabel" type="Label" parent="HUDContanier/LevelPanel/HBoxContainer"]
+[node name="CurrentLevelLabel" type="Label" parent="HUDContanier/HBoxContainer/LevelPanel/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -209,28 +225,13 @@ size_flags_vertical = 1
 text = "0"
 label_settings = ExtResource("3_7g137")
 
-[node name="LevelMaxLabel2" type="Label" parent="HUDContanier/LevelPanel/HBoxContainer"]
+[node name="LevelMaxLabel2" type="Label" parent="HUDContanier/HBoxContainer/LevelPanel/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "/ 10"
 label_settings = ExtResource("3_7g137")
-
-[node name="TimerBar" parent="HUDContanier" instance=ExtResource("3_fl0mb")]
-layout_mode = 1
-offset_left = 4.0
-offset_top = -11.0
-offset_right = 147.0
-offset_bottom = 2.0
-rotation = 3.14159
-
-[node name="TimerBar2" parent="HUDContanier" instance=ExtResource("3_fl0mb")]
-layout_mode = 1
-offset_left = 4.0
-offset_top = -24.0
-offset_right = 147.0
-offset_bottom = -11.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../HUDContanier")
@@ -239,6 +240,9 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(323, 342)
-scale = Vector2(1.5, 1.5)
+position = Vector2(320, 342)
+scale = Vector2(1.35156, 1.22656)
 sprite_frames = SubResource("SpriteFrames_f6hsj")
+
+[editable path="HUDContanier/HBoxContainer/HBoxContainer/TimerBar"]
+[editable path="HUDContanier/HBoxContainer/HBoxContainer/TimerBar2"]

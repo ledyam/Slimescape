@@ -93,7 +93,7 @@ func tile_collision():
 			var tile_coords = tilemap.local_to_map(local_position)
 			var tile_data: TileData = tilemap.get_cell_tile_data( tile_coords)  # <-- Aquí agregamos el layer 0
 			if tile_data and tile_data.get_custom_data("es_pincho"):
-				ControlUi.reset_level()
+				LevelManager.restart_level()
 
 func can_jump():
 	if is_jumping and double_jump  : 

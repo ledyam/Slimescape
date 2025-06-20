@@ -43,7 +43,9 @@ func go_to_next_level():
 	if current_level_index >= level_paths.size():
 		print("¡Juego completado!")
 		return
+		
 	next_level_path = level_paths[current_level_index]
+	HUD.show()
 	get_tree().change_scene_to_file(level_paths[current_level_index])
 
 func restart_level():

@@ -41,6 +41,14 @@ patch_margin_bottom = 7
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
+[node name="ReturnMenu" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 48.0
+offset_bottom = 37.0
+text = "<--"
+
 [node name="OptionsSectionLabel" type="Label" parent="NinePatchRect"]
 layout_mode = 1
 anchors_preset = 5
@@ -138,5 +146,6 @@ ease_type = "IN_OUT"
 layout = NodePath("..")
 metadata/_custom_type_script = "uid://b15gu5hdpxfvy"
 
+[connection signal="pressed" from="NinePatchRect/ReturnMenu" to="." method="_on_return_menu_pressed"]
 [connection signal="value_changed" from="NinePatchRect/ScrollContainer/VBoxContainer/MusicContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="NinePatchRect/ScrollContainer/VBoxContainer/SoundContainer/SFXHSlider" to="." method="_on_sound_h_slider_value_changed"]
