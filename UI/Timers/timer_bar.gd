@@ -1,4 +1,4 @@
-extends Panel
+extends PanelContainer
 
 @onready var progress_bar: ProgressBar = $ProgressBar
 
