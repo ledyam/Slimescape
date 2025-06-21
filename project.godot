@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SlimeScape"
-run/main_scene="uid://ciwdvtk5yn12r"
+run/main_scene="uid://d1ahlqvroo52o"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://dao5qffpvd14u"
 
@@ -21,7 +21,7 @@ buses/default_bus_layout="res://Data/Resources/Sounds/Sound Bus/default_bus_layo
 
 [autoload]
 
-ControlUi="*res://UI/HUD/uhd.tscn"
+ControlUi="*res://UI/HUD/hud.tscn"
 CentralSignal="*res://Autoloads/CentralSignal.gd"
 PausableMenu="*res://UI/Pause Menu/pausable_menu.tscn"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
@@ -31,7 +31,7 @@ MusicManager="*res://Autoloads/MusicManager.gd"
 LevelManager="*res://Autoloads/LevelManager.gd"
 GameSession="*res://Autoloads/GameSession.gd"
 LevelTimeManager="*res://Autoloads/LevelTimeManager.gd"
-HUD="*res://UI/HUD/uhd.tscn"
+HUD="*res://UI/HUD/hud.tscn"
 
 [dialogic]
 

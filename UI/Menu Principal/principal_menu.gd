@@ -8,7 +8,7 @@ func _ready() -> void:
 	MusicManager.play_music("res://Assets/Sounds/principal_menu_audio.mp3")
 	PausableMenu.process_mode =Node.PROCESS_MODE_DISABLED
 	animation_player.play("oclution")
-	$VideoStreamPlayer.play()
+	%BackgroundVideo.play()
 	await animation_player.animation_finished
 	gui_transition._show()
 
@@ -19,8 +19,8 @@ func _on_salir_pressed() -> void:
 
 func _on_iniciar_pressed() -> void:
 	gui_transition._hide()
-	$VideoStreamPlayer.stream = load("res://Assets/Sounds/Init Game.ogv")
-	$VideoStreamPlayer.play()
+	%BackgroundVideo.stream = load("res://Assets/Videos/Init Game.ogv")
+	%BackgroundVideo.play()
 	animation_player.play("oclution_2")
 	await animation_player.animation_finished
 	PausableMenu.process_mode =Node.PROCESS_MODE_ALWAYS
