@@ -158,8 +158,8 @@ move_distance = Vector2(0, 80)
 position = Vector2(480, 111)
 move_distance = Vector2(0, -80)
 
-[node name="LeftHand" parent="." index="6"]
-position = Vector2(30, 333)
+[node name="RedPlayerRespawn" parent="." index="6"]
+position = Vector2(38.9482, 329.895)
 
-[node name="RightHand" parent="." index="7"]
-position = Vector2(629, 336)
+[node name="BluePlayerRespawn" parent="." index="7"]
+position = Vector2(616, 330)

@@ -180,8 +180,8 @@ texture = ExtResource("4_ekgag")
 position = Vector2(578, 128)
 texture = ExtResource("5_ex7vk")
 
-[node name="LeftHand" parent="." index="4"]
-position = Vector2(278, 153)
+[node name="RedPlayerRespawn" parent="." index="4"]
+position = Vector2(282, 146)
 
-[node name="RightHand" parent="." index="5"]
-position = Vector2(376, 148)
+[node name="BluePlayerRespawn" parent="." index="5"]
+position = Vector2(371, 146)

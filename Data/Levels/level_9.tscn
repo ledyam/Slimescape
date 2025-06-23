@@ -121,8 +121,8 @@ offset_right = 628.0
 scale = Vector2(1.04596, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="LeftHand" parent="." index="4"]
-position = Vector2(40.6882, 323.563)
+[node name="RedPlayerRespawn" parent="." index="4"]
+position = Vector2(44.8751, 329.088)
 
-[node name="RightHand" parent="." index="5"]
-position = Vector2(603.008, 325.165)
+[node name="BluePlayerRespawn" parent="." index="5"]
+position = Vector2(617.805, 331.721)
