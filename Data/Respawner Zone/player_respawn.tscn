@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://j4cey7tgttcd"]
+[gd_scene load_steps=2 format=3 uid="uid://j4cey7tgttcd"]
+
+[ext_resource type="Script" uid="uid://33c584oo5hl6" path="res://Data/Respawner Zone/player_respawn.gd" id="1_rihjx"]
 
 [node name="PlayerRespawn" type="Marker2D"]
+script = ExtResource("1_rihjx")
