@@ -18,6 +18,7 @@ var has_started : bool = false
 var double_jump : bool = false 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var coyote_timer: Timer = $Timers/CoyoteTimer
+@onready var double_jump_timer: Timer = $Timers/DoubleJumpTimer
 
 
 func _ready() -> void:
@@ -80,7 +81,7 @@ func started_timer():
 
 func on_double_jump():
 	double_jump = true
-	$DoubleJumpTimer.start()
+	double_jump_timer.start()
 	pass
 
 func tile_collision():
@@ -98,7 +99,7 @@ func tile_collision():
 func can_jump():
 	if is_jumping and double_jump  : 
 		double_jump = false 
-		$DoubleJumpTimer.stop()
+		double_jump_timer.stop()
 		return true
 	if is_on_floor() and !is_jumping  : return true
 	elif !is_jumping and !coyote_timer.is_stopped() : return  true 
@@ -118,6 +119,5 @@ func _on_area_2d_body_entered(body):
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
-		GameSession.add_attempt()
 		LevelManager.restart_level()
 		

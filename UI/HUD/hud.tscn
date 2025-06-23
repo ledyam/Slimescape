@@ -64,7 +64,6 @@ animations = [{
 
 [node name="HUD" type="CanvasLayer"]
 layer = 2
-visible = false
 script = ExtResource("1_od8do")
 
 [node name="TransitionRect" type="ColorRect" parent="."]
@@ -115,6 +114,7 @@ offset_right = 37.0
 offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "0"
 label_settings = ExtResource("3_7g137")
 horizontal_alignment = 1
 vertical_alignment = 1
