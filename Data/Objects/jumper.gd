@@ -20,7 +20,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		player_reference = body
 		if !is_active:
 			$AnimationPlayer.play("fetch")
-			CentralSignal.active_jumper.emit()
+			CentralSignal.emit_signal("active_jumper")
 			is_active = true
 			
 func on_active_jumper():
