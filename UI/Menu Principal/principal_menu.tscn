@@ -1,9 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://ciwdvtk5yn12r"]
+[gd_scene load_steps=31 format=3 uid="uid://ciwdvtk5yn12r"]
 
 [ext_resource type="Script" uid="uid://bx7jp71nnnyt6" path="res://UI/Menu Principal/principal_menu.gd" id="1_xaq4r"]
-[ext_resource type="VideoStream" uid="uid://cmvyeg68dgbkh" path="res://Assets/Sounds/My-Video-1.ogv" id="2_s4ewf"]
 [ext_resource type="Texture2D" uid="uid://c03fydu2mq1vg" path="res://Assets/Logos/Game Logo solo Design.png" id="3_s4ewf"]
-[ext_resource type="Theme" uid="uid://c8f8cf35u5tw8" path="res://UI/Themes/custom_theme.tres" id="4_7yhsr"]
 [ext_resource type="PackedScene" uid="uid://cy4tlif73jssx" path="res://UI/buttons/button_with_sound.tscn" id="4_82crm"]
 [ext_resource type="Script" uid="uid://b15gu5hdpxfvy" path="res://addons/simple-gui-transitions/transition.gd" id="5_5v1vu"]
 [ext_resource type="Texture2D" uid="uid://b4fe4cmythg37" path="res://Assets/icons/Lucid V1.2/PNG/Flat/16/Speaker-0.png" id="7_vvsx8"]
@@ -12,8 +10,16 @@
 [ext_resource type="Texture2D" uid="uid://bhgh2otjegapn" path="res://Assets/icons/App_Icons/Small (24x24) PNG/Discord.png" id="9_fbmrv"]
 [ext_resource type="Texture2D" uid="uid://b5v0k6fcml0k8" path="res://Assets/icons/App_Icons/Small (24x24) PNG/Telegram.png" id="10_fbmrv"]
 [ext_resource type="Texture2D" uid="uid://cueqgc005jlj7" path="res://Assets/icons/App_Icons/Small (24x24) PNG/PayPal.png" id="11_vvsx8"]
+[ext_resource type="Texture2D" uid="uid://dli3c1bcfhagr" path="res://Assets/Logos/ChatGPT Image 22 jun 2025, 06_05_39 p.m..png" id="13_rct5c"]
 [ext_resource type="PackedScene" uid="uid://duqr2sbbuoytj" path="res://UI/Principal Menu/menu_options.tscn" id="13_s4ewf"]
 [ext_resource type="AudioStream" uid="uid://cq2d78bc8qsia" path="res://Assets/Sounds/principal_menu_audio.mp3" id="14_b53i8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rct5c"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_4qscx"]
+Button/styles/normal = SubResource("StyleBoxFlat_rct5c")
+Button/styles/pressed = null
 
 [sub_resource type="LabelSettings" id="LabelSettings_7yhsr"]
 font_size = 12
@@ -59,7 +65,50 @@ Button/styles/hover = SubResource("StyleBoxFlat_x012q")
 Button/styles/normal = SubResource("StyleBoxFlat_ufk0p")
 Button/styles/pressed = SubResource("StyleBoxFlat_181kp")
 
-[sub_resource type="Animation" id="Animation_5v1vu"]
+[sub_resource type="Animation" id="Animation_rct5c"]
+resource_name = "fade_in"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/MainLogo:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/MainLogo:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.537255, 0.741176, 0.984314, 0), Color(0.537255, 0.741176, 0.984314, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4qscx"]
+resource_name = "fade_out"
+
+[sub_resource type="Animation" id="Animation_866uv"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -76,113 +125,33 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/VersionLabel:modulate")
+tracks/1/path = NodePath("CanvasLayer/MainLogo:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/Sound:modulate")
+tracks/2/path = NodePath("CanvasLayer/MainLogo:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_7yhsr"]
-resource_name = "oclution"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 4.93333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/VersionLabel:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 4.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/Sound:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 5.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_82crm"]
-resource_name = "oclution_2"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5.93333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/VersionLabel:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.0999999, 5.86667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/Sound:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 5.86667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(0.537255, 0.741176, 0.984314, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n3ypx"]
 _data = {
-&"RESET": SubResource("Animation_5v1vu"),
-&"oclution": SubResource("Animation_7yhsr"),
-&"oclution_2": SubResource("Animation_82crm")
+&"RESET": SubResource("Animation_866uv"),
+&"fade_in": SubResource("Animation_rct5c"),
+&"fade_out": SubResource("Animation_4qscx")
 }
 
 [node name="PrincipalMenu" type="Control"]
@@ -197,7 +166,6 @@ script = ExtResource("1_xaq4r")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -206,6 +174,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="MainLogo" type="TextureRect" parent="CanvasLayer"]
+visible = false
 modulate = Color(0.537255, 0.741176, 0.984314, 1)
 self_modulate = Color(0.635294, 0.811765, 1, 1)
 anchors_preset = 5
@@ -220,18 +189,19 @@ texture = ExtResource("3_s4ewf")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -27.5
-offset_right = 30.0
-offset_bottom = 89.5
+offset_left = -36.0
+offset_top = -47.0
+offset_right = 24.0
+offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_7yhsr")
+theme = SubResource("Theme_4qscx")
 theme_override_constants/separation = 21
 alignment = 1
 
@@ -314,10 +284,10 @@ offset_bottom = -6.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("8_ufk0p")
-region_rect = Rect2(2, 34, 38, 44)
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_bottom = 7
+region_rect = Rect2(92, 145, 68, 85)
+patch_margin_left = 16
+patch_margin_top = 13
+patch_margin_bottom = 15
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
@@ -328,14 +298,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.5
-offset_top = -11.5
-offset_right = 53.5
-offset_bottom = 12.5
+offset_left = -32.5
+offset_top = -7.5
+offset_right = 75.5
+offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.742762, 0.643935)
 theme = SubResource("Theme_181kp")
-theme_override_constants/separation = 11
+theme_override_constants/separation = 18
 alignment = 1
 
 [node name="Discord" type="Button" parent="CanvasLayer/SocialNetworksPanel/HBoxContainer"]
@@ -354,16 +325,11 @@ focus_mode = 0
 icon = ExtResource("11_vvsx8")
 
 [node name="MenuOptions" parent="CanvasLayer" instance=ExtResource("13_s4ewf")]
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stream = ExtResource("2_s4ewf")
-expand = true
+visible = false
+offset_left = -10.0
+offset_top = 41.0
+offset_right = -10.0
+offset_bottom = 41.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -374,6 +340,28 @@ libraries = {
 stream = ExtResource("14_b53i8")
 volume_db = 6.0
 bus = &"Music"
+
+[node name="BackgroundVideo" type="VideoStreamPlayer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+expand = true
+loop = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_rct5c")
+expand_mode = 1
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Inciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Opciones" to="." method="_on_opciones_pressed"]

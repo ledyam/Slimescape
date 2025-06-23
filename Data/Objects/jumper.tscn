@@ -139,7 +139,7 @@ animations = [{
 }]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_l78bg"]
-b = Vector2(19, 0)
+b = Vector2(20, 0)
 
 [sub_resource type="Animation" id="Animation_2l8ff"]
 length = 0.001
@@ -398,8 +398,8 @@ _data = {
 }
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_qbduj"]
-a = Vector2(-2, 0)
-b = Vector2(14, 0)
+a = Vector2(-1, 0)
+b = Vector2(16, 0)
 
 [node name="Jumper" type="StaticBody2D"]
 collision_layer = 4
@@ -407,7 +407,7 @@ script = ExtResource("1_qbduj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rlq3o")
-animation = &"push"
+animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-12, 2)

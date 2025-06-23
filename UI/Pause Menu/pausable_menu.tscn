@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgxqadk8df0em"]
+[gd_scene load_steps=5 format=3 uid="uid://dgxqadk8df0em"]
 
 [ext_resource type="Texture2D" uid="uid://bqbbvbdbc45qa" path="res://Assets/GUI.png" id="1_wbn63"]
 [ext_resource type="Script" uid="uid://chtnry3edpskt" path="res://UI/Pause Menu/pausable_menu.gd" id="1_xh5gb"]
-[ext_resource type="Theme" uid="uid://c8f8cf35u5tw8" path="res://UI/Themes/custom_theme.tres" id="2_mx2vx"]
 [ext_resource type="PackedScene" uid="uid://cy4tlif73jssx" path="res://UI/buttons/button_with_sound.tscn" id="4_n067c"]
 [ext_resource type="PackedScene" uid="uid://duqr2sbbuoytj" path="res://UI/Principal Menu/menu_options.tscn" id="5_55xsl"]
 
@@ -19,7 +18,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_mx2vx")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control"]
 layout_mode = 1
@@ -35,13 +33,11 @@ offset_bottom = 74.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_wbn63")
-region_rect = Rect2(2, 34, 44, 44)
+region_rect = Rect2(93, 146, 82, 83)
 patch_margin_left = 7
 patch_margin_top = 7
 patch_margin_right = 7
 patch_margin_bottom = 6
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect"]
 layout_mode = 1
@@ -56,7 +52,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 13
+theme_override_constants/separation = 8
 
 [node name="Continuar" parent="Control/NinePatchRect/VBoxContainer" instance=ExtResource("4_n067c")]
 layout_mode = 2
@@ -73,8 +69,10 @@ text = "Salir"
 [node name="MenuOptions" parent="Control" instance=ExtResource("5_55xsl")]
 visible = false
 layout_mode = 1
-offset_top = -40.0
-offset_bottom = -40.0
+offset_left = -3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 3.0
 
 [connection signal="pressed" from="Control/NinePatchRect/VBoxContainer/Continuar" to="." method="_on_button_continuar"]
 [connection signal="pressed" from="Control/NinePatchRect/VBoxContainer/Options" to="." method="_on_options_pressed"]

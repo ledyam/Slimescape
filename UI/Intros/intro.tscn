@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1ahlqvroo52o"]
 
-[ext_resource type="VideoStream" path="res://Assets/Videos/Intro_Developer_Team.ogv" id="1_ft0my"]
+[ext_resource type="VideoStream" uid="uid://bdv7tdd606ljp" path="res://Assets/Videos/Intro_Developer_Team.ogv" id="1_ft0my"]
 [ext_resource type="Script" uid="uid://dgxb2gag2tnkd" path="res://UI/Intros/intro.gd" id="2_iweix"]
 
 [node name="Intro" type="VideoStreamPlayer"]

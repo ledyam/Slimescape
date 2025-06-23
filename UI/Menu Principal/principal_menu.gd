@@ -7,7 +7,7 @@ extends Control
 func _ready() -> void:
 	MusicManager.play_music("res://Assets/Sounds/principal_menu_audio.mp3")
 	PausableMenu.process_mode =Node.PROCESS_MODE_DISABLED
-	animation_player.play("oclution")
+	animation_player.play("fade_in")
 	%BackgroundVideo.play()
 	await animation_player.animation_finished
 	gui_transition._show()
@@ -21,10 +21,11 @@ func _on_iniciar_pressed() -> void:
 	gui_transition._hide()
 	%BackgroundVideo.stream = load("res://Assets/Videos/Init Game.ogv")
 	%BackgroundVideo.play()
-	animation_player.play("oclution_2")
+	animation_player.play("fade_out")
 	await animation_player.animation_finished
 	PausableMenu.process_mode =Node.PROCESS_MODE_ALWAYS
 	HUD.show()
+	MusicManager._change_music(load("res://Assets/Sounds/timex27s-running-out-151012.ogg"))
 	get_tree().change_scene_to_file("res://Data/Levels/level_tutorial.tscn")
 
 
