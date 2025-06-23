@@ -49,6 +49,7 @@ func go_to_next_level():
 	get_tree().change_scene_to_file(level_paths[current_level_index])
 
 func restart_level():
+	LevelTimeManager.reset_level_timer()
 	get_tree().change_scene_to_file(level_paths[current_level_index])
 	
 func _get_to_transition():

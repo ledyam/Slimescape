@@ -75,7 +75,7 @@ func move(direction) -> void :
 	
 func started_timer():
 	if !LevelTimeManager.is_running:
-		CentralSignal.player_is_movement.emit()
+		CentralSignal.emit_signal("player_is_movement")
 
 
 func on_double_jump():
@@ -120,4 +120,4 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		GameSession.add_attempt()
 		LevelManager.restart_level()
-		LevelTimeManager.reset_level_timer()
+		
