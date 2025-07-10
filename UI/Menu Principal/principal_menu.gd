@@ -19,7 +19,7 @@ func _on_salir_pressed() -> void:
 
 func _on_iniciar_pressed() -> void:
 	gui_transition._hide()
-	%BackgroundVideo.stream = load("res://Assets/Videos/Init Game.ogv")
+	%BackgroundVideo.stream = load("res://Assets/Videos/InitGame.ogv")
 	%BackgroundVideo.play()
 	animation_player.play("fade_out")
 	await animation_player.animation_finished

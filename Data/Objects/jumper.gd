@@ -14,6 +14,14 @@ func _ready() -> void:
 	else :
 		$AnimationPlayer.play('down')
 
+func on_active_jumper():
+	if is_push and is_active:
+		$AnimationPlayer.play("push")
+
+func push_player():
+	if is_player_in:
+		player_reference.velocity.y += -500	
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D: 
 		is_player_in = true
@@ -22,19 +30,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			$AnimationPlayer.play("fetch")
 			CentralSignal.emit_signal("active_jumper")
 			is_active = true
-			
-func on_active_jumper():
-	if is_push and is_active:
-		$AnimationPlayer.play("push")
-		
-		
-		
-func push_player():
-	if is_player_in:
-		player_reference.velocity.y += -500
-	
-
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	is_player_in = false 
-	pass # Replace with function body.
+	if body is CharacterBody2D:
+		is_player_in = false 

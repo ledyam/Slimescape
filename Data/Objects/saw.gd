@@ -46,7 +46,7 @@ func _on_body_entered(body: Node2D):
 	if body is CharacterBody2D:
 		# En un juego real, aquí iría el sistema de daño al jugador
 		print("¡Jugador golpeado por la sierra!")
-		ControlUi.reset_level()  
+		LevelManager.restart_level() 
 		
 		
 	

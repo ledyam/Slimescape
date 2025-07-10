@@ -51,7 +51,7 @@ func go_to_next_level():
 func restart_level():
 	GameSession.add_attempt()
 	LevelTimeManager.reset_level_timer()
-	get_tree().change_scene_to_file(level_paths[current_level_index])
+	get_tree().call_deferred("change_scene_to_file",level_paths[current_level_index])
 	
 func _get_to_transition():
 	LevelTimeManager.reset_level_timer()
