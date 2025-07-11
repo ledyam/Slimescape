@@ -34,3 +34,5 @@ one_shot = true
 [node name="DoubleJumpTimer" type="Timer" parent="Timers"]
 wait_time = 2.0
 one_shot = true
+
+[connection signal="timeout" from="Timers/DoubleJumpTimer" to="." method="_on_double_jump_timer_timeout"]
