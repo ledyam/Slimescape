@@ -115,9 +115,3 @@ func _on_area_2d_body_entered(body):
 	if body is MainCharacter:
 		if !body.ID == ID: 
 			call_deferred("_change_scene")
-
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		LevelManager.restart_level()
-		

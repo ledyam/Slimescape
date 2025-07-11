@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://wfdg11x7ur7v" path="res://Assets/Sounds/cartoon-jump-6462.mp3" id="3_yc2cu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krfdj"]
-size = Vector2(24, 13)
+size = Vector2(24, 11)
 
 [node name="HandMain" type="CharacterBody2D"]
 z_index = 1
