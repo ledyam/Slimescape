@@ -59,3 +59,9 @@ func _get_to_transition():
 
 func get_time_level():
 	return level_time[current_level_index]
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		restart_level()
+		
