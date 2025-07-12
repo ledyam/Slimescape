@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpq0jjkqx38eo"]
+[gd_scene load_steps=5 format=3 uid="uid://cpq0jjkqx38eo"]
 
 [ext_resource type="Script" uid="uid://dx85212bxya46" path="res://Data/Characters/Players/hand.gd" id="1_hnbiw"]
+[ext_resource type="AudioStream" uid="uid://6mocsj6pf7js" path="res://Assets/Sounds/02_Heal_02.wav" id="3_hnbiw"]
 [ext_resource type="AudioStream" uid="uid://wfdg11x7ur7v" path="res://Assets/Sounds/cartoon-jump-6462.mp3" id="3_yc2cu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krfdj"]
@@ -24,6 +25,9 @@ debug_color = Color(0.622742, 0.0655712, 0.117887, 0.42)
 [node name="Jump" type="AudioStreamPlayer" parent="Sound"]
 stream = ExtResource("3_yc2cu")
 bus = &"SFX"
+
+[node name="Buff" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("3_hnbiw")
 
 [node name="Timers" type="Node" parent="."]
 

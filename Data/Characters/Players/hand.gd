@@ -16,6 +16,7 @@ var leaved_floor : bool = false
 var is_jumping : bool = false
 var has_started : bool = false  
 var double_jump : bool = false 
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var coyote_timer: Timer = $Timers/CoyoteTimer
 @onready var double_jump_timer: Timer = $Timers/DoubleJumpTimer
@@ -26,6 +27,7 @@ func _ready() -> void:
 		$AnimatedSprite2D.sprite_frames = load("res://Data/Resources/Character/AnimatedSprites/red_slime.tres")
 	else :
 		$AnimatedSprite2D.sprite_frames = load("res://Data/Resources/Character/AnimatedSprites/blue_slime.tres")
+	
 	CentralSignal.double_jump.connect(on_double_jump)
 	
 func _physics_process(delta: float) -> void:
@@ -79,9 +81,11 @@ func started_timer():
 		CentralSignal.emit_signal("player_is_movement")
 
 
-func on_double_jump():
-	double_jump = true
-	double_jump_timer.start()
+func on_double_jump(player_id : int ):
+	if player_id == ID:
+		double_jump = true
+		$Sound/Buff.play()
+		double_jump_timer.start()
 	pass
 
 func tile_collision():

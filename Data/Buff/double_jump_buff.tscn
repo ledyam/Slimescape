@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5yir4b2bqqlc"]
+[gd_scene load_steps=10 format=3 uid="uid://c5yir4b2bqqlc"]
 
 [ext_resource type="Texture2D" uid="uid://c1gilyr80l4cm" path="res://Assets/Arrow_Double_Jump.png" id="1_rc3vt"]
 [ext_resource type="Script" uid="uid://dpxxpedew4ojc" path="res://Data/Buff/double_jump_buff.gd" id="1_wmtg5"]
+[ext_resource type="AudioStream" uid="uid://6mocsj6pf7js" path="res://Assets/Sounds/02_Heal_02.wav" id="3_b6lbd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wmtg5"]
 atlas = ExtResource("1_rc3vt")
@@ -52,5 +53,10 @@ frame_progress = 0.015826
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_b6lbd")
+
+[node name="Sound" type="Node" parent="."]
+
+[node name="Buff" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("3_b6lbd")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

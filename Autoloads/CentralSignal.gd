@@ -1,4 +1,4 @@
 extends Node
 signal player_is_movement
 signal active_jumper
-signal double_jump
+signal double_jump(ID : int)

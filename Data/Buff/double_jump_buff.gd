@@ -5,7 +5,7 @@ func _ready() -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is CharacterBody2D: 
-		CentralSignal.double_jump.emit()
+	if body is MainCharacter: 
+		CentralSignal.double_jump.emit(body.ID)
 		queue_free()
 	pass # Replace with function body.
