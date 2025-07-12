@@ -16,21 +16,21 @@ tile_map_data = PackedByteArray("AAAAAAAAAAACAAEAAAABAAAAAAACAAEAAAACAAAAAAACAAE
 [node name="Obstacles" parent="Tiles/BaseTile" index="0"]
 tile_map_data = PackedByteArray("AAAGAAwAAAABAAoAAAAHAAwAAAACAAoAAAAIAAwAAAADAAoAAAABAAgAAAABAAoAAAACAAgAAAACAAoAAAADAAgAAAADAAoAAAAIAAYAAAABAAoAAAAJAAYAAAACAAoAAAAKAAYAAAADAAoAAAAAAAQAAAABAAoAAAABAAQAAAACAAoAAAACAAQAAAADAAoAAAAgABAAAAABAAoAAAAhABAAAAACAAoAAAAiABAAAAADAAoAAAAkAA4AAAABAAoAAAAlAA4AAAACAAoAAAAmAA4AAAADAAoAAAAkAAoAAAABAAoAAAAlAAoAAAACAAoAAAAmAAoAAAADAAoAAAAkAAYAAAABAAoAAAAlAAYAAAACAAoAAAAmAAYAAAADAAoAAAAkAAMAAAACAAoAAAAlAAMAAAACAAoAAAAmAAMAAAADAAoAAAAjAAMAAAACAAoAAAAiAAMAAAABAAoAAAAdABIAAAABAA4AAFAdABMAAAADAA4AAFAdABQAAAAEAA4AAFAGABMAAAAEAA4AAAAFABMAAAACAA4AAAAMABMAAAABAA4AAGAMABIAAAADAA4AAGAMABEAAAAEAA4AAGAMABAAAAABAA4AAGAMABQAAAAEAA4AAGAMAAkAAAAFAA4AAGAMAAoAAAABAA4AAGAMAAsAAAAGAA4AAGAMAAwAAAAGAA4AAGAMAA0AAAADAA4AAGAMAA4AAAAGAA4AAGAMAA8AAAACAA4AAGARAAsAAAAFAA4AAGARAAwAAAADAA4AAGARAA0AAAABAA4AAGARAA4AAAAEAA4AAGARAA8AAAAGAA4AAGAUAAsAAAAFAA4AAFAUAAwAAAAGAA4AAFAUAA0AAAAFAA4AAFAUAA4AAAAEAA4AAFAUAA8AAAAFAA4AAFAZAAoAAAAEAA4AAAAaAAoAAAAGAA4AAAAbAAoAAAADAA4AAAAcAAoAAAACAA4AAAAdAAoAAAAGAA4AAAAeAAoAAAAGAA4AAAAfAAoAAAABAA4AAAA=")
 
-[node name="RedSkull" parent="Interactable" index="0" instance=ExtResource("7_wyjt1")]
+[node name="RedSkullKey" parent="Interactable" index="0" instance=ExtResource("7_wyjt1")]
 position = Vector2(41, 56)
 texture = ExtResource("8_fwrns")
-door = NodePath("../DoorRed")
+door = NodePath("../RedDoor")
 
-[node name="BlueSkull" parent="Interactable" index="1" instance=ExtResource("7_wyjt1")]
+[node name="BlueSkullKey" parent="Interactable" index="1" instance=ExtResource("7_wyjt1")]
 position = Vector2(376, 226)
 texture = ExtResource("9_xllas")
-door = NodePath("../DoorBlue")
+door = NodePath("../BlueDoor")
 
-[node name="DoorBlue" parent="Interactable" index="2" instance=ExtResource("7_lt2y5")]
+[node name="BlueDoor" parent="Interactable" index="2" instance=ExtResource("7_lt2y5")]
 position = Vector2(319, 305)
 texture = ExtResource("9_xllas")
 
-[node name="DoorRed" parent="Interactable" index="3" instance=ExtResource("7_xllas")]
+[node name="RedDoor" parent="Interactable" index="3" instance=ExtResource("7_xllas")]
 position = Vector2(434, 58)
 rotation = 1.57079
 texture = ExtResource("8_fwrns")
