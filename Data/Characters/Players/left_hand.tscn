@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://80xbrmsmcgi2"]
 
 [ext_resource type="PackedScene" uid="uid://cpq0jjkqx38eo" path="res://Data/Characters/Players/hand.tscn" id="1_r7ld7"]
-[ext_resource type="SpriteFrames" uid="uid://dv5yi22qpdyhu" path="res://Data/Resources/Character/AnimatedSprites/blue_slime.tres" id="2_3a3ly"]
+[ext_resource type="SpriteFrames" uid="uid://4w7c4la807lq" path="res://Data/Resources/Character/AnimatedSprites/red_slime.tres" id="2_3a3ly"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3a3ly"]
 radius = 14.0357
@@ -99,13 +99,14 @@ _data = {
 [node name="LeftHand" instance=ExtResource("1_r7ld7")]
 
 [node name="BodyCollision" parent="." index="0"]
-position = Vector2(0, 6)
+position = Vector2(0, 6.25)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 scale = Vector2(1.5, 1.5)
 sprite_frames = ExtResource("2_3a3ly")
 animation = &"idle"
 autoplay = "idle"
+flip_h = true
 
 [node name="HitBox" type="Area2D" parent="." index="4"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dlbo5fy1tqi6t"]
 
 [ext_resource type="PackedScene" uid="uid://cpq0jjkqx38eo" path="res://Data/Characters/Players/hand.tscn" id="1_vh8bh"]
-[ext_resource type="SpriteFrames" uid="uid://4w7c4la807lq" path="res://Data/Resources/Character/AnimatedSprites/red_slime.tres" id="2_7j8kk"]
+[ext_resource type="SpriteFrames" uid="uid://dv5yi22qpdyhu" path="res://Data/Resources/Character/AnimatedSprites/blue_slime.tres" id="2_7j8kk"]
 
 [sub_resource type="Animation" id="Animation_7j8kk"]
 length = 2.0

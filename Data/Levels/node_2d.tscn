@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://d1gr425gux2om"]
+[gd_scene load_steps=5 format=4 uid="uid://dkassi7brrg0q"]
 
 [ext_resource type="Texture2D" uid="uid://dmdjfm1favu8w" path="res://Assets/CastleTiles.png" id="1_kbdb8"]
 [ext_resource type="PackedScene" uid="uid://j4cey7tgttcd" path="res://Data/Respawner Zone/player_respawn.tscn" id="2_nygmm"]
