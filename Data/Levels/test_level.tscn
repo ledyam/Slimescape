@@ -1,12 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy4vjdm0j3cpo"]
+[gd_scene load_steps=3 format=3 uid="uid://dy4vjdm0j3cpo"]
 
 [ext_resource type="PackedScene" uid="uid://c23n2lc118mxj" path="res://Data/Levels/generic_level.tscn" id="1_ot8m6"]
+[ext_resource type="PackedScene" uid="uid://c5yir4b2bqqlc" path="res://Data/Buff/double_jump_buff.tscn" id="2_03dyd"]
 
 [node name="generic_level" instance=ExtResource("1_ot8m6")]
 
 [node name="Camera2D" parent="." index="1"]
 position = Vector2(466, 225)
 zoom = Vector2(0.688, 0.8)
+
+[node name="RedPlayerRespawn" parent="PlayersPosition" index="0"]
+position = Vector2(89.3576, 305.799)
+
+[node name="BluePlayerRespawn" parent="PlayersPosition" index="1"]
+position = Vector2(417.682, 296.032)
+
+[node name="DoubleJumpBuff3" parent="PowerUps" index="0" instance=ExtResource("2_03dyd")]
+position = Vector2(599, 318)
+
+[node name="DoubleJumpBuff" parent="PowerUps" index="1" instance=ExtResource("2_03dyd")]
+position = Vector2(226.097, 317.82)
+
+[node name="DoubleJumpBuff2" parent="PowerUps" index="2" instance=ExtResource("2_03dyd")]
+position = Vector2(498, 318)
 
 [node name="ColorRect" parent="Shaders" index="0"]
 offset_right = 931.0

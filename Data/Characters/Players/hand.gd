@@ -10,7 +10,7 @@ class_name MainCharacter
 	RIGHT = "D"
 }
 
-const SPEED = 140.0
+@export var SPEED = 140.0
 const JUMP_VELOCITY = -350.0
 var leaved_floor : bool = false 
 var is_jumping : bool = false

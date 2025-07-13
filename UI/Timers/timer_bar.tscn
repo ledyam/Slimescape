@@ -1,26 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhehq44lrf35w"]
+[gd_scene load_steps=4 format=3 uid="uid://dhehq44lrf35w"]
 
 [ext_resource type="Script" uid="uid://dfr5qnk3cuecs" path="res://UI/Timers/timer_bar.gd" id="1_fe7li"]
+[ext_resource type="Shader" uid="uid://bdy1f55ti0ugq" path="res://UI/Shaders/timer.gdshader" id="2_fe7li"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yaohs"]
-bg_color = Color(0.0941176, 0.0784314, 0.145098, 1)
-corner_radius_top_left = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe7li"]
-bg_color = Color(0.811765, 0.698039, 0.0941176, 1)
-corner_radius_top_left = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3fso"]
-bg_color = Color(0.0941176, 0.0784314, 0.145098, 1)
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0v873"]
-bg_color = Color(0.811765, 0.698039, 0.0941176, 1)
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i3fso"]
+shader = ExtResource("2_fe7li")
+shader_parameter/progress = 1.0
+shader_parameter/fill_color = Color(0.94788, 0.827172, 0.0873602, 1)
+shader_parameter/empty_color = Color(0.1, 0.1, 0.1, 0.5)
+shader_parameter/enable_low_time_pulse = true
+shader_parameter/low_time_threshold = 0.2
+shader_parameter/pulse_speed = 5.0
+shader_parameter/pulse_color = Color(1, 0, 0, 0.7)
 
 [node name="TimerBar" type="HBoxContainer"]
 anchors_preset = 7
@@ -33,24 +24,13 @@ offset_top = -5.0
 offset_right = 72.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = -1
+theme_override_constants/separation = 21
 script = ExtResource("1_fe7li")
 
 [node name="ProgressTimeBar" type="ProgressBar" parent="."]
+material = SubResource("ShaderMaterial_i3fso")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_styles/background = SubResource("StyleBoxFlat_yaohs")
-theme_override_styles/fill = SubResource("StyleBoxFlat_fe7li")
-value = 100.0
-fill_mode = 1
-show_percentage = false
-
-[node name="ProgressTimeBar2" type="ProgressBar" parent="."]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_styles/background = SubResource("StyleBoxFlat_i3fso")
-theme_override_styles/fill = SubResource("StyleBoxFlat_0v873")
-value = 100.0
+localize_numeral_system = false
 show_percentage = false

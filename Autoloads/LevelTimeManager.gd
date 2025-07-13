@@ -1,7 +1,6 @@
 # LevelTimeManager.gd
 extends Node
 
-signal level_time_started(max_time)
 signal level_time_changed(time_left , max_level_time)
 signal level_time_ended
 signal level_time_reset
@@ -23,7 +22,6 @@ func start_level_time(duration: float):
 	max_level_time = duration
 	current_time = duration
 	is_running = true
-	emit_signal("level_time_started", max_level_time)
 
 func _process(delta):
 	if not is_running or get_tree().paused:

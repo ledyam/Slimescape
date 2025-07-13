@@ -36,15 +36,19 @@ HUD="*res://UI/HUD/hud.tscn"
 [dialogic]
 
 directories/dch_directory={
+"blue": "res://Dialogs/blue.dch",
+"red": "res://Dialogs/red.dch",
 "unit_test_character": "res://addons/dialogic-2.0-alpha-16/Tests/Resources/unit_test_character.dch"
 }
-directories/dtl_directory={}
+directories/dtl_directory={
+"Intro": "res://Dialogs/Intro.dtl"
+}
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://Dialogs/styles/custom_style.tres"]
+layout/default_style="res://Dialogs/styles/custom_style.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.01
+text/letter_speed=0.1
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
