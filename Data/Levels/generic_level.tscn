@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://c23n2lc118mxj"]
+[gd_scene load_steps=14 format=4 uid="uid://c23n2lc118mxj"]
 
 [ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Tiles/Dungeon Tile Set.png" id="1_xrjha"]
 [ext_resource type="TileSet" uid="uid://crgx7l6ohoamm" path="res://Data/Resources/Tiles/obstacles.tres" id="2_3ayg0"]
@@ -131,6 +131,24 @@ texture = ExtResource("1_xrjha")
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_lhd0x")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w1tct"]
+texture = ExtResource("1_xrjha")
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+4:12/size_in_atlas = Vector2i(3, 1)
+4:12/0 = 0
+3:12/0 = 0
+2:12/size_in_atlas = Vector2i(1, 2)
+2:12/0 = 0
+1:12/0 = 0
+4:13/size_in_atlas = Vector2i(3, 1)
+4:13/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cqn5r"]
+sources/0 = SubResource("TileSetAtlasSource_w1tct")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iq2b3"]
 shader = ExtResource("2_lhd0x")
 shader_parameter/color = Color(0, 0, 0, 1)
@@ -159,6 +177,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAACAAEAAAABAAAAAAACAAEAAAACAAAAAAACAAE
 tile_set = SubResource("TileSet_w1tct")
 
 [node name="FisicDecoration" type="TileMapLayer" parent="Tiles/BaseTile"]
+tile_set = SubResource("TileSet_cqn5r")
 
 [node name="Obstacles" type="TileMapLayer" parent="Tiles/BaseTile" groups=["obstacles"]]
 tile_set = ExtResource("2_3ayg0")

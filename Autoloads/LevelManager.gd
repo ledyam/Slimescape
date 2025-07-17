@@ -16,7 +16,8 @@ var level_paths := [
 	"res://Data/Levels/level_6.tscn",
 	"res://Data/Levels/level_7.tscn",
 	"res://Data/Levels/level_8.tscn",
-	"res://Data/Levels/level_9.tscn"
+	"res://Data/Levels/level_9.tscn",
+	"res://Data/Levels/level_10.tscn"
 ]
 var level_time :={
 	0 : 12,
@@ -29,6 +30,7 @@ var level_time :={
 	7 : 12,
 	8 : 12,
 	9 : 12,
+	10 : 12 
 
 }
 
