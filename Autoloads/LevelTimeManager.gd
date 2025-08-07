@@ -10,7 +10,7 @@ var max_level_time: float = 60.0
 var is_running: bool = false
 
 func _ready() -> void:
-	CentralSignal.connect("player_is_movement" , on_player_movement)
+	CentralSignal.connect("player_in_movement" , on_player_movement)
 	
 	
 func on_player_movement():

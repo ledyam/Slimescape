@@ -1,21 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpq0jjkqx38eo"]
+[gd_scene load_steps=6 format=3 uid="uid://cpq0jjkqx38eo"]
 
 [ext_resource type="Script" uid="uid://dx85212bxya46" path="res://Data/Characters/Players/hand.gd" id="1_hnbiw"]
 [ext_resource type="AudioStream" uid="uid://6mocsj6pf7js" path="res://Assets/Sounds/02_Heal_02.wav" id="3_hnbiw"]
 [ext_resource type="AudioStream" uid="uid://wfdg11x7ur7v" path="res://Assets/Sounds/cartoon-jump-6462.mp3" id="3_yc2cu"]
+[ext_resource type="Texture2D" uid="uid://cafvxxfjjeorr" path="res://Assets/pigment.png" id="4_whk8f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krfdj"]
-size = Vector2(24, 11.5)
+size = Vector2(15.3846, 11.1903)
 
 [node name="HandMain" type="CharacterBody2D"]
 z_index = 1
 collision_mask = 7
 script = ExtResource("1_hnbiw")
-SPEED = 200.0
+SPEED = 160.0
 metadata/_custom_type_script = "uid://dx85212bxya46"
 
 [node name="BodyCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
+position = Vector2(0, -4.625)
 shape = SubResource("RectangleShape2D_krfdj")
 debug_color = Color(0.622742, 0.0655712, 0.117887, 0.42)
 
@@ -39,5 +40,18 @@ one_shot = true
 [node name="DoubleJumpTimer" type="Timer" parent="Timers"]
 wait_time = 2.0
 one_shot = true
+
+[node name="JumpParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+texture = ExtResource("4_whk8f")
+lifetime = 0.14
+one_shot = true
+speed_scale = 0.3
+emission_shape = 4
+emission_points = PackedVector2Array(5, 0, -5, 0, 0, 0, 8, 0, -10, 0, 0, 0, 0, 0, 0, 0)
+emission_colors = PackedColorArray()
+particle_flag_align_y = true
+scale_amount_min = 1.5
+scale_amount_max = 2.0
 
 [connection signal="timeout" from="Timers/DoubleJumpTimer" to="." method="_on_double_jump_timer_timeout"]

@@ -3,7 +3,7 @@ class_name GameSessionClass
 
 signal attempt_change(new_attempts)
 var attempts: int = 0
-
+var is_game_on : bool = false 
 
 ### --- INTENTOS ---
 

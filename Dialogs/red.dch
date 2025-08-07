@@ -6,13 +6,13 @@
 &"custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
-"style": ""
+"style": "intro_style"
 },
 &"default_portrait": "",
 &"description": "",
-&"display_name": "Red",
+&"display_name": "Ember",
 &"mirror": false,
-&"nicknames": ["Redis"],
+&"nicknames": ["Ember"],
 &"offset": Vector2(0, 0),
 &"portraits": {},
 &"scale": 1.0

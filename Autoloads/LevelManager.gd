@@ -1,6 +1,7 @@
 extends Node
 
-signal level_changed(current_level_index ) 
+signal level_restarting
+signal level_changed (current_level_index ) 
 
 
 var current_level_index := 0
@@ -38,7 +39,7 @@ var next_level_path : String = ""
 
 func _ready() -> void:
 	LevelTimeManager.connect("level_time_ended",restart_level)
-	
+	HUD.connect("transition_finished", _on_hud_transition_finished)
 func go_to_next_level():
 	current_level_index += 1
 	level_changed.emit(current_level_index)
@@ -53,7 +54,10 @@ func go_to_next_level():
 func restart_level():
 	GameSession.add_attempt()
 	LevelTimeManager.reset_level_timer()
-	get_tree().call_deferred("change_scene_to_file",level_paths[current_level_index])
+	level_restarting.emit()
+	
+func _on_hud_transition_finished():
+	get_tree().change_scene_to_file(level_paths[current_level_index])
 	
 func _get_to_transition():
 	LevelTimeManager.reset_level_timer()
@@ -64,6 +68,7 @@ func get_time_level():
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		restart_level()
+	if GameSession.is_game_on:
+		if event.is_action_pressed("ui_accept"):
+			restart_level()
 		

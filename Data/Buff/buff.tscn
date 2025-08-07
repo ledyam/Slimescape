@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5yir4b2bqqlc"]
+
+[ext_resource type="Script" uid="uid://dpxxpedew4ojc" path="res://Data/Buff/buff.gd" id="1_wmtg5"]
+[ext_resource type="SpriteFrames" uid="uid://c6vo14wgkg420" path="res://Data/Resources/Buff/Animated Sprites/double_jump_buff.tres" id="2_b6lbd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b6lbd"]
+
+[node name="Buff" type="Node2D"]
+script = ExtResource("1_wmtg5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_b6lbd")
+frame_progress = 0.015826
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_b6lbd")
+
+[node name="Sound" type="Node" parent="."]
+
+[node name="Buff" type="AudioStreamPlayer" parent="Sound"]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

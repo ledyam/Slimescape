@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://hldlryo6ruik" path="res://Assets/icons/skull_01a.png" id="4_u65ur"]
 [ext_resource type="PackedScene" uid="uid://cfifsncne7dsj" path="res://Data/Objects/door.tscn" id="5_cyy38"]
 [ext_resource type="PackedScene" uid="uid://w3gaj2dokwg2" path="res://Data/Objects/large_door.tscn" id="6_hr7qr"]
-[ext_resource type="PackedScene" uid="uid://c5yir4b2bqqlc" path="res://Data/Buff/double_jump_buff.tscn" id="7_iai21"]
+[ext_resource type="PackedScene" uid="uid://c5yir4b2bqqlc" path="res://Data/Buff/buff.tscn" id="7_iai21"]
 
 [node name="generic_level4" instance=ExtResource("1_ojosj")]
 

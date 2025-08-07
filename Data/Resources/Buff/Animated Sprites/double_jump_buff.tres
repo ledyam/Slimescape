@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://c6vo14wgkg420"]
+
+[ext_resource type="Texture2D" uid="uid://c1gilyr80l4cm" path="res://Assets/Arrow_Double_Jump.png" id="1_cm511"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmtg5"]
+atlas = ExtResource("1_cm511")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6lbd"]
+atlas = ExtResource("1_cm511")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvh25"]
+atlas = ExtResource("1_cm511")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e80ui"]
+atlas = ExtResource("1_cm511")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmtg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6lbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvh25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e80ui")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
