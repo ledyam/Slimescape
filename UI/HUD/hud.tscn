@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5gs1uviawiuc"]
+[gd_scene load_steps=9 format=3 uid="uid://c5gs1uviawiuc"]
 
 [ext_resource type="Script" uid="uid://ccgvfwayvk2jj" path="res://UI/HUD/hud.gd" id="1_od8do"]
 [ext_resource type="Shader" uid="uid://qa4mrd77ndyn" path="res://UI/HUD/hud_level_transition.gdshader" id="2_radol"]
@@ -18,6 +18,13 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdh7y"]
+bg_color = Color(0.117647, 0.137255, 0.219608, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ry7jt"]
 bg_color = Color(0.117647, 0.137255, 0.219608, 1)
@@ -46,6 +53,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.00084, 1)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -59,7 +67,7 @@ anchor_bottom = 1.0
 offset_left = -255.0
 offset_top = -29.0
 offset_right = 257.0
-offset_bottom = -15.0
+offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -77,10 +85,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.5
-offset_top = -7.0
-offset_right = 36.5
-offset_bottom = 7.0
+offset_left = -38.5
+offset_top = -6.0
+offset_right = 38.5
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "0 "
@@ -88,9 +96,26 @@ label_settings = ExtResource("3_7g137")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TimerBar" parent="HUDContanier/HBoxContainer" instance=ExtResource("3_fl0mb")]
-unique_name_in_owner = true
+[node name="Panel" type="Panel" parent="HUDContanier/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qdh7y")
+
+[node name="TimerBar" parent="HUDContanier/HBoxContainer/Panel" instance=ExtResource("3_fl0mb")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -5.5
+offset_right = 0.0
+offset_bottom = 10.5
+grow_vertical = 2
+scale = Vector2(0.982313, 0.708043)
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.46
 
@@ -107,12 +132,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -17.0
+offset_left = -22.5
 offset_top = -7.0
-offset_right = 17.0
+offset_right = 22.5
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = -10
 
 [node name="CurrentLevelLabel" type="Label" parent="HUDContanier/HBoxContainer/LevelPanel/HBoxContainer"]
 unique_name_in_owner = true
@@ -131,3 +157,5 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "/ 10"
 label_settings = ExtResource("3_7g137")
+horizontal_alignment = 1
+vertical_alignment = 1

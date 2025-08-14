@@ -4,6 +4,7 @@ extends HBoxContainer
 @onready var progress_time_bar_2: ProgressBar = $ProgressTimeBar2
 
 
+
 const NORMALIZED_TIMER : int = 1 
 func _ready():
 	progress_time_bar.max_value = LevelManager.get_time_level()

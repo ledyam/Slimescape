@@ -31,7 +31,7 @@ func _process(delta):
 	current_time = max(0.0, current_time)
 	emit_signal("level_time_changed", current_time , max_level_time)
 	
-	if current_time <= 0.0:
+	if current_time <= 0.0  :
 		is_running = false
 		emit_signal("level_time_ended")
 

@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://c03fydu2mq1vg" path="res://Assets/Logos/Game Logo solo Design.png" id="3_s4ewf"]
 [ext_resource type="PackedScene" uid="uid://cy4tlif73jssx" path="res://UI/buttons/button_with_sound.tscn" id="4_82crm"]
 [ext_resource type="Script" uid="uid://b15gu5hdpxfvy" path="res://addons/simple-gui-transitions/transition.gd" id="5_5v1vu"]
+[ext_resource type="Texture2D" uid="uid://cx7ncu3egj2tf" path="res://Assets/Frame.png" id="7_rct5c"]
 [ext_resource type="Texture2D" uid="uid://b4fe4cmythg37" path="res://Assets/icons/Lucid V1.2/PNG/Flat/16/Speaker-0.png" id="7_vvsx8"]
-[ext_resource type="Texture2D" uid="uid://bqbbvbdbc45qa" path="res://Assets/GUI.png" id="8_ufk0p"]
 [ext_resource type="Texture2D" uid="uid://dyf5vhc5de5mq" path="res://Assets/icons/Lucid V1.2/PNG/Flat/16/Cursor-3.png" id="8_vvsx8"]
 [ext_resource type="Texture2D" uid="uid://bhgh2otjegapn" path="res://Assets/icons/App_Icons/Small (24x24) PNG/Discord.png" id="9_fbmrv"]
 [ext_resource type="Texture2D" uid="uid://b5v0k6fcml0k8" path="res://Assets/icons/App_Icons/Small (24x24) PNG/Telegram.png" id="10_fbmrv"]
-[ext_resource type="Texture2D" uid="uid://cueqgc005jlj7" path="res://Assets/icons/App_Icons/Small (24x24) PNG/PayPal.png" id="11_vvsx8"]
+[ext_resource type="Texture2D" uid="uid://bme7edmjsu0la" path="res://Assets/icons/App_Icons/Small (24x24) PNG/Itch io.png" id="11_4qscx"]
 [ext_resource type="VideoStream" uid="uid://c8ke7ewjxh1f7" path="res://Assets/Videos/MenuIntroLoop.ogv" id="13_rct5c"]
 [ext_resource type="PackedScene" uid="uid://duqr2sbbuoytj" path="res://UI/Principal Menu/menu_options.tscn" id="13_s4ewf"]
 [ext_resource type="AudioStream" uid="uid://cq2d78bc8qsia" path="res://Assets/Sounds/principal_menu_audio.mp3" id="14_b53i8"]
@@ -219,10 +219,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -47.0
-offset_right = 24.0
-offset_bottom = 70.0
+offset_left = -30.0
+offset_top = -58.0
+offset_right = 30.0
+offset_bottom = 59.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_4qscx")
@@ -261,7 +261,7 @@ offset_top = -16.0
 offset_right = 54.0
 offset_bottom = -3.0
 grow_vertical = 0
-text = "v1.0.0"
+text = "v  1. 0 . 0"
 label_settings = SubResource("LabelSettings_7yhsr")
 
 [node name="Sound" type="Button" parent="CanvasLayer"]
@@ -269,9 +269,9 @@ unique_name_in_owner = true
 anchors_preset = -1
 anchor_bottom = 0.008
 offset_left = 11.0
-offset_top = 9.0
+offset_top = 14.0
 offset_right = 35.0
-offset_bottom = 29.928
+offset_bottom = 34.928
 size_flags_horizontal = 3
 focus_mode = 0
 theme_override_styles/hover = SubResource("StyleBoxFlat_fbmrv")
@@ -297,20 +297,23 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1j08h")
 icon = ExtResource("8_vvsx8")
 
 [node name="SocialNetworksPanel" type="NinePatchRect" parent="CanvasLayer"]
+modulate = Color(0.850691, 1, 0.999784, 1)
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -113.0
-offset_top = -43.0
-offset_bottom = -6.0
+offset_left = -106.0
+offset_top = -41.0
+offset_right = -4.0
+offset_bottom = -4.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("8_ufk0p")
-region_rect = Rect2(92, 145, 68, 85)
-patch_margin_left = 16
-patch_margin_top = 13
+texture = ExtResource("7_rct5c")
+region_rect = Rect2(3, 3, 58, 74)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 13
 patch_margin_bottom = 15
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
@@ -322,31 +325,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.5
+offset_left = -39.0
 offset_top = -7.5
-offset_right = 75.5
+offset_right = 69.0
 offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.742762, 0.643935)
 theme = SubResource("Theme_181kp")
-theme_override_constants/separation = 18
 alignment = 1
 
-[node name="Discord" type="Button" parent="CanvasLayer/SocialNetworksPanel/HBoxContainer"]
+[node name="Discord" parent="CanvasLayer/SocialNetworksPanel/HBoxContainer" instance=ExtResource("4_82crm")]
 layout_mode = 2
-focus_mode = 0
 icon = ExtResource("9_fbmrv")
 
-[node name="Telegram" type="Button" parent="CanvasLayer/SocialNetworksPanel/HBoxContainer"]
+[node name="Telegram" parent="CanvasLayer/SocialNetworksPanel/HBoxContainer" instance=ExtResource("4_82crm")]
 layout_mode = 2
-focus_mode = 0
 icon = ExtResource("10_fbmrv")
 
-[node name="Paypal" type="Button" parent="CanvasLayer/SocialNetworksPanel/HBoxContainer"]
+[node name="Itchio" parent="CanvasLayer/SocialNetworksPanel/HBoxContainer" instance=ExtResource("4_82crm")]
 layout_mode = 2
-focus_mode = 0
-icon = ExtResource("11_vvsx8")
+icon = ExtResource("11_4qscx")
 
 [node name="MenuOptions" parent="CanvasLayer" instance=ExtResource("13_s4ewf")]
 visible = false
@@ -371,7 +370,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("13_rct5c")

@@ -1,14 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgxqadk8df0em"]
+[gd_scene load_steps=9 format=3 uid="uid://dgxqadk8df0em"]
 
-[ext_resource type="Texture2D" uid="uid://bqbbvbdbc45qa" path="res://Assets/GUI.png" id="1_wbn63"]
 [ext_resource type="Script" uid="uid://chtnry3edpskt" path="res://UI/Pause Menu/pausable_menu.gd" id="1_xh5gb"]
+[ext_resource type="Theme" uid="uid://bpa860c3t7k5b" path="res://UI/Pause Menu/pausable_menu.tres" id="2_dibm2"]
+[ext_resource type="Texture2D" uid="uid://cx7ncu3egj2tf" path="res://Assets/Frame.png" id="2_mjuw2"]
 [ext_resource type="PackedScene" uid="uid://cy4tlif73jssx" path="res://UI/buttons/button_with_sound.tscn" id="4_n067c"]
 [ext_resource type="PackedScene" uid="uid://duqr2sbbuoytj" path="res://UI/Principal Menu/menu_options.tscn" id="5_55xsl"]
+[ext_resource type="Texture2D" uid="uid://cdxoo8hm1rltr" path="res://Assets/decoration_frame.png" id="6_t6e5o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mjuw2"]
+font_size = 26
+outline_size = 2
+outline_color = Color(0.423529, 0.411765, 0.384314, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.65098)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_dibm2"]
+color = Color(0.180392, 0.219608, 0.294118, 0.470588)
+grow_begin = 10.0
+grow_end = 9.0
+thickness = 2
 
 [node name="PausableMenu" type="CanvasLayer"]
 process_mode = 3
 layer = 4
-visible = false
 script = ExtResource("1_xh5gb")
 
 [node name="Control" type="Control" parent="."]
@@ -18,6 +32,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_dibm2")
+
+[node name="PausableBackground" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.12549)
+metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control"]
 layout_mode = 1
@@ -26,54 +51,115 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -73.5
-offset_top = -74.5
-offset_right = 73.5
-offset_bottom = 74.5
+offset_left = -66.0
+offset_top = -90.0
+offset_right = 67.0
+offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_wbn63")
-region_rect = Rect2(93, 146, 82, 83)
-patch_margin_left = 7
-patch_margin_top = 7
-patch_margin_right = 7
-patch_margin_bottom = 6
+scale = Vector2(1.00554, 1.01163)
+texture = ExtResource("2_mjuw2")
+region_rect = Rect2(4, 3, 56, 73)
+patch_margin_left = 10
+patch_margin_top = 15
+patch_margin_right = 10
+patch_margin_bottom = 14
+axis_stretch_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect"]
+[node name="FrameContainer" type="VBoxContainer" parent="Control/NinePatchRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -48.5
+offset_top = -72.0115
+offset_right = 48.5
+offset_bottom = 73.9885
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 19
 
-[node name="Continuar" parent="Control/NinePatchRect/VBoxContainer" instance=ExtResource("4_n067c")]
+[node name="TopTextContainer" type="VBoxContainer" parent="Control/NinePatchRect/FrameContainer"]
 layout_mode = 2
+
+[node name="PauseLabel" type="Label" parent="Control/NinePatchRect/FrameContainer/TopTextContainer"]
+layout_mode = 2
+text = "Pausa"
+label_settings = SubResource("LabelSettings_mjuw2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SeparationLine" type="Panel" parent="Control/NinePatchRect/FrameContainer/TopTextContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxLine_dibm2")
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="Control/NinePatchRect/FrameContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 14
+
+[node name="Continuar" parent="Control/NinePatchRect/FrameContainer/ButtonsContainer" instance=ExtResource("4_n067c")]
+layout_mode = 2
+focus_mode = 0
 text = "Continuar"
 
-[node name="Options" parent="Control/NinePatchRect/VBoxContainer" instance=ExtResource("4_n067c")]
+[node name="Options" parent="Control/NinePatchRect/FrameContainer/ButtonsContainer" instance=ExtResource("4_n067c")]
 layout_mode = 2
+focus_mode = 0
 text = "Opciones"
 
-[node name="Salir" parent="Control/NinePatchRect/VBoxContainer" instance=ExtResource("4_n067c")]
+[node name="Salir" parent="Control/NinePatchRect/FrameContainer/ButtonsContainer" instance=ExtResource("4_n067c")]
 layout_mode = 2
+focus_mode = 0
 text = "Salir"
+
+[node name="Decorations" type="Control" parent="Control/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/NinePatchRect/Decorations"]
+layout_mode = 0
+offset_left = 13.9229
+offset_top = 22.7357
+offset_right = 20.9229
+offset_bottom = 29.7357
+texture = ExtResource("6_t6e5o")
+flip_v = true
+
+[node name="TextureRect2" type="TextureRect" parent="Control/NinePatchRect/Decorations"]
+layout_mode = 0
+offset_left = 13.9229
+offset_top = 140.368
+offset_right = 20.9229
+offset_bottom = 147.368
+texture = ExtResource("6_t6e5o")
+
+[node name="TextureRect3" type="TextureRect" parent="Control/NinePatchRect/Decorations"]
+layout_mode = 0
+offset_left = 109.394
+offset_top = 140.368
+offset_right = 116.394
+offset_bottom = 147.368
+texture = ExtResource("6_t6e5o")
+flip_h = true
+flip_v = true
+
+[node name="TextureRect4" type="TextureRect" parent="Control/NinePatchRect/Decorations"]
+layout_mode = 0
+offset_left = 109.394
+offset_top = 22.7357
+offset_right = 116.394
+offset_bottom = 29.7357
+texture = ExtResource("6_t6e5o")
+flip_h = true
 
 [node name="MenuOptions" parent="Control" instance=ExtResource("5_55xsl")]
 visible = false
 layout_mode = 1
-offset_left = -3.0
-offset_top = 3.0
-offset_right = -3.0
-offset_bottom = 3.0
 
-[connection signal="pressed" from="Control/NinePatchRect/VBoxContainer/Continuar" to="." method="_on_button_continuar"]
-[connection signal="pressed" from="Control/NinePatchRect/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Control/NinePatchRect/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Control/NinePatchRect/FrameContainer/ButtonsContainer/Continuar" to="." method="_on_button_continuar"]
+[connection signal="pressed" from="Control/NinePatchRect/FrameContainer/ButtonsContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Control/NinePatchRect/FrameContainer/ButtonsContainer/Salir" to="." method="_on_salir_pressed"]

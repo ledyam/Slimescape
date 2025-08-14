@@ -24,7 +24,7 @@ func _on_iniciar_pressed() -> void:
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
 	MusicManager._change_music(load("res://Assets/Sounds/timex27s-running-out-151012.ogg"))
-	get_tree().change_scene_to_file("res://UI/Intros/History Intro/history_intro.tscn")
+	get_tree().change_scene_to_file("res://UI/Intros/Cinematics/history_intro.tscn")
 
 
 func _on_sound_pressed() -> void:

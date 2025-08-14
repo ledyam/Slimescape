@@ -9,9 +9,9 @@ var right_hand: PackedScene = preload("res://Data/Characters/Players/right_hand.
 func _ready() -> void:
 	
 	if ID == 0 : 
-		instantiate_hand(left_hand)
-	else : 
 		instantiate_hand(right_hand)
+	else : 
+		instantiate_hand(left_hand)
 		
 	
 	

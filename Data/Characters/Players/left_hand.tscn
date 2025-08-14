@@ -1,29 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://80xbrmsmcgi2"]
+[gd_scene load_steps=11 format=3 uid="uid://80xbrmsmcgi2"]
 
 [ext_resource type="PackedScene" uid="uid://cpq0jjkqx38eo" path="res://Data/Characters/Players/hand.tscn" id="1_r7ld7"]
-[ext_resource type="SpriteFrames" uid="uid://4w7c4la807lq" path="res://Data/Resources/Character/AnimatedSprites/red_slime.tres" id="2_3a3ly"]
+[ext_resource type="SpriteFrames" uid="uid://dv5yi22qpdyhu" path="res://Data/Resources/Character/AnimatedSprites/blue_slime.tres" id="2_3a3ly"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3a3ly"]
 radius = 14.0357
 
-[sub_resource type="Animation" id="Animation_illsx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:flip_v")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="Animation" id="Animation_3a3ly"]
-length = 2.0
+length = 0.571429
 loop_mode = 1
+step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -31,10 +17,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [0, 1, 2, 3]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -74,7 +60,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_cvs1s"]
-length = 0.1
+length = 0.0666667
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -83,10 +69,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -207,14 +193,24 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_illsx"]
 _data = {
-&"RESET": SubResource("Animation_illsx"),
 &"idle": SubResource("Animation_3a3ly"),
 &"jump": SubResource("Animation_cvs1s"),
 &"move": SubResource("Animation_x1o24"),
 &"vertical_move": SubResource("Animation_6oqii")
 }
 
+[sub_resource type="Gradient" id="Gradient_7j8kk"]
+offsets = PackedFloat32Array(0, 0.00325733, 0.0130293, 0.609121, 0.785016, 1)
+colors = PackedColorArray(0.237785, 0.237785, 0.237785, 1, 0.875557, 0.875557, 0.875557, 1, 1, 1, 1, 1, 0.272147, 0.272147, 0.272147, 1, 0.254004, 0.254004, 0.254004, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3a3ly"]
+gradient = SubResource("Gradient_7j8kk")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.91453, 0.183761)
+
 [node name="LeftHand" instance=ExtResource("1_r7ld7")]
+ID = 1
 SPEED = 165.0
 
 [node name="BodyCollision" parent="." index="0"]
@@ -225,9 +221,8 @@ scale = Vector2(1.3, 1.137)
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(-1.4, -9.2)
 sprite_frames = ExtResource("2_3a3ly")
-animation = &"vertical_move"
+animation = &"move"
 autoplay = "idle"
-flip_h = true
 
 [node name="HitBox" type="Area2D" parent="." index="4"]
 visible = false
@@ -243,6 +238,12 @@ libraries = {
 }
 
 [node name="JumpParticles2D" parent="." index="6"]
-color = Color(0.901819, 0.346309, 0.332923, 1)
+color = Color(0.584314, 0.458824, 0.803922, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="7"]
+position = Vector2(-1, -5)
+scale = Vector2(0.789063, 0.796875)
+color = Color(0.392157, 0, 0.870588, 1)
+texture = SubResource("GradientTexture2D_3a3ly")
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

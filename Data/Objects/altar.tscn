@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6jipnfiart5h"]
+
+[ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Tiles/Dungeon Tile Set.png" id="1_1yjv2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl0uq"]
+atlas = ExtResource("1_1yjv2")
+region = Rect2(40, 248, 56, 40)
+
+[node name="Altar" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -21)
+texture = SubResource("AtlasTexture_bl0uq")

@@ -25,13 +25,14 @@ func animate_level_change():
 	
 	# 2. Cambiar texto y resetear propiedades
 	current_level_label.text = str(LevelManager.current_level_index + 1)
-	current_level_label.position.y -= MOVE_DISTANCE
+	await get_tree().process_frame
+	current_level_label.position.y -= (MOVE_DISTANCE + 10)
 	
 	# 3. Animación de entrada (nuevo número aparece desde arriba)
-	current_level_label.position.y = current_level_label.position.y - 50
+
 	tween = create_tween().set_parallel(true)
 	tween.tween_property(current_level_label, "position:y", 
-						current_level_label.position.y + MOVE_DISTANCE, 
+						0, 
 						ANIM_DURATION).set_trans(Tween.TRANS_BACK)
 	tween.tween_property(current_level_label, "modulate:a", 
 						1, ANIM_DURATION)

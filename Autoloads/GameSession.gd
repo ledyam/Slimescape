@@ -2,11 +2,19 @@ extends Node
 class_name GameSessionClass
 
 signal attempt_change(new_attempts)
+
 var attempts: int = 0
 var is_game_on : bool = false 
+var is_dialogue_on : bool = false 
+var is_tutorial_finished : bool = false 
 
+func is_pausable_moment() -> bool : 
+	return is_game_on and !is_dialogue_on
+
+func GAME_ON () ->void : 
+	is_game_on = true
+	
 ### --- INTENTOS ---
-
 func reset_attempts() -> void:
 	attempts = 0
 	

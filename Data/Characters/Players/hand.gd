@@ -34,11 +34,16 @@ func _ready() -> void:
 	CentralSignal.active_buff.connect(on_active_buff)
 
 func _physics_process(delta: float) -> void:
+	
+	
 	if   is_on_floor():
+		if !is_moving:
+			animation_player.play("idle")
 		coyote_timer.stop()
 		is_jumping = false 
 		leaved_floor = false
-		animation_player.play("move")
+
+		
 	if  not is_on_floor():
 		animation_player.play("jump")
 		if not leaved_floor and coyote_timer.is_stopped(): 
@@ -94,8 +99,10 @@ func _handle_movement():
 			
 		move(direction)
 	else:
+		
 		is_moving = false 
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
 
 func started_timer():
 	if !LevelTimeManager.is_running:

@@ -12,8 +12,6 @@ var screen_modes = {
 }
 
 func _ready():
-
-
 	# Conectar señal de selección
 	screen_mode_menu.connect("id_pressed", Callable(self, "_on_screen_mode_selected"))
 
@@ -45,4 +43,5 @@ func _on_music_slider_value_changed(value: float) -> void:
 
 func _on_return_menu_pressed() -> void:
 	GuiTransitions.hide(self.name)
+	owner.other_screen_closed.emit()
 	pass # Replace with function body.

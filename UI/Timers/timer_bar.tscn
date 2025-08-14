@@ -1,21 +1,34 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhehq44lrf35w"]
+[gd_scene load_steps=9 format=3 uid="uid://dhehq44lrf35w"]
 
 [ext_resource type="Script" uid="uid://dfr5qnk3cuecs" path="res://UI/Timers/timer_bar.gd" id="1_fe7li"]
 [ext_resource type="Texture2D" uid="uid://dpb6udqspfcqo" path="res://Assets/timer-sheet.png" id="3_i3fso"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i3fso"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3fso"]
+bg_color = Color(0, 0.172549, 0.321569, 0.611765)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_left = 2
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0v873"]
-bg_color = Color(0, 0.846045, 0.961124, 1)
+bg_color = Color(1.05888e-06, 0.620039, 0.777529, 1)
 corner_radius_top_left = 3
 corner_radius_bottom_left = 3
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3fso"]
 atlas = ExtResource("3_i3fso")
-region = Rect2(3, 2, 11, 12)
+region = Rect2(1, 0, 13, 16)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3r10u"]
+bg_color = Color(0, 0.172549, 0.321569, 0.611765)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe7li"]
-bg_color = Color(0, 0.847059, 0.960784, 1)
+bg_color = Color(0, 0.619608, 0.776471, 1)
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 
@@ -26,11 +39,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -71.0
-offset_top = -5.0
+offset_top = -20.0
 offset_right = 72.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = -6
+scale = Vector2(0.97266, 0.818943)
+theme_override_constants/separation = -7
 script = ExtResource("1_fe7li")
 
 [node name="ProgressTimeBar" type="ProgressBar" parent="."]
@@ -39,12 +53,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 localize_numeral_system = false
+theme_override_styles/background = SubResource("StyleBoxFlat_i3fso")
 theme_override_styles/fill = SubResource("StyleBoxFlat_0v873")
 value = 100.0
 fill_mode = 1
 show_percentage = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.695801, 0.953014, 0.907729, 1)
 z_index = 1
 layout_mode = 2
 texture = SubResource("AtlasTexture_i3fso")
@@ -54,6 +70,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 localize_numeral_system = false
+theme_override_styles/background = SubResource("StyleBoxFlat_3r10u")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fe7li")
 value = 100.0
 show_percentage = false

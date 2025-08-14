@@ -1,0 +1,40 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dsd3b54xfrrdr"]
+
+[ext_resource type="Texture2D" uid="uid://bqbbvbdbc45qa" path="res://Assets/GUI.png" id="1_h4th2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjuw2"]
+atlas = ExtResource("1_h4th2")
+region = Rect2(146, 99, 46, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dibm2"]
+texture = SubResource("AtlasTexture_mjuw2")
+texture_margin_left = 3.0
+texture_margin_top = 1.0
+texture_margin_right = 3.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mm3s"]
+atlas = ExtResource("1_h4th2")
+region = Rect2(146, 82, 46, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mjuw2"]
+texture = SubResource("AtlasTexture_0mm3s")
+texture_margin_left = 5.0
+texture_margin_top = 2.0
+texture_margin_right = 5.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6e5o"]
+atlas = ExtResource("1_h4th2")
+region = Rect2(146, 114, 46, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qlyqy"]
+texture = SubResource("AtlasTexture_t6e5o")
+texture_margin_left = 3.0
+texture_margin_top = 1.0
+texture_margin_right = 3.0
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxTexture_dibm2")
+Button/styles/normal = SubResource("StyleBoxTexture_mjuw2")
+Button/styles/pressed = SubResource("StyleBoxTexture_qlyqy")

@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://duqr2sbbuoytj"]
+[gd_scene load_steps=9 format=3 uid="uid://duqr2sbbuoytj"]
 
+[ext_resource type="Theme" uid="uid://bpa860c3t7k5b" path="res://UI/Pause Menu/pausable_menu.tres" id="1_mtwi2"]
 [ext_resource type="Script" uid="uid://bbyix4jc5wrsc" path="res://UI/Principal Menu/menu_options.gd" id="1_vrvnh"]
-[ext_resource type="Texture2D" uid="uid://bqbbvbdbc45qa" path="res://Assets/GUI.png" id="1_worg6"]
+[ext_resource type="Texture2D" uid="uid://cx7ncu3egj2tf" path="res://Assets/Frame.png" id="2_jdue7"]
 [ext_resource type="Script" uid="uid://b15gu5hdpxfvy" path="res://addons/simple-gui-transitions/transition.gd" id="4_jdue7"]
+[ext_resource type="PackedScene" uid="uid://cy4tlif73jssx" path="res://UI/buttons/button_with_sound.tscn" id="5_wg5wr"]
+[ext_resource type="Texture2D" uid="uid://cdxoo8hm1rltr" path="res://Assets/decoration_frame.png" id="6_kve0o"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1y815"]
-atlas = ExtResource("1_worg6")
-region = Rect2(92, 145, 84, 85)
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_vrvnh"]
+color = Color(0.180392, 0.219608, 0.294118, 0.470588)
+grow_begin = 88.0
+grow_end = 88.0
+thickness = 3
 
 [sub_resource type="LabelSettings" id="LabelSettings_vrvnh"]
 font_size = 30
@@ -20,6 +25,9 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_mtwi2")
 script = ExtResource("1_vrvnh")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
@@ -29,25 +37,46 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -185.0
-offset_top = -99.0
-offset_right = 185.0
-offset_bottom = 99.0
+offset_left = -198.5
+offset_top = -124.5
+offset_right = 198.5
+offset_bottom = 124.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_1y815")
-patch_margin_left = 14
-patch_margin_top = 12
-patch_margin_right = 13
-patch_margin_bottom = 13
+texture = ExtResource("2_jdue7")
+patch_margin_left = 20
+patch_margin_top = 21
+patch_margin_right = 21
+patch_margin_bottom = 18
 
-[node name="ReturnMenu" type="Button" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 48.0
-offset_bottom = 37.0
-text = "<--"
+[node name="ReturnMenu" parent="NinePatchRect" instance=ExtResource("5_wg5wr")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -39.0
+offset_right = 20.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+text = "Volver"
+
+[node name="OptionsSectionPanel" type="Panel" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 69.5
+offset_top = 58.0
+offset_right = 212.5
+offset_bottom = 98.0
+grow_horizontal = 2
+rotation = -3.14159
+theme_override_styles/panel = SubResource("StyleBoxLine_vrvnh")
 
 [node name="OptionsSectionLabel" type="Label" parent="NinePatchRect"]
 layout_mode = 1
@@ -55,19 +84,26 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -48.0
-offset_top = 16.0
+offset_top = 17.0
 offset_right = 48.0
-offset_bottom = 46.0
+offset_bottom = 48.0
 grow_horizontal = 2
 text = "Opciones"
 label_settings = SubResource("LabelSettings_vrvnh")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
-layout_mode = 2
-offset_left = 30.0
-offset_top = 46.0
-offset_right = 340.0
-offset_bottom = 170.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.5
+offset_top = -60.5
+offset_right = 163.5
+offset_bottom = 63.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/ScrollContainer"]
 layout_mode = 2
@@ -77,7 +113,7 @@ size_flags_vertical = 3
 [node name="MusicContainer" type="HBoxContainer" parent="NinePatchRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 20
+theme_override_constants/separation = 2
 
 [node name="MusicLabel" type="Label" parent="NinePatchRect/ScrollContainer/VBoxContainer/MusicContainer"]
 layout_mode = 2
@@ -94,7 +130,7 @@ value = 0.6
 [node name="SoundContainer" type="HBoxContainer" parent="NinePatchRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 20
+theme_override_constants/separation = 6
 
 [node name="SFXdLabel" type="Label" parent="NinePatchRect/ScrollContainer/VBoxContainer/SoundContainer"]
 layout_mode = 2
@@ -136,6 +172,46 @@ item_2/text = "Sin Bordes"
 item_2/id = 2
 item_3/text = "Pantalla Exclusiva"
 item_3/id = 3
+
+[node name="Decoration" type="Control" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/Decoration"]
+layout_mode = 0
+offset_left = 22.5
+offset_top = 19.5
+offset_right = 35.5
+offset_bottom = 32.5
+texture = ExtResource("6_kve0o")
+flip_v = true
+
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect/Decoration"]
+layout_mode = 0
+offset_left = 362.5
+offset_top = 19.5
+offset_right = 375.5
+offset_bottom = 32.5
+texture = ExtResource("6_kve0o")
+flip_h = true
+flip_v = true
+
+[node name="TextureRect3" type="TextureRect" parent="NinePatchRect/Decoration"]
+layout_mode = 0
+offset_left = 22.5
+offset_top = 210.5
+offset_right = 35.5
+offset_bottom = 223.5
+texture = ExtResource("6_kve0o")
+
+[node name="TextureRect4" type="TextureRect" parent="NinePatchRect/Decoration"]
+layout_mode = 0
+offset_left = 362.5
+offset_top = 210.5
+offset_right = 375.5
+offset_bottom = 223.5
+texture = ExtResource("6_kve0o")
+flip_h = true
 
 [node name="GuiTransition" type="Node" parent="."]
 script = ExtResource("4_jdue7")

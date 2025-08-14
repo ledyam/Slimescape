@@ -40,6 +40,7 @@ var next_level_path : String = ""
 func _ready() -> void:
 	LevelTimeManager.connect("level_time_ended",restart_level)
 	HUD.connect("transition_finished", _on_hud_transition_finished)
+	
 func go_to_next_level():
 	current_level_index += 1
 	level_changed.emit(current_level_index)
@@ -60,8 +61,10 @@ func _on_hud_transition_finished():
 	get_tree().change_scene_to_file(level_paths[current_level_index])
 	
 func _get_to_transition():
-	LevelTimeManager.reset_level_timer()
-	get_tree().change_scene_to_packed(transition_packed_scene)
+	
+	if LevelTimeManager.current_time > 0 or current_level_index == 0:  
+		LevelTimeManager.reset_level_timer()
+		get_tree().change_scene_to_packed(transition_packed_scene)
 
 func get_time_level():
 	return level_time[current_level_index]
