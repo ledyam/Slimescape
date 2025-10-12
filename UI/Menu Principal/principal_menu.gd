@@ -6,7 +6,7 @@ extends Control
 
 func _ready() -> void:
 	MusicManager.play_music("res://Assets/Sounds/principal_menu_audio.mp3")
-	PausableMenu.process_mode =Node.PROCESS_MODE_DISABLED
+	#PausableMenu.process_mode =Node.PROCESS_MODE_DISABLED
 	animation_player.play("fade_in")
 	%BackgroundVideo.play()
 	await animation_player.animation_finished

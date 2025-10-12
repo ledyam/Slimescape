@@ -78,7 +78,8 @@ func _on_rebind_button_pressed(direction: String):
 	var btn = _get_button(direction)
 	btn.text = "..."
 	set_process_input(true)
- 
+
+
 func _input(event):
 	if waiting_for_input == "":
 		return
@@ -86,14 +87,23 @@ func _input(event):
 	if event is InputEventKey and event.pressed:
 		var direction = waiting_for_input
 		var action_name = ACTIONS[direction]
-
-		if InputManager.is_key_used(event.keycode) and _get_button_letter(event.keycode) != null: 
-			var btn = _get_button_letter(event.keycode)
-			btn.text = label_text_unassigned
-			InputMap.action_erase_events(ACTIONS[btn.name.to_lower()])
-		InputManager.rebind_action(action_name,event.keycode)
-		_update_button_label(direction)
-
+		
+		
+		if event.keycode == KEY_ESCAPE:
+			_update_button_label(direction)
+		else:
+			
+			if InputManager.is_key_used(event.keycode) and _get_button_letter(event.keycode) != null:
+				var btn = _get_button_letter(event.keycode)
+				btn.text = label_text_unassigned
+				
+				var old_action = InputManager.get_action_with_key(event.keycode)
+				InputMap.action_erase_events(old_action)
+			
+			
+			InputManager.rebind_action(action_name, event.keycode)
+			_update_button_label(direction)
+		
 		waiting_for_input = ""
 		set_process_input(false)
- 
+		get_viewport().set_input_as_handled()

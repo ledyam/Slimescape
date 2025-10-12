@@ -46,7 +46,7 @@ func play_restart_transition():
 	tween.tween_property(hud_container, "modulate:a", 0.0, duration * 0.6).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	
 	# -----------------------------------------------
-	# SECCIÓN DE ANIMACIÓN DEL SHADER (sin cambios)
+	# SECCIÓN DE ANIMACIÓN DEL SHADER 
 	# -----------------------------------------------
 	# El efecto de glitch de pantalla sigue funcionando al mismo tiempo.
 	tween.tween_property(_transition_material, "shader_parameter/glitch_intensity", 0.1, duration * 0.5).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)

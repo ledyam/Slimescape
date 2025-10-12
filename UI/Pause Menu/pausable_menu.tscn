@@ -157,7 +157,8 @@ offset_bottom = 29.7357
 texture = ExtResource("6_t6e5o")
 flip_h = true
 
-[node name="MenuOptions" parent="." instance=ExtResource("6_dibm2")]
+[node name="MenuOptions" parent="Control" instance=ExtResource("6_dibm2")]
+layout_mode = 1
 
 [connection signal="pressed" from="Control/NinePatchRect/FrameContainer/ButtonsContainer/Continuar" to="." method="_on_button_continuar"]
 [connection signal="pressed" from="Control/NinePatchRect/FrameContainer/ButtonsContainer/Options" to="." method="_on_options_pressed"]

@@ -2,6 +2,7 @@ extends Control
 
 @onready var screen_mode_button := %ScreenModeButton
 @onready var screen_mode_menu :PopupMenu = screen_mode_button.get_menu_popup(0)
+@onready var input_system: Control = $NinePatchRect/InputSystem
 
 # Mapeo de ID -> texto -> modo
 var screen_modes = {
@@ -12,6 +13,7 @@ var screen_modes = {
 }
 
 func _ready():
+	self.hide()
 	# Conectar señal de selección
 	screen_mode_menu.connect("id_pressed", Callable(self, "_on_screen_mode_selected"))
 
@@ -44,4 +46,9 @@ func _on_music_slider_value_changed(value: float) -> void:
 func _on_return_menu_pressed() -> void:
 	GuiTransitions.hide(self.name)
 	owner.other_screen_closed.emit()
+	pass # Replace with function body.
+
+
+func _on_button_pressed() -> void:
+	input_system.visible = true
 	pass # Replace with function body.

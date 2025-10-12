@@ -38,9 +38,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -309.0
+offset_left = -218.0
 offset_top = -136.0
-offset_right = 88.0
+offset_right = 179.0
 offset_bottom = 113.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -214,6 +214,17 @@ offset_bottom = 223.5
 texture = ExtResource("6_kve0o")
 flip_h = true
 
+[node name="Button" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 210.0
+offset_right = 346.0
+offset_bottom = 231.0
+text = "Controles"
+
+[node name="InputSystem" parent="NinePatchRect" instance=ExtResource("7_kve0o")]
+layout_mode = 1
+
 [node name="GuiTransition" type="Node" parent="."]
 script = ExtResource("4_jdue7")
 animation_enter = 1
@@ -223,13 +234,7 @@ ease_type = "IN_OUT"
 layout = NodePath("..")
 metadata/_custom_type_script = "uid://b15gu5hdpxfvy"
 
-[node name="InputSystem" parent="." instance=ExtResource("7_kve0o")]
-layout_mode = 1
-offset_left = 190.0
-offset_top = -17.0
-offset_right = 190.0
-offset_bottom = -17.0
-
 [connection signal="pressed" from="NinePatchRect/ReturnMenu" to="." method="_on_return_menu_pressed"]
 [connection signal="value_changed" from="NinePatchRect/ScrollContainer/VBoxContainer/MusicContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="NinePatchRect/ScrollContainer/VBoxContainer/SoundContainer/SFXHSlider" to="." method="_on_sound_h_slider_value_changed"]
+[connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_button_pressed"]

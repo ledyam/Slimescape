@@ -167,4 +167,14 @@ func is_key_used(keycode: int, exclude_action: String = "") -> bool:
 	
 	return false
 	
+func get_action_with_key(keycode: int) -> String:
+	for action in InputMap.get_actions():
+		# Ignorar acciones del sistema UI si no quieres incluirlas
+		if action.begins_with("ui_"):
+			continue
+		
+		for event in InputMap.action_get_events(action):
+			if event is InputEventKey and event.keycode == keycode:
+				return action
 	
+	return ""
