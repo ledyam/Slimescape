@@ -6,7 +6,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i3fso"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3fso"]
-bg_color = Color(0, 0.172549, 0.321569, 0.611765)
+bg_color = Color(0, 0.172549, 0.321569, 0.337255)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_left = 2
@@ -21,7 +21,7 @@ atlas = ExtResource("3_i3fso")
 region = Rect2(1, 0, 13, 16)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3r10u"]
-bg_color = Color(0, 0.172549, 0.321569, 0.611765)
+bg_color = Color(0, 0.172549, 0.321569, 0.337255)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2

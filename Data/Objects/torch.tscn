@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://cvyksltqb4hli"]
+
+[ext_resource type="Script" uid="uid://cp3ol1q7i0xsr" path="res://Data/Objects/torch.gd" id="1_0uub4"]
+[ext_resource type="Texture2D" uid="uid://ddeo5rydll5al" path="res://Assets/Tiles/Dungeon Tile Set.png" id="1_ucosn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uub4"]
+atlas = ExtResource("1_ucosn")
+region = Rect2(112, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2clb"]
+atlas = ExtResource("1_ucosn")
+region = Rect2(128, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdf2q"]
+atlas = ExtResource("1_ucosn")
+region = Rect2(144, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htgy4"]
+atlas = ExtResource("1_ucosn")
+region = Rect2(112, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8up6"]
+atlas = ExtResource("1_ucosn")
+region = Rect2(128, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2rs6"]
+atlas = ExtResource("1_ucosn")
+region = Rect2(144, 176, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u8up6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uub4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2clb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdf2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htgy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8up6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2rs6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_l2clb"]
+offsets = PackedFloat32Array(0.472313, 0.830619, 0.86645)
+colors = PackedColorArray(1, 1, 1, 1, 0.0661158, 0.0661158, 0.0661158, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gdf2q"]
+gradient = SubResource("Gradient_l2clb")
+fill = 1
+fill_from = Vector2(0.512821, 0.551282)
+fill_to = Vector2(0.747863, 0.0769231)
+
+[node name="Torch" type="Node2D"]
+script = ExtResource("1_0uub4")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u8up6")
+frame_progress = 0.0851591
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1.19209e-07, 0)
+scale = Vector2(1.49089, 1.1263)
+color = Color(1, 0.682353, 0.211765, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_gdf2q")
+texture_scale = 0.75

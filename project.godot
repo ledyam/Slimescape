@@ -32,6 +32,7 @@ LevelManager="*res://Autoloads/LevelManager.gd"
 GameSession="*res://Autoloads/GameSession.gd"
 LevelTimeManager="*res://Autoloads/LevelTimeManager.gd"
 HUD="*res://UI/HUD/hud.tscn"
+InputManager="*res://Data/Modules/InputSystem/Autoload/InputManager.gd"
 
 [dialogic]
 

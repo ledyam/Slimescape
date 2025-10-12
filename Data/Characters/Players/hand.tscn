@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cafvxxfjjeorr" path="res://Assets/pigment.png" id="4_whk8f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krfdj"]
-size = Vector2(15.3846, 11.1903)
+size = Vector2(10.6923, 9.22015)
 
 [node name="HandMain" type="CharacterBody2D"]
 z_index = 1
@@ -16,7 +16,7 @@ SPEED = 160.0
 metadata/_custom_type_script = "uid://dx85212bxya46"
 
 [node name="BodyCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4.625)
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_krfdj")
 debug_color = Color(0.622742, 0.0655712, 0.117887, 0.42)
 

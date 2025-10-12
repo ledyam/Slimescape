@@ -55,16 +55,15 @@
 		{
 			"uuid": "c549a139-abfe-42bd-8fb9-ff1fe6121303",
 			"title": "To-Do",
-			"tasks": [
-				"2911a72b-9bf6-4d97-89ce-a98aba6838e7"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "810e7fab-7cc4-45eb-8664-fc3d79b05959",
 			"title": "In Progress",
 			"tasks": [
 				"19a56a9d-0f39-4a91-bb4f-b75b3a22f65d",
-				"cb1e6e61-dee4-42f1-b247-6e752beaaa23"
+				"cb1e6e61-dee4-42f1-b247-6e752beaaa23",
+				"2911a72b-9bf6-4d97-89ce-a98aba6838e7"
 			]
 		},
 		{

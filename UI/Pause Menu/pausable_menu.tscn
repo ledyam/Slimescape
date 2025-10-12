@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://bpa860c3t7k5b" path="res://UI/Pause Menu/pausable_menu.tres" id="2_dibm2"]
 [ext_resource type="Texture2D" uid="uid://cx7ncu3egj2tf" path="res://Assets/Frame.png" id="2_mjuw2"]
 [ext_resource type="PackedScene" uid="uid://cy4tlif73jssx" path="res://UI/buttons/button_with_sound.tscn" id="4_n067c"]
-[ext_resource type="PackedScene" uid="uid://duqr2sbbuoytj" path="res://UI/Principal Menu/menu_options.tscn" id="5_55xsl"]
+[ext_resource type="PackedScene" uid="uid://duqr2sbbuoytj" path="res://UI/Principal Menu/menu_options.tscn" id="6_dibm2"]
 [ext_resource type="Texture2D" uid="uid://cdxoo8hm1rltr" path="res://Assets/decoration_frame.png" id="6_t6e5o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mjuw2"]
@@ -26,6 +26,7 @@ layer = 4
 script = ExtResource("1_xh5gb")
 
 [node name="Control" type="Control" parent="."]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -156,9 +157,7 @@ offset_bottom = 29.7357
 texture = ExtResource("6_t6e5o")
 flip_h = true
 
-[node name="MenuOptions" parent="Control" instance=ExtResource("5_55xsl")]
-visible = false
-layout_mode = 1
+[node name="MenuOptions" parent="." instance=ExtResource("6_dibm2")]
 
 [connection signal="pressed" from="Control/NinePatchRect/FrameContainer/ButtonsContainer/Continuar" to="." method="_on_button_continuar"]
 [connection signal="pressed" from="Control/NinePatchRect/FrameContainer/ButtonsContainer/Options" to="." method="_on_options_pressed"]

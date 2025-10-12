@@ -1,0 +1,102 @@
+[gd_scene load_steps=2 format=3 uid="uid://br2483w80nowk"]
+
+[ext_resource type="Script" uid="uid://ceint8jfljo4o" path="res://Modules/InputSystem/input_system.gd" id="1_h634m"]
+
+[node name="InputSystem" type="Control" node_paths=PackedStringArray("up_button", "down_button", "left_button", "right_button")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h634m")
+up_button = NodePath("Panel/VBoxContainer/HBoxContainer/Up")
+down_button = NodePath("Panel/VBoxContainer/HBoxContainer2/Down")
+left_button = NodePath("Panel/VBoxContainer/HBoxContainer3/Left")
+right_button = NodePath("Panel/VBoxContainer/HBoxContainer4/Right")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -94.5
+offset_right = 100.0
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -66.5
+offset_right = 70.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Saltar"
+
+[node name="Up" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 20)
+layout_mode = 2
+text = "W"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Abajo"
+
+[node name="Down" type="Button" parent="Panel/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 20)
+layout_mode = 2
+text = "W"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Izquierda"
+
+[node name="Left" type="Button" parent="Panel/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(10, 20)
+layout_mode = 2
+text = "W"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Derecha"
+
+[node name="Right" type="Button" parent="Panel/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(10, 20)
+layout_mode = 2
+text = "W"

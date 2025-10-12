@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://duqr2sbbuoytj"]
+[gd_scene load_steps=10 format=3 uid="uid://duqr2sbbuoytj"]
 
 [ext_resource type="Theme" uid="uid://bpa860c3t7k5b" path="res://UI/Pause Menu/pausable_menu.tres" id="1_mtwi2"]
 [ext_resource type="Script" uid="uid://bbyix4jc5wrsc" path="res://UI/Principal Menu/menu_options.gd" id="1_vrvnh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b15gu5hdpxfvy" path="res://addons/simple-gui-transitions/transition.gd" id="4_jdue7"]
 [ext_resource type="PackedScene" uid="uid://cy4tlif73jssx" path="res://UI/buttons/button_with_sound.tscn" id="5_wg5wr"]
 [ext_resource type="Texture2D" uid="uid://cdxoo8hm1rltr" path="res://Assets/decoration_frame.png" id="6_kve0o"]
+[ext_resource type="PackedScene" uid="uid://br2483w80nowk" path="res://Data/Modules/InputSystem/input_system.tscn" id="7_kve0o"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_vrvnh"]
 color = Color(0.180392, 0.219608, 0.294118, 0.470588)
@@ -37,10 +38,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -198.5
-offset_top = -124.5
-offset_right = 198.5
-offset_bottom = 124.5
+offset_left = -309.0
+offset_top = -136.0
+offset_right = 88.0
+offset_bottom = 113.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_jdue7")
@@ -221,6 +222,13 @@ transition_type = "LINEAR"
 ease_type = "IN_OUT"
 layout = NodePath("..")
 metadata/_custom_type_script = "uid://b15gu5hdpxfvy"
+
+[node name="InputSystem" parent="." instance=ExtResource("7_kve0o")]
+layout_mode = 1
+offset_left = 190.0
+offset_top = -17.0
+offset_right = 190.0
+offset_bottom = -17.0
 
 [connection signal="pressed" from="NinePatchRect/ReturnMenu" to="." method="_on_return_menu_pressed"]
 [connection signal="value_changed" from="NinePatchRect/ScrollContainer/VBoxContainer/MusicContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]

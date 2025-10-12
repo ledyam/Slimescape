@@ -14,7 +14,7 @@ func _ready() -> void:
 	audio_player.bus = AUDIO_BUS
 	audio_player.volume_db = DEFAULT_VOLUME
 	audio_player.process_mode = Node.PROCESS_MODE_ALWAYS  # Funciona incluso en pausa
-## Reproduce una música en loop
+# Reproduce una música en loop
 func play_music(music_path: String, fade_duration: float = 0.0) -> void:
 	if current_music_path == music_path and audio_player.playing:
 		return  # Ya está sonando esta música
@@ -39,7 +39,7 @@ func play_music(music_path: String, fade_duration: float = 0.0) -> void:
 	else:
 		_change_music(music)
 
-## Cambia la música inmediatamente (sin fade)
+# Cambia la música inmediatamente (sin fade)
 func _change_music(new_music: AudioStream) -> void:
 	audio_player.stream = new_music
 	audio_player.play()
@@ -53,7 +53,7 @@ func stop_music(fade_duration: float = 0.0) -> void:
 	else:
 		audio_player.stop()
 
-## Aplica fade in a la música actual
+# Aplica fade in a la música actual
 func fade_in(duration: float) -> void:
 	var original_volume = audio_player.volume_db
 	audio_player.volume_db = -80.0

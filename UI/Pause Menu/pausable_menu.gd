@@ -5,12 +5,12 @@ signal other_screen_closed
 var paused : bool = false 
 
 func _ready() -> void:
-	self.hide()
+
 	other_screen_closed.connect(on_other_screen_closed)
 	
-func _input(_event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	
-	if GameSession.is_pausable_moment():
+	#if GameSession.is_pausable_moment():
 		if Input.is_action_just_pressed("Esc") and not is_other_screen_open():
 			if paused:
 				paused_off()

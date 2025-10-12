@@ -4,14 +4,10 @@ class_name MainCharacter
 
 @export_enum("RED", "BLUE") var ID : int 
 
-@export var input_map : Dictionary = {
-	JUMP = "W",
-	LEFT = "A",
-	RIGHT = "D"
-}
+var input_map : Dictionary = {}
 
 @export var SPEED = 145.0
-const JUMP_VELOCITY = -355.0
+const JUMP_VELOCITY = -350.0
 
 var leaved_floor : bool = false 
 var is_jumping : bool = false
@@ -26,11 +22,17 @@ var is_moving : bool = false
 
 
 func _ready() -> void:
-	if ID == 0 : 
+	if ID == 1 : 
 		$AnimatedSprite2D.sprite_frames = load("res://Data/Resources/Character/AnimatedSprites/red_slime.tres")
+		input_map.JUMP = "left_move_up"
+		input_map.LEFT = "left_move_left"
+		input_map.RIGHT = "left_move_right"
 	else :
 		$AnimatedSprite2D.sprite_frames = load("res://Data/Resources/Character/AnimatedSprites/blue_slime.tres")
-	
+		input_map.JUMP = "right_move_up"
+		input_map.LEFT = "right_move_left"
+		input_map.RIGHT = "right_move_right"
+		
 	CentralSignal.active_buff.connect(on_active_buff)
 
 func _physics_process(delta: float) -> void:

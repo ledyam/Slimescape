@@ -72,6 +72,6 @@ func get_time_level():
 
 func _input(event: InputEvent) -> void:
 	if GameSession.is_game_on:
-		if event.is_action_pressed("ui_accept"):
+		if event.is_action_pressed("reset"):
 			restart_level()
 		
